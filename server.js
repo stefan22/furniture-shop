@@ -1,7 +1,9 @@
-const express = require("express");
-const jsonServer = require("json-server");
-const chokidar = require("chokidar");
-const cors = require("cors");
+const express = require("express"),
+      jsonServer = require("json-server"),
+      chokidar = require("chokidar"),
+      cors = require("cors"),
+      open = require("open");
+
 
 // target file
 const dataFile = process.argv[2] || "./assets/data.js"
@@ -35,6 +37,10 @@ createServer();
 
 app.use("/api", (req, resp, next) => router(req, resp, next));
 
-// listening..
-app.listen(port, () => console.log(`running server on port ${port}`));
+// opens localhost:4000 ...
+app.listen(port, () => {
+  let localHost = `http://localhost:${port}/api`;
+  console.log("Running server @ ... ",localHost);
+  open(localHost);
+});
 
