@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 // redux
 import { Provider } from 'react-redux';
 import ShopStore from './redux/ShopStore';
@@ -17,8 +17,7 @@ class App extends Component {
       <Provider store={ShopStore}>
         <Router>
           <Switch>
-            <Route path='/shop' component={ShopConnector} />
-            <Redirect to='/shop' />
+            <Route path='/' component={ShopConnector} />
           </Switch>
         </Router>
       </Provider>
