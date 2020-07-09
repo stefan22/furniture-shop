@@ -16,7 +16,7 @@ class ShopConnector extends Component {
     return <Switch>
         <Route path='/shop/products/:category?'
           render={routeProps =>
-            <Shop { ...this.props }
+            <Shop { ...this.props } {...routeProps}
               products={products}
             />}
         />
