@@ -1,55 +1,39 @@
 import React, { Component } from 'react';
-import { Switch, Route, Redirect } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom'
 // redux
 import { connect } from 'react-redux';
-import { doDataLoad } from '../data/ActionCreators';
-import { DataTypes } from '../data/Types';
-
-
 // comps
-import TopNavigation from './TopNavigation';
+import Shop from './Shop';
 
 
-
-const filterProducts = (products = [], category) => 
-	(!category || category === "All") 
-		? products 
-		: products.filter(p => p.category.toLowerCase() === category.toLowerCase());
-
-
-
+const filterProducts = (products = [], category) =>
+    (!category || category === 'All')
+        ? products
+        : products.filter(p => p.category.toLowerCase() === category.toLowerCase());
 
 class ShopConnector extends Component {
 
-	componentDidMount() {
-		this.props.doDataLoad(DataTypes.CATEGORIES, DataTypes.PRODUCTS);
-	}
+  render () {
+    const { products } = this.props;
 
-	render() {
-			return <Switch>
+    return <Switch>
+        <Route path='/shop/products/:category?'
+          render={  (routeProps) =>
+            <Shop { ...this.props } { ...routeProps }
+              products={filterProducts(products,routeProps.match.params.category)}
+            />}
+        />
+        <Redirect to='/shop/products' />
+      </Switch>
 
-					<Route path="/shop/products/:category?"
-						render={ (routeProps) => 
-							<Shop { ...this.props } { ...routeProps } 
-								products={ filterProducts(this.props.products, 
-									routeProps.match.params.category) } />} />
 
-					<Route path="/shop/cart" render={ (routeProps) => 
-						<CartDetails { ...this.props } { ...routeProps }  />} />                                
-					<Redirect to="/shop/products" />
-			</Switch>           
-		}
-
+  }
 }
 
+const mapStateToProps = state => ({
+  shop: state.shop,
+});
 
 
 
-const mapStateToProps = (state) => ({
-    products: state.products,
-		categories: state.categories,
-})
-
-const mapActionsToProps = {
-    doDataLoad,
-}
+export default connect(mapStateToProps)(ShopConnector);

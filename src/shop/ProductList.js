@@ -3,11 +3,12 @@ import React, { Component } from 'react';
 class ProductList extends Component {
 
 	render() {
-		console.log(this);
+    console.log(this);
+
 		if (this.props.products == null || this.props.products.length === 0) {
 					return <h5 className="p-2">No Products</h5>
 		}
-		return this.props.products.map(p => 
+		return this.props.products.map(p =>
 			<div className="card m-1 p-1 bg-light" key={ p.id }>
 				<h4>
 					{ p.name }
@@ -20,8 +21,8 @@ class ProductList extends Component {
 					<button className="btn btn-success btn-sm float-right"
 							onClick={ () => this.props.addToCart(p) } >
 									Add To Cart
-					</button>                                            
-				</div>                
+					</button>
+				</div>
 			</div>
 		)
 	}
