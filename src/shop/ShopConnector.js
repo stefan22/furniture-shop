@@ -3,7 +3,7 @@ import { Switch, Route, Redirect } from 'react-router-dom'
 // redux
 import { connect } from 'react-redux';
 // comps
-import Shop from './Shop';
+import Shop from './Shop/index';
 
 
 

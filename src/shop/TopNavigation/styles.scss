@@ -1,0 +1,64 @@
+@import "../../styles/vars.scss";
+
+.topnavCategoriesWrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  .categoryAll {
+    flex: 0 1 auto;
+  }
+  .topnavCategoriesMain {
+    background: #f5f5f5;
+    border: 1px solid lightgray;
+    box-shadow: $reg-boxshadow;
+    width: 50%;
+    margin: 0 auto;
+    .topnavCategories {
+      display: flex;
+      flex-direction: column;
+      padding: 1rem;
+      justify-content: space-evenly;
+      .categoryAll {
+        margin: 1rem;
+        min-width: 135px;
+        a {
+          font-size: $h6;
+          color: $black;
+          padding: 10px 20px;
+          width: 100%;
+          display: inline-block;
+          border-bottom: 1px dashed lightgray;
+          transition: border-bottom 25ms linear 0ms, color 100ms linear 0ms;
+           &:hover {
+            border-bottom: 1px dashed lightsalmon;
+          }
+          &:focus {
+            color: $regorange;
+          }
+
+        }
+      }
+      .categoryOther {
+        margin: 1rem;
+        min-width: 135px;
+        a {
+          font-size: $h6;
+          color: $black;
+          width: 100%;
+          display: inline-block;
+          padding: 10px 20px;
+          border-bottom: 1px dashed lightgray;
+          transition: border-bottom 25ms linear 0ms, color 100ms linear 0ms;
+          &:hover {
+            border-bottom: 1px dashed lightsalmon;
+          }
+          &:focus {
+            color: $regorange;
+          }
+
+        }
+      }
+    } //topnavCategories
+  } //topnavCategoriesMain
+} //topnavCategoriesWrapper

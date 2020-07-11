@@ -1,0 +1,40 @@
+/**
+@  vars.scss
+¶  imported into each stylesheet
+¶  =============================
+*/
+
+/**
+@  colors
+¶  ––––––
+*/
+
+$reggrey: rgba(34, 34, 34, 0.55);
+$darkblue: rgba(59, 89, 152, 0.9);
+$regblue: rgba(85, 172, 238, 0.9);
+$regorange: rgba(221, 75, 57, 0.9);
+$black: rgba(0, 0, 0, 0.87);
+$white: rgba(255, 255, 255, 0.94);
+
+/**
+@  font-size
+¶  –––––––––
+*/
+
+$h1: 2.2rem;
+$h2: 2rem;
+$h3: 1.8rem;
+$h4: 1.6rem;
+$h5: 1.4rem;
+$h6: 1.2rem;
+$p: 1rem;
+
+/**
+@  box-shadows
+¶  –––––––––––
+*/
+
+$reg-boxshadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
+  0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+
+$boxshadow2: 0px 2px 4px -1px rgba(0,0,0,0.2), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12);

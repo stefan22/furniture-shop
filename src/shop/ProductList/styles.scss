@@ -1,0 +1,26 @@
+@import "../../styles/vars.scss";
+
+.productListWrapper {
+  height: 270px;
+  margin: 2rem 1rem;
+  h4 {
+    font-size: $h4;
+    margin-bottom: 1rem;
+  }
+  .productPriceTage {
+    font-size: $h5;
+    color: $regorange;
+    display: block;
+    margin-bottom: 1rem;
+  }
+  .productDescription {
+    height: auto;
+    min-height: 60px;
+    font-size: $p;
+  }
+  .actionButtonWrapper {
+    margin: 1rem 0;
+    button: {
+    }
+  }
+} //productListWrapper

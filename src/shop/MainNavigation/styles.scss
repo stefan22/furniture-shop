@@ -1,0 +1,39 @@
+@import "../../styles/vars.scss";
+
+
+.mainNavigation {
+  height: 64px;
+}
+
+.title {
+  font-size: $h5;
+}
+
+.left {
+  flex: 1;
+}
+
+.leftLinkActive {
+  color: $white;
+}
+
+.right {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.rightLink {
+  font-size: $h6;
+  color: $white;
+  font-weight: 500;
+}
+
+.linkSecondary {
+  color: $regorange !important;
+  display: flex;
+  font-size: $h6;
+  margin-left: 10px !important;
+  font-weight: 500;
+}
+

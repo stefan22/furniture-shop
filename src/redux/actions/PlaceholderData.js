@@ -57,12 +57,5 @@ export const data = {
       description: "Gives any room additional depth",
       price: 1013,
     },
-    {
-      id: 9,
-      name: "Horizon Rug",
-      category: "Accessories",
-      description: "Multi-colored striped carpet",
-      price: 423,
-    },
   ],
 };
