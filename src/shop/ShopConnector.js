@@ -1,36 +1,54 @@
-import React, { Component } from 'react';
-import { Switch, Route, Redirect } from 'react-router-dom'
+import React, { Component } from "react";
+import { Switch, Route, Redirect } from "react-router-dom";
 // redux
-import { connect } from 'react-redux';
+import { connect } from "react-redux";
 // comps
-import Shop from './Shop/index';
+import ShopStore from "../redux/ShopStore";
+import Shop from "./Shop/index";
+import CartDetails from "./CartDetails/index";
+import { doLoadData } from "../redux/actions/DataActions";
 
 
+// data placeholder
+ShopStore.dispatch(doLoadData());
 
 class ShopConnector extends Component {
-
-
-  render () {
+  render() {
     const { products } = this.props.shop;
 
-    return <Switch>
-        <Route path='/shop/products/:category?'
-          render={routeProps =>
-            <Shop { ...this.props } {...routeProps}
+    return (
+      <Switch>
+        <Route
+          path="/shop/products/:category?"
+          render={(routeProps) => (
+            <Shop
+              {...this.props}
+              {...routeProps}
               products={products}
-            />}
+            />
+          )}
         />
-        <Redirect to='/shop/products' />
+
+        <Route
+          path="/shop/cart"
+          render={(routeProps) => (
+            <CartDetails {...this.props} {...routeProps} />
+          )}
+        />
+
+        <Redirect to="/shop/products" />
       </Switch>
-
-
+    );
   }
 }
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   shop: state.shop,
+  cart: state.cart,
 });
 
+const mapActionsToProps = {
+  doLoadData,
+};
 
-
-export default connect(mapStateToProps)(ShopConnector);
+export default connect(mapStateToProps, mapActionsToProps)(ShopConnector);

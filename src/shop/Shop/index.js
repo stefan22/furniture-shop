@@ -5,6 +5,10 @@ import Grid from "@material-ui/core/Grid";
 import ProductList from "../ProductList/index";
 import TopNavigation from "../TopNavigation/index";
 import MainNavigation from "../MainNavigation/index";
+import CartSummary from "../CartSummary/index";
+// redux
+import { connect } from "react-redux";
+import { addToCart, updateCart } from "../../redux/actions/CartActions";
 // styles
 import "./styles.scss";
 
@@ -23,20 +27,25 @@ class Shop extends Component {
   };
 
   render() {
+    //console.log(this);
     const { category } = this.props.match.params;
     return (
       <div className="wrapper">
         <MainNavigation />
-
+        <CartSummary  {...this.props}
+        />
         <Grid container justify={"center"} spacing={2}>
           <Grid item xs={12} md={9} lg={10}>
             <div className="mainContent">
               {!!this.props.products && (
                 <ProductList
+                  addToCart={this.props.addToCart}
+                  cart={this.props.cart}
                   products={this.handleFilterProducts(
                     category,
                     this.props.products
                   )}
+
                 />
               )}
             </div>
@@ -53,4 +62,15 @@ class Shop extends Component {
   }
 }
 
-export default Shop;
+const mapStateToProps = (state) => ({
+  shop: state.shop,
+  cart: state.cart,
+});
+
+const mapActionsToProps = {
+  addToCart,
+  updateCart,
+};
+
+
+export default connect(mapStateToProps,mapActionsToProps)(Shop);
