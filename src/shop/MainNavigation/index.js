@@ -11,6 +11,7 @@ class MainNavigation extends Component {
     super(props);
     this.state = {
       windowWidth: window.innerWidth,
+      menuOpen: false,
     };
   }
 
@@ -29,10 +30,14 @@ class MainNavigation extends Component {
 
   handleClick = () => {
     console.log("click");
+    this.setState(prevState => ({
+      menuOpen: !prevState.menuOpen
+    }))
+
   };
 
   render() {
-    const { windowWidth } = this.state;
+    const { windowWidth, menuOpen } = this.state;
     return (
       <AppBar className="mainNavigation" position="fixed" color="default">
         <Toolbar>
@@ -75,13 +80,11 @@ class MainNavigation extends Component {
               className="hamburger"
               onClick={this.handleClick}
             >
-              <img
-                alt={"main menu"}
-                className="menuBurger"
-                src={burger}
-                width="64"
-                height="64"
-              />
+            <div className={`${menuOpen ? "menuButton open" : "menuButton"}`}>
+              <div className="menuButtonBurger">
+
+              </div>
+            </div>
             </Link>
           )}
         </Toolbar>
@@ -91,3 +94,13 @@ class MainNavigation extends Component {
 }
 
 export default MainNavigation;
+
+
+
+//  <img
+//   alt={"main menu"}
+//   className="menuBurger"
+//   src={burger}
+//   width="64"
+//   height="64"
+// />
