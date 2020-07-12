@@ -1,8 +1,7 @@
-import React, { Component } from "react";
+import React from "react";
 // mui
 import Grid from "@material-ui/core/Grid";
 import Card from "@material-ui/core/Card";
-import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import Button from "@material-ui/core/Button";
 // styles
@@ -10,7 +9,7 @@ import "./styles.scss";
 
 const Product = (props) => {
   return props.products.map((p) => (
-    <Grid item xs={12} md={4} lg={3}>
+    <Grid key={p.id} item xs={12} md={4} lg={3}>
       <Card key={p.id} className="productListWrapper">
         <CardContent key={p.id}>
           <h4>{p.name}</h4>

@@ -29,8 +29,8 @@ class Shop extends Component {
         <MainNavigation />
 
         <Grid container justify={"center"} spacing={2}>
-            <Grid item xs={12} md={9}>
-              <div className="mainContent">
+          <Grid item xs={12} md={9} lg={10}>
+            <div className="mainContent">
               {!!this.props.products && (
                 <ProductList
                   products={this.handleFilterProducts(
@@ -39,15 +39,14 @@ class Shop extends Component {
                   )}
                 />
               )}
-              </div>
-            </Grid>
-            <Grid item xs={12} md={3}>
-              <TopNavigation
-                baseURL={baseURL}
-                categories={this.props.shop.categories}
-              />
-            </Grid>
-
+            </div>
+          </Grid>
+          <Grid item xs={12} md={3} lg={2}>
+            <TopNavigation
+              baseURL={baseURL}
+              categories={this.props.shop.categories}
+            />
+          </Grid>
         </Grid>
       </div>
     );

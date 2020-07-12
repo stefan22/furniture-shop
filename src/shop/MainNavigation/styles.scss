@@ -6,8 +6,20 @@
 }
 
 .title {
-  font-size: $h5;
+
+  flex: 1;
 }
+
+.noTitle {
+  font-size: $h5;
+  width: 100%;
+  text-align: left;
+}
+
+.menuBurger {
+    mix-blend-mode: darken;
+    cursor: pointer;
+  }
 
 .left {
   flex: 1;
@@ -21,6 +33,10 @@
   flex: 1;
   display: flex;
   justify-content: flex-end;
+}
+.menuBurger {
+  margin-left: 1rem;
+  display: block;
 }
 
 .rightLink {
