@@ -4,7 +4,7 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Link from "@material-ui/core/Link";
 // styles
 import "./styles.scss";
-import burger from "../../images/burger3.png";
+
 
 class MainNavigation extends Component {
   constructor(props) {
