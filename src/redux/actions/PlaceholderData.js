@@ -3,7 +3,7 @@ export const data = {
   products: [
     {
       id: 1,
-      name: "Betty TK1 Chair",
+      name: "Betty Chair",
       category: "Furniture",
       description: "Supportive seat webbing design",
       price: 310,
@@ -24,30 +24,30 @@ export const data = {
     },
     {
       id: 4,
-      name: "Piccolo Table Lamp",
+      name: "Piccolo Lamp",
       category: "Lighting",
-      description: "Piccolo is turned on and off when you click the shade",
+      description: "Turned on and off when you click the shade",
       price: 34.95,
     },
     {
       id: 5,
       name: "PC Pendant",
       category: "Lighting",
-      description: "Pendant constructed in anodised aluminium",
-      price: 79500,
+      description: "Constructed in anodised aluminium",
+      price: 795,
     },
     {
       id: 6,
-      name: "Countour Place mat",
+      name: "Countour Mat",
       category: "Accessories",
-      description: "Rectangular place mat in cotton with sewn edges",
+      description: "Rectangular mat in cotton with sewn edges",
       price: 16,
     },
     {
       id: 7,
       name: "Sillon Mirror",
       category: "Accessories",
-      description: "Sillon furrowed frame inspired by the Deco movement",
+      description: "Sillon frame inspired by the Deco movement",
       price: 245,
     },
     {
