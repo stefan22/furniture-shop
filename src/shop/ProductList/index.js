@@ -27,8 +27,9 @@ const Product = (props) => {
             onClick={() => handleAddToCart(p)}
             component={Link}
             to="/shop/products"
-            variant="contained"
+            variant="outlined"
             size="small"
+            color="default"
           >
             Add To Cart
           </Button>

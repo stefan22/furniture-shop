@@ -2,60 +2,42 @@
 
 .topnavCategoriesWrapper {
   position: relative;
+  .furnlogo {
+      position: fixed;
+      top: 7.5vh;
+      right: 3vw;
+      @media screen and (max-width: 1300px) {
+        right: 4vw;
+      }
+    }
   .topnavCategoriesMain {
-    position: fixed;
-    right: 2rem;
-    top: 17.5vh;
-    background: #f5f5f5;
-    border: 1px solid lightgray;
-    box-shadow: $reg-boxshadow;
+    @include mainBoxCategories;
+    top: 0vh;
     @media screen and (max-width: 960px) {
       position:static;
       margin: 0 1rem;
     }
+
     .topnavCategories {
       display: flex;
       flex-flow: column;
       padding: 0 1rem;
       justify-content: space-evenly;
       .categoryAll {
-        margin: 1rem 0;
-        align-items: center;
+        margin-top: 7.5rem;
         a {
-          font-size: $h6;
-          color: $black;
-          padding: 10px 20px;
-          align-items: center;
-          width: 100%;
-          display: inline-block;
-          border-bottom: 1px dashed lightgray;
-          transition: border-bottom 25ms linear 0ms, color 100ms linear 0ms;
-          &:hover {
-            border-bottom: 1px dashed lightsalmon;
+          .categoryIcon {
+            margin-right: 10px;
           }
-          &:focus {
-            color: $regorange;
-          }
+          @include aCategory;
         }
       }
       .categoryOther {
-        margin: 1rem 0;
-        align-items: center;
-
         a {
-          font-size: $h6;
-          color: $black;
-          width: 100%;
-          display: inline-block;
-          padding: 10px 20px;
-          border-bottom: 1px dashed lightgray;
-          transition: border-bottom 25ms linear 0ms, color 100ms linear 0ms;
-          &:hover {
-            border-bottom: 1px dashed lightsalmon;
+          .categoryIcon {
+            margin-right: 10px;
           }
-          &:focus {
-            color: $regorange;
-          }
+          @include aCategory;
         }
       }
     } //topnavCategories
