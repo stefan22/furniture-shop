@@ -9,13 +9,12 @@ import Button from "@material-ui/core/Button";
 import "./styles.scss";
 
 const Product = (props) => {
-
   const handleAddToCart = (prod) => {
     props.addToCart(prod);
   };
 
   return props.products.map((p) => (
-    <Grid key={p.id} item xs={12} md={4} lg={3}>
+    <Grid key={p.id} item xs={12} sm={6} md={4} lg={3}>
       <Card key={p.id} className="productListWrapper">
         <CardContent key={p.id}>
           <h4>{p.name}</h4>
@@ -27,8 +26,9 @@ const Product = (props) => {
             onClick={() => handleAddToCart(p)}
             component={Link}
             to="/shop/products"
-            variant="contained"
+            variant="outlined"
             size="small"
+            color="default"
           >
             Add To Cart
           </Button>

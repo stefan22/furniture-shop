@@ -1,5 +1,8 @@
 import React, { Component } from "react";
+// comps
 import CartTableDisplay from "./CartTableDisplay";
+// mui
+import Grid from "@material-ui/core/Grid";
 // styles
 import "./styles.scss";
 
@@ -10,9 +13,9 @@ class CartSummary extends Component {
     } = this.props;
 
     return (
-      <div className="cartWrapper">
+       <Grid container spacing={0}>
         {!!cartItems && <CartTableDisplay cartItems={cartItems} />}
-      </div>
+      </Grid>
     );
   }
 }

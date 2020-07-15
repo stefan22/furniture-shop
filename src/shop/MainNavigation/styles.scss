@@ -1,25 +1,18 @@
 @import "../../styles/vars.scss";
 
-
-.mainNavigation {
-  height: 64px;
-  transition: all .25s ease-in-out;
-}
-
-.title {
-  flex: 1;
-}
-
-.noTitle {
-  font-size: $h5;
-  width: 100%;
-  text-align: left;
-}
-
-.menuBurger {
-  mix-blend-mode: darken;
-  cursor: pointer;
-}
+.mobileMenu {
+  position: fixed;
+  z-index: 10;
+  display: flex;
+  height: 70px;
+  margin: 0 1rem;
+  .hamburger {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+} // mobileMenu
 
 .menuButton {
   position: relative;
@@ -30,35 +23,14 @@
   width: 40px;
   height: 40px;
   cursor: pointer;
-  transition: all .25s ease-in-out;
-  // border: 1px solid #000;
-}
-
-.menuButtonBurger {
-  width: 20px;
-  height: 2px;
-  background: #000;
-  border-radius: 5px;
-  // box-shadow: 0 2px 5px rgba(0,101,47,.25);
-  transition: all .25s ease-in-out;
-}
-
-.menuButtonBurger::before, .menuButtonBurger::after {
-  content: '';
-  position: absolute;
-  width: 20px;
-  height: 2px;
-  background: #000;
-  border-radius: 5px;
-  transition: all .25s ease-in-out;
-}
-
-.menuButtonBurger::before {
-  transform: translate(-10px,-10px);
-}
-
-.menuButtonBurger::after {
-  transform: translate(-10px,10px);
+  transition: all 0.25s ease-in-out;
+  .menuButtonBurger {
+    width: 20px;
+    height: 2px;
+    background: $black;
+    border-radius: 5px;
+    transition: all 0.25s ease-in-out;
+  }
 }
 
 .menuButton.open .menuButtonBurger {
@@ -75,39 +47,21 @@
   transform: rotate(-45deg) translate(3px, 3px);
 }
 
-
-.left {
-  flex: 1;
+.menuButtonBurger::before,
+.menuButtonBurger::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 2px;
+  background: $black;
+  border-radius: 5px;
+  transition: all 0.25s ease-in-out;
 }
 
-.leftLinkActive {
-  color: $white;
+.menuButtonBurger::before {
+  transform: translate(-10px, -10px);
 }
 
-.right {
-  flex: 1;
-  display: flex;
-  justify-content: flex-end;
+.menuButtonBurger::after {
+  transform: translate(-10px, 10px);
 }
-.menuBurger {
-  margin-left: 1rem;
-  display: block;
-}
-
-.rightLink {
-  font-size: $h6;
-  color: $white;
-  font-weight: 500;
-}
-
-.linkSecondary {
-  color: $regorange !important;
-  display: flex;
-  font-size: $h6;
-  margin-left: 10px !important;
-  font-weight: 500;
-}
-
-
-
-
