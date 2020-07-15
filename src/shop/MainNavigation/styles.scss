@@ -1,26 +1,18 @@
 @import "../../styles/vars.scss";
 
-
-.mainNavigation {
-  height: 64px;
-  transition: all .25s ease-in-out;
-}
-
-.title {
-  flex: 1;
-  color: $black !important;
-}
-
-.noTitle {
-  font-size: $h5;
-  width: 100%;
-  text-align: left;
-}
-
-.menuBurger {
-  mix-blend-mode: darken;
-  cursor: pointer;
-}
+.mobileMenu {
+  position: fixed;
+  z-index: 10;
+  display: flex;
+  height: 70px;
+  margin: 0 1rem;
+  .hamburger {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+} // mobileMenu
 
 .menuButton {
   position: relative;
@@ -31,33 +23,14 @@
   width: 40px;
   height: 40px;
   cursor: pointer;
-  transition: all .25s ease-in-out;
-}
-
-.menuButtonBurger {
-  width: 20px;
-  height: 2px;
-  background: $black;
-  border-radius: 5px;
-  transition: all .25s ease-in-out;
-}
-
-.menuButtonBurger::before, .menuButtonBurger::after {
-  content: '';
-  position: absolute;
-  width: 20px;
-  height: 2px;
-  background: $black;
-  border-radius: 5px;
-  transition: all .25s ease-in-out;
-}
-
-.menuButtonBurger::before {
-  transform: translate(-10px,-10px);
-}
-
-.menuButtonBurger::after {
-  transform: translate(-10px,10px);
+  transition: all 0.25s ease-in-out;
+  .menuButtonBurger {
+    width: 20px;
+    height: 2px;
+    background: $black;
+    border-radius: 5px;
+    transition: all 0.25s ease-in-out;
+  }
 }
 
 .menuButton.open .menuButtonBurger {
@@ -74,35 +47,21 @@
   transform: rotate(-45deg) translate(3px, 3px);
 }
 
-
-.left,.right {
-  flex: 1;
-  display: flex;
-  color: $black !important;
+.menuButtonBurger::before,
+.menuButtonBurger::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 2px;
+  background: $black;
+  border-radius: 5px;
+  transition: all 0.25s ease-in-out;
 }
 
-.right {
-  justify-content: flex-end;
-}
-.menuBurger {
-  margin-left: 1rem;
-  display: block;
+.menuButtonBurger::before {
+  transform: translate(-10px, -10px);
 }
 
-.rightLink {
-  font-size: $h6;
-  color: $white;
-  font-weight: 500;
+.menuButtonBurger::after {
+  transform: translate(-10px, 10px);
 }
-
-.linkSecondary {
-  color: $cardPrice !important;
-  display: flex;
-  font-size: $h6;
-  margin-left: 10px !important;
-  font-weight: 500;
-}
-
-
-
-

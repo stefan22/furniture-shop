@@ -30,34 +30,47 @@ class Shop extends Component {
     //console.log(this);
     const { category } = this.props.match.params;
     return (
-      <div className="wrapper">
-        <MainNavigation />
-        <CartSummary  {...this.props}
-        />
-        <Grid container justify={"center"} spacing={2}>
-          <Grid item xs={12} md={9} lg={10}>
-            <div className="mainContent">
-              {!!this.props.products && (
-                <ProductList
-                  addToCart={this.props.addToCart}
-                  cart={this.props.cart}
-                  products={this.handleFilterProducts(
-                    category,
-                    this.props.products
-                  )}
-
-                />
-              )}
+      <Grid container justify={"center"} spacing={0}>
+        <div className="mainWrapper">
+          <Grid item zeroMinWidth md={2} lg={2}>
+            <div className="sideNavCol">
+              <TopNavigation
+                baseURL={baseURL}
+                categories={this.props.shop.categories}
+              />
             </div>
           </Grid>
-          <Grid item xs={12} md={3} lg={2}>
-            <TopNavigation
-              baseURL={baseURL}
-              categories={this.props.shop.categories}
+
+          <Grid item xs={12} md={10} lg={10}>
+            <MainNavigation />
+            <CartSummary
+              cart={this.props.cart}
             />
+            <div className="mainCol">
+              <main className="content">
+                <div className="mainContent">
+                  <div className="mainHeader">
+                    <h1>Furniture</h1>
+                  </div>
+                  <div className="mainProducts">
+                    {!!this.props.products && (
+                      <ProductList
+                        addToCart={this.props.addToCart}
+                        cart={this.props.cart}
+                        products={this.handleFilterProducts(
+                          category,
+                          this.props.products
+                        )}
+                      />
+                    )}
+                  </div>
+                </div>
+              </main>
+              <footer>footer</footer>
+            </div>
           </Grid>
-        </Grid>
-      </div>
+        </div>
+      </Grid>
     );
   }
 }
@@ -72,5 +85,4 @@ const mapActionsToProps = {
   updateCart,
 };
 
-
-export default connect(mapStateToProps,mapActionsToProps)(Shop);
+export default connect(mapStateToProps, mapActionsToProps)(Shop);
