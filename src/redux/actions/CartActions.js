@@ -10,11 +10,15 @@ export const addToCart = (product) => (dispatch) => {
   });
 };
 
-export const updateCart = (product, quantity) => (dispatch) => {
+export const updateCart = (product,qty) => (dispatch) => {
+  let objUpdate = {};
+  objUpdate.id = product.id;
+  objUpdate.qty = qty;
   dispatch({
     type: types.CART_UPDATE,
-    payload: { product, quantity },
+    payload: objUpdate
   });
+
 };
 
 export const deleteFromCart = (product) => (dispatch) => {
@@ -29,3 +33,17 @@ export const clearCart = () => (dispatch) => {
     type: types.CART_CLEAR,
   });
 };
+
+
+export const totalCartItems = cartItems => dispatch => {
+  let count = 0;
+  !!cartItems && cartItems.map(itm =>
+    Number(itm.qty) > 1 ? count += Number(itm.qty) : Number(count += 1)
+  )
+  dispatch({
+    type: types.CART_TOTAL_ITEMS,
+    payload: count,
+  })
+}
+
+

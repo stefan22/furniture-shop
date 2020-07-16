@@ -72,20 +72,10 @@
     font-size: $p;
     border: 1px solid lighten($gray, 40%);
     &.cartRemove button {
+      font-weight: 400;
       color: $white;
-      font-weight: 500;
-      padding: 10px 20px;
+      background: lighten($cardPrice,12%);
       border: 1px solid $cardPrice;
-      border-radius: 4px;
-      cursor: pointer;
-      background-color: lighten($cardPrice, 12%);
-      transition: background-color 0.4s linear 10ms;
-      &:focus {
-        outline: none;
-      }
-      &:hover {
-        background-color: lighten($cardPrice, 5%);
-      }
     }
   }
 

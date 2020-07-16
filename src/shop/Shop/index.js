@@ -2,18 +2,14 @@ import React, { Component } from "react";
 // mui
 import Grid from "@material-ui/core/Grid";
 // comps
-import ProductList from "../ProductList/index";
-import TopNavigation from "../TopNavigation/index";
-import MainNavigation from "../MainNavigation/index";
-import CartDetails from "./CartDetails";
-// redux
-import { connect } from "react-redux";
-import { addToCart, updateCart } from "../../redux/actions/CartActions";
+import ProductList from "../ProductList";
+import TopNavigation from "../TopNavigation";
+import MainNavigation from "../MainNavigation";
+import CartInfo from "../CartInfo";
 // styles
 import "./styles.scss";
 
 const baseURL = "/shop/products";
-
 
 class Shop extends Component {
   handleFilterProducts = (cat, prdts) => {
@@ -27,8 +23,16 @@ class Shop extends Component {
     return products;
   };
 
+  handleUpdateCart = () => {
+    this.props.updateCart(this.props.cart.cartItems);
+  };
+
   render() {
     const { category } = this.props.match.params;
+    const {
+      cart: { currentCart },
+    } = this.props;
+
     return (
       <Grid container justify={"center"} spacing={0}>
         <div className="mainWrapper">
@@ -44,8 +48,11 @@ class Shop extends Component {
           <Grid item xs={12} md={10} lg={10}>
             <MainNavigation />
 
-            <CartDetails
+            <CartInfo
+              handleUpdateCart={this.handleUpdateCart}
+              totalCartItems={this.props.totalCartItems}
               cart={this.props.cart}
+              currentCart={currentCart}
             />
 
             <div className="mainCol">
@@ -77,14 +84,5 @@ class Shop extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({
-  shop: state.shop,
-  cart: state.cart,
-});
 
-const mapActionsToProps = {
-  addToCart,
-  updateCart,
-};
-
-export default connect(mapStateToProps, mapActionsToProps)(Shop);
+export default Shop;

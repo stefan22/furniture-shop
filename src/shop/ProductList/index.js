@@ -9,9 +9,8 @@ import Button from "@material-ui/core/Button";
 import "./styles.scss";
 
 const Product = (props) => {
-
   const handleAddToCart = (prod) => {
-    props.history.push('/shop/cart');
+    props.history.push("/shop/cart");
     props.addToCart(prod);
   };
 
@@ -52,4 +51,4 @@ const ProductList = (props) => {
   );
 };
 
-export default (withRouter)(ProductList);
+export default withRouter(ProductList);

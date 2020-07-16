@@ -26,7 +26,6 @@ class MainNavigation extends Component {
   }
 
   handleClick = () => {
-    console.log("click");
     this.setState((prevState) => ({
       menuOpen: !prevState.menuOpen,
     }));

@@ -2,6 +2,8 @@ import types from "../Types";
 
 const initialState = {
   cartItems: [],
+  currentItem: 0,
+  cartTotalItems:0,
 };
 
 export const CartReducer = (state = initialState, action) => {
@@ -18,8 +20,23 @@ export const CartReducer = (state = initialState, action) => {
         };
       } else {
         return {
+          ...state,
           cartItems: state.cartItems.concat(item),
         };
+      }
+
+    case types.CART_UPDATE:
+      let upItem = state.cartItems.find(itm => itm.id === action.payload.id);
+      if(!!upItem) upItem.qty = action.payload.qty;
+      return {
+        ...state,
+        currentItem: {...state.currentItem,...upItem}
+      };
+
+    case types.CART_TOTAL_ITEMS:
+      return {
+        ...state,
+        cartTotalItems: action.payload
       }
 
     default:

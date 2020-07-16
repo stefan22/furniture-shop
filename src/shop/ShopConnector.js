@@ -7,6 +7,12 @@ import ShopStore from "../redux/ShopStore";
 import Shop from "./Shop/index";
 import CartSummary from "./CartSummary"
 import { doLoadData } from "../redux/actions/DataActions";
+import {
+  addToCart,
+  updateCart,
+  deleteFromCart,
+  totalCartItems
+} from "../redux/actions/CartActions";
 
 
 // data placeholder
@@ -23,6 +29,9 @@ class ShopConnector extends Component {
           path="/shop/products/:category?"
           render={(routeProps) => (
             <Shop
+              doLoadData={this.props.doLoadData}
+              addToCart={this.props.addToCart}
+              totalCartItems={this.props.totalCartItems}
               {...this.props}
               {...routeProps}
               products={products}
@@ -33,7 +42,11 @@ class ShopConnector extends Component {
         <Route
           path="/shop/cart"
           render={(routeProps) => (
-            <CartSummary {...this.props} {...routeProps} />
+            <CartSummary
+              updateCart={this.props.updateCart}
+              deleteFromCart={this.props.deleteFromCart}
+              {...this.props} {...routeProps}
+            />
           )}
         />
 
@@ -57,6 +70,10 @@ const mapStateToProps = (state) => ({
 
 const mapActionsToProps = {
   doLoadData,
+  addToCart,
+  updateCart,
+  deleteFromCart,
+  totalCartItems,
 };
 
 export default connect(mapStateToProps, mapActionsToProps)(ShopConnector);
