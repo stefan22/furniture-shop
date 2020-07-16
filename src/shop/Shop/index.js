@@ -5,7 +5,7 @@ import Grid from "@material-ui/core/Grid";
 import ProductList from "../ProductList/index";
 import TopNavigation from "../TopNavigation/index";
 import MainNavigation from "../MainNavigation/index";
-import CartSummary from "../CartSummary/index";
+import CartDetails from "./CartDetails";
 // redux
 import { connect } from "react-redux";
 import { addToCart, updateCart } from "../../redux/actions/CartActions";
@@ -13,6 +13,7 @@ import { addToCart, updateCart } from "../../redux/actions/CartActions";
 import "./styles.scss";
 
 const baseURL = "/shop/products";
+
 
 class Shop extends Component {
   handleFilterProducts = (cat, prdts) => {
@@ -27,7 +28,6 @@ class Shop extends Component {
   };
 
   render() {
-    //console.log(this);
     const { category } = this.props.match.params;
     return (
       <Grid container justify={"center"} spacing={0}>
@@ -43,9 +43,11 @@ class Shop extends Component {
 
           <Grid item xs={12} md={10} lg={10}>
             <MainNavigation />
-            <CartSummary
+
+            <CartDetails
               cart={this.props.cart}
             />
+
             <div className="mainCol">
               <main className="content">
                 <div className="mainContent">

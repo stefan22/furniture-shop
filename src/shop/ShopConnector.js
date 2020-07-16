@@ -5,12 +5,13 @@ import { connect } from "react-redux";
 // comps
 import ShopStore from "../redux/ShopStore";
 import Shop from "./Shop/index";
-import CartDetails from "./CartDetails/index";
+import CartSummary from "./CartSummary"
 import { doLoadData } from "../redux/actions/DataActions";
 
 
 // data placeholder
 ShopStore.dispatch(doLoadData());
+
 
 class ShopConnector extends Component {
   render() {
@@ -32,7 +33,14 @@ class ShopConnector extends Component {
         <Route
           path="/shop/cart"
           render={(routeProps) => (
-            <CartDetails {...this.props} {...routeProps} />
+            <CartSummary {...this.props} {...routeProps} />
+          )}
+        />
+
+        <Route
+          path="/shop/checkout"
+          render={(routeProps) => (
+            <CartSummary {...this.props} {...routeProps} />
           )}
         />
 

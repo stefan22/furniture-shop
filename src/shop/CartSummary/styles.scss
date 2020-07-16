@@ -1,7 +1,140 @@
-@import '../../styles/vars.scss';
+@import "../../styles/vars.scss";
 
-.cartDisplay {
-  thead {
-    background: $tableHeadingBg;
+
+.cartWrapper {
+  width: 100%;
+  min-height: 100vh;
+  overflow: auto;
+  .cartHeader {
+    margin: 5rem 0 3rem;
   }
+
+  .cartButtons {
+    margin: 3rem 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 110px;
+    justify-content: center;
+    & > div {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    a {
+      margin: 1rem;
+      border: 1px dashed lightgray;
+    }
+  }
+
+  .cartDisplay .cartTableRow:nth-child(even) {
+    background: #f7f7f7;
+  }
+
+  .cartDisplay .cartTableRow:nth-child(odd) {
+    background: #f1f1f1;
+  }
+
+  .cartDisplay {
+    display: table;
+    width: 100%;
+    box-shadow: $boxshadow2;
+  }
+
+  .cartTableRow {
+    display: table-row;
+    width: 100%;
+    height: auto;
+  }
+
+  .cartTableHeading {
+    width: 100%;
+    display: table-header-group;
+  }
+
+  .cartTableHeading .cartTableRow {
+    background: $white !important;
+  }
+
+  .cartHead {
+    display: table-cell;
+    padding: 2rem 1rem;
+    font-size: $h6;
+    font-weight: 600;
+    border: 1px solid lighten($gray, 10%);
+  }
+
+
+  .cartCell {
+    display: table-cell;
+    padding: 1.5rem;
+    font-size: $p;
+    border: 1px solid lighten($gray, 40%);
+    &.cartRemove button {
+      color: $white;
+      font-weight: 500;
+      padding: 10px 20px;
+      border: 1px solid $cardPrice;
+      border-radius: 4px;
+      cursor: pointer;
+      background-color: lighten($cardPrice, 12%);
+      transition: background-color 0.4s linear 10ms;
+      &:focus {
+        outline: none;
+      }
+      &:hover {
+        background-color: lighten($cardPrice, 5%);
+      }
+    }
+  }
+
+.cartHead, .cartCell {
+  width: 15%;
 }
+  .cartTableFooter {
+    width: 100%;
+    display: table-footer-group;
+  }
+
+  .cartTableFooter .cartTableRow {
+    background: $white !important;
+  }
+
+  .cartTableBody .cartTableRow {
+    display: table-row;
+  }
+
+  .cartTableBody {
+    width: 100%;
+    display: table-row-group;
+  }
+
+  .cartTableFooter .cartCell {
+    padding: 3rem 0 1rem;
+    border: none;
+    border-top: 1px solid lighten($gray, 40%);
+  }
+
+  .cartTableFooter .cartTableRow .cartCell:first-child {
+    border-left: 1px solid lighten($gray, 40%);
+  }
+  .cartTableFooter .cartTableRow .cartCell:nth-child(5) {
+    border-left: 1px solid lighten($gray, 40%);
+  }
+  .cartTableFooter .cartTableRow .cartCell:nth-child(6) {
+    border-right: 1px solid lighten($gray, 40%);
+  }
+
+  .cartTableFooter {
+    font-size: $h6;
+    font-weight: bold;
+    color: $black;
+    background: transparent;
+    width: 100%;
+    border-right: 1px solid lighten($gray, 40%);
+  }
+
+
+
+} //cartWrapper

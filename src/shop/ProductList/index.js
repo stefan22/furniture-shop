@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 // mui
 import Grid from "@material-ui/core/Grid";
 import Card from "@material-ui/core/Card";
@@ -9,7 +9,9 @@ import Button from "@material-ui/core/Button";
 import "./styles.scss";
 
 const Product = (props) => {
+
   const handleAddToCart = (prod) => {
+    props.history.push('/shop/cart');
     props.addToCart(prod);
   };
 
@@ -25,7 +27,7 @@ const Product = (props) => {
           <Button
             onClick={() => handleAddToCart(p)}
             component={Link}
-            to="/shop/products"
+            to="/shop/cart"
             variant="outlined"
             size="small"
             color="default"
@@ -50,4 +52,4 @@ const ProductList = (props) => {
   );
 };
 
-export default ProductList;
+export default (withRouter)(ProductList);
