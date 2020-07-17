@@ -31,6 +31,7 @@ class ShopConnector extends Component {
             <Shop
               doLoadData={this.props.doLoadData}
               addToCart={this.props.addToCart}
+              deleteFromCart={this.props.deleteFromCart}
               totalCartItems={this.props.totalCartItems}
               {...this.props}
               {...routeProps}

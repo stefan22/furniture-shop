@@ -36,7 +36,7 @@ class ShoppingCart extends Component {
                   <div className="cartCell">
                     <input
                       type="number"
-                      defaultValue={itm.qty}
+                      value={itm.qty}
                       onChange={(e) => this.handleChange(itm,e)}
                     />
                   </div>
@@ -46,7 +46,7 @@ class ShoppingCart extends Component {
                   <div className="cartCell">£{itm.price * itm.qty}</div>
                   <div className="cartCell cartRemove">
                     <Button
-                      onClick={() => this.props.deleteFromCart(itm)}
+                      onClick={(e) => this.props.deleteFromCart(itm)}
                       variant="outlined"
                       size="small"
                       color="secondary"

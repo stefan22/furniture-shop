@@ -23,15 +23,10 @@ class Shop extends Component {
     return products;
   };
 
-  handleUpdateCart = () => {
-    this.props.updateCart(this.props.cart.cartItems);
-  };
 
   render() {
     const { category } = this.props.match.params;
-    const {
-      cart: { currentCart },
-    } = this.props;
+
 
     return (
       <Grid container justify={"center"} spacing={0}>
@@ -49,10 +44,9 @@ class Shop extends Component {
             <MainNavigation />
 
             <CartInfo
-              handleUpdateCart={this.handleUpdateCart}
+              deleteFromCart={this.props.deleteFromCart}
               totalCartItems={this.props.totalCartItems}
               cart={this.props.cart}
-              currentCart={currentCart}
             />
 
             <div className="mainCol">

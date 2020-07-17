@@ -44,6 +44,7 @@ export const totalCartItems = cartItems => dispatch => {
     type: types.CART_TOTAL_ITEMS,
     payload: count,
   })
+
 }
 
 

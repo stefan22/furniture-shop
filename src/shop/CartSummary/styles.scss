@@ -40,6 +40,8 @@
     display: table;
     width: 100%;
     box-shadow: $boxshadow2;
+    border: 1px solid lighten($gray, 50%);
+    border-radius: 4px;
   }
 
   .cartTableRow {
@@ -61,8 +63,9 @@
     display: table-cell;
     padding: 2rem 1rem;
     font-size: $h6;
+    color: $black;
     font-weight: 600;
-    border: 1px solid lighten($gray, 10%);
+    border: 1px solid lighten($gray, 50%);
   }
 
 
@@ -70,12 +73,20 @@
     display: table-cell;
     padding: 1.5rem;
     font-size: $p;
-    border: 1px solid lighten($gray, 40%);
+    vertical-align: middle;
+    color: lighten($black,10%);
+    border: 1px solid lighten($gray, 50%);
     &.cartRemove button {
       font-weight: 400;
       color: $white;
       background: lighten($cardPrice,12%);
       border: 1px solid $cardPrice;
+    }
+    & input {
+      padding: 7px 12px;
+      font-size: $p;
+      border: 1px solid lighten($gray, 50%);
+      border-radius: 3px;
     }
   }
 
@@ -103,17 +114,17 @@
   .cartTableFooter .cartCell {
     padding: 3rem 0 1rem;
     border: none;
-    border-top: 1px solid lighten($gray, 40%);
+    border-top: 1px solid lighten($gray, 50%);
   }
 
   .cartTableFooter .cartTableRow .cartCell:first-child {
-    border-left: 1px solid lighten($gray, 40%);
+    border-left: 1px solid lighten($gray, 50%);
   }
   .cartTableFooter .cartTableRow .cartCell:nth-child(5) {
-    border-left: 1px solid lighten($gray, 40%);
+    border-left: 1px solid lighten($gray, 50%);
   }
   .cartTableFooter .cartTableRow .cartCell:nth-child(6) {
-    border-right: 1px solid lighten($gray, 40%);
+    border-right: 1px solid lighten($gray, 50%);
   }
 
   .cartTableFooter {
@@ -122,7 +133,6 @@
     color: $black;
     background: transparent;
     width: 100%;
-    border-right: 1px solid lighten($gray, 40%);
   }
 
 
