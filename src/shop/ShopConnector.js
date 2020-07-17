@@ -11,7 +11,8 @@ import {
   addToCart,
   updateCart,
   deleteFromCart,
-  totalCartItems
+  totalCartItems,
+  getCartTotal,
 } from "../redux/actions/CartActions";
 
 
@@ -31,6 +32,7 @@ class ShopConnector extends Component {
             <Shop
               doLoadData={this.props.doLoadData}
               addToCart={this.props.addToCart}
+              deleteFromCart={this.props.deleteFromCart}
               totalCartItems={this.props.totalCartItems}
               {...this.props}
               {...routeProps}
@@ -45,6 +47,7 @@ class ShopConnector extends Component {
             <CartSummary
               updateCart={this.props.updateCart}
               deleteFromCart={this.props.deleteFromCart}
+              getCartTotal={this.props.getCartTotal}
               {...this.props} {...routeProps}
             />
           )}
@@ -53,7 +56,9 @@ class ShopConnector extends Component {
         <Route
           path="/shop/checkout"
           render={(routeProps) => (
-            <CartSummary {...this.props} {...routeProps} />
+            <CartSummary {...this.props} {...routeProps}
+
+            />
           )}
         />
 
@@ -74,6 +79,7 @@ const mapActionsToProps = {
   updateCart,
   deleteFromCart,
   totalCartItems,
+  getCartTotal,
 };
 
 export default connect(mapStateToProps, mapActionsToProps)(ShopConnector);

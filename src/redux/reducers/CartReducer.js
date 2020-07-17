@@ -3,7 +3,8 @@ import types from "../Types";
 const initialState = {
   cartItems: [],
   currentItem: 0,
-  cartTotalItems:0,
+  cartTotalItems: 0,
+  cartTotalPrice: 0,
 };
 
 export const CartReducer = (state = initialState, action) => {
@@ -26,17 +27,41 @@ export const CartReducer = (state = initialState, action) => {
       }
 
     case types.CART_UPDATE:
-      let upItem = state.cartItems.find(itm => itm.id === action.payload.id);
-      if(!!upItem) upItem.qty = action.payload.qty;
+      let upItem = state.cartItems.find((itm) => itm.id === action.payload.id);
+      if (!!upItem) upItem.qty = action.payload.qty;
       return {
         ...state,
-        currentItem: {...state.currentItem,...upItem}
+        currentItem: { ...state.currentItem, ...upItem },
       };
 
     case types.CART_TOTAL_ITEMS:
       return {
         ...state,
-        cartTotalItems: action.payload
+        cartTotalItems: action.payload,
+      };
+
+    case types.CART_DELETE:
+      let newStore = [];
+      let delItem = state.cartItems.filter(itm => itm.id === action.payload.id);
+      let restItems = state.cartItems.filter(re => re.id !== delItem[0].id);
+      delItem[0].qty -= 1;
+      if (delItem[0].qty === 0) {//remove from cart
+        newStore = newStore.concat(restItems);
+      }
+      if (delItem[0].qty > 0) {//update item qty
+        newStore = [...restItems, ...delItem];
+      }
+      return {
+        ...state,
+        cartItems: newStore,
+      };
+
+      case types.CART_TOTAL_PRICE:
+        let total = Math.round(action.payload).toFixed(2);
+
+      return {
+        ...state,
+        cartTotalPrice: total,
       }
 
     default:

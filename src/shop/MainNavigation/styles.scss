@@ -23,6 +23,9 @@
   width: 40px;
   height: 40px;
   cursor: pointer;
+  &:focus,&:active {
+    outline: none;
+  }
   transition: all 0.25s ease-in-out;
   .menuButtonBurger {
     width: 20px;
@@ -47,6 +50,14 @@
   transform: rotate(-45deg) translate(3px, 3px);
 }
 
+.menuButtonBurger::before {
+  transform: translate(-10px, -10px);
+}
+
+.menuButtonBurger::after {
+  transform: translate(-10px, 10px);
+}
+
 .menuButtonBurger::before,
 .menuButtonBurger::after {
   content: "";
@@ -56,12 +67,8 @@
   background: $black;
   border-radius: 5px;
   transition: all 0.25s ease-in-out;
+  &:focus,&:active {
+    outline: none;
+  }
 }
 
-.menuButtonBurger::before {
-  transform: translate(-10px, -10px);
-}
-
-.menuButtonBurger::after {
-  transform: translate(-10px, 10px);
-}

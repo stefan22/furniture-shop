@@ -46,4 +46,20 @@ export const totalCartItems = cartItems => dispatch => {
   })
 }
 
+export const getCartTotal = cartItems => dispatch => {
+  let sum = 0;
+  if (cartItems.length > 0) {
+      sum = cartItems.map(itm =>
+        itm.price * itm.qty
+      )
+      .reduce((total,price) =>
+        total + price
+      )
+  }
+  dispatch({
+    type: types.CART_TOTAL_PRICE,
+    payload: sum,
+  })
+}
+
 

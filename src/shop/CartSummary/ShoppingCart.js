@@ -6,15 +6,25 @@ import TableContainer from "@material-ui/core/TableContainer";
 import Paper from "@material-ui/core/Paper";
 
 class ShoppingCart extends Component {
+  componentDidMount() {
+    this.props.getCartTotal(this.props.cartItems);
+  }
+
 
   handleChange = (qty, e) => {
     this.props.updateCart(qty, e.target.value);
+    this.props.getCartTotal(this.props.cartItems);
+  }
+
+  handleDeleteFromCart = (itm) => {
+    this.props.deleteFromCart(itm);
+    this.props.getCartTotal(this.props.cartItems);
   }
 
 
   render() {
 
-    const { cartItems } = this.props;
+    const { cartItems, cartTotalPrice } = this.props;
     return (
       <Grid item xs={12}>
         <TableContainer component={Paper}>
@@ -36,7 +46,7 @@ class ShoppingCart extends Component {
                   <div className="cartCell">
                     <input
                       type="number"
-                      defaultValue={itm.qty}
+                      value={itm.qty}
                       onChange={(e) => this.handleChange(itm,e)}
                     />
                   </div>
@@ -46,7 +56,7 @@ class ShoppingCart extends Component {
                   <div className="cartCell">£{itm.price * itm.qty}</div>
                   <div className="cartCell cartRemove">
                     <Button
-                      onClick={() => this.props.deleteFromCart(itm)}
+                      onClick={(e) => this.handleDeleteFromCart(itm)}
                       variant="outlined"
                       size="small"
                       color="secondary"
@@ -64,8 +74,12 @@ class ShoppingCart extends Component {
                 <div className="cartCell"></div>
                 <div className="cartCell"></div>
                 <div className="cartCell"></div>
-                <div className="cartCell">Total: </div>
-                <div className="cartCell"></div>
+                <div
+                  className="cartCell"
+                >
+                  Total:
+                </div>
+                <div className="cartCell">£ {cartTotalPrice}</div>
                 <div className="cartCell"></div>
               </div>
             </div>

@@ -14,10 +14,11 @@ import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
 import StoreIcon from "@material-ui/icons/Store";
 
 class CartSummary extends Component {
+
   render() {
 
     const {
-      cart: { cartItems },
+      cart: { cartItems, cartTotalPrice },
     } = this.props;
 
     return (
@@ -32,6 +33,8 @@ class CartSummary extends Component {
               <ShoppingCart cartItems={cartItems}
                 updateCart={this.props.updateCart}
                 deleteFromCart={this.props.deleteFromCart}
+                getCartTotal={this.props.getCartTotal}
+                cartTotalPrice={cartTotalPrice}
               />
             }
             <div className="cartButtons">
