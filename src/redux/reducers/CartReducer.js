@@ -64,6 +64,10 @@ export const CartReducer = (state = initialState, action) => {
         cartTotalPrice: total,
       }
 
+      return {
+        cartItems: newStore,
+      };
+
     default:
       return {
         ...state,
