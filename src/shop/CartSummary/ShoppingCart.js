@@ -56,7 +56,7 @@ class ShoppingCart extends Component {
                   <div className="cartCell">£{itm.price * itm.qty}</div>
                   <div className="cartCell cartRemove">
                     <Button
-                      onClick={(e) => this.handleDeleteFromCart(itm)}
+                      onClick={() => this.handleDeleteFromCart(itm)}
                       variant="outlined"
                       size="small"
                       color="secondary"

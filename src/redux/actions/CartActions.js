@@ -1,7 +1,7 @@
 import types from "../Types";
 
 export const addToCart = (product) => (dispatch) => {
-  if (!!product.qty) {
+  if (product.qty) {
     product.qty += 1;
   } else product.qty = 1;
   dispatch({

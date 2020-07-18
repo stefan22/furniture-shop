@@ -13,7 +13,7 @@ export const CartReducer = (state = initialState, action) => {
       let exist = undefined;
       const item = action.payload;
       exist = state.cartItems.find((itm) => itm.id === item.id);
-      if (!!exist) {
+      if (exist) {
         exist = item;
         return {
           ...state,
@@ -28,7 +28,7 @@ export const CartReducer = (state = initialState, action) => {
 
     case types.CART_UPDATE:
       let upItem = state.cartItems.find((itm) => itm.id === action.payload.id);
-      if (!!upItem) upItem.qty = action.payload.qty;
+      if (upItem) upItem.qty = action.payload.qty;
       return {
         ...state,
         currentItem: { ...state.currentItem, ...upItem },
@@ -42,13 +42,17 @@ export const CartReducer = (state = initialState, action) => {
 
     case types.CART_DELETE:
       let newStore = [];
-      let delItem = state.cartItems.filter(itm => itm.id === action.payload.id);
-      let restItems = state.cartItems.filter(re => re.id !== delItem[0].id);
+      let delItem = state.cartItems.filter(
+        (itm) => itm.id === action.payload.id
+      );
+      let restItems = state.cartItems.filter((re) => re.id !== delItem[0].id);
       delItem[0].qty -= 1;
-      if (delItem[0].qty === 0) {//remove from cart
+      if (delItem[0].qty === 0) {
+        //remove from cart
         newStore = newStore.concat(restItems);
       }
-      if (delItem[0].qty > 0) {//update item qty
+      if (delItem[0].qty > 0) {
+        //update item qty
         newStore = [...restItems, ...delItem];
       }
       return {
@@ -56,16 +60,12 @@ export const CartReducer = (state = initialState, action) => {
         cartItems: newStore,
       };
 
-      case types.CART_TOTAL_PRICE:
-        let total = Math.round(action.payload).toFixed(2);
+    case types.CART_TOTAL_PRICE:
+      let total = Math.round(action.payload).toFixed(2);
 
       return {
         ...state,
         cartTotalPrice: total,
-      }
-
-      return {
-        cartItems: newStore,
       };
 
     default:

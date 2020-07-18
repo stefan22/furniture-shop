@@ -9,7 +9,6 @@ const express = require("express"),
 const dataFile = process.argv[2] || "./assets/data.js"
 
 // server port
-const SERVER_PORT = 4000;
 const port = process.env.SERVER_PORT || 4000;
 
 let router = undefined;

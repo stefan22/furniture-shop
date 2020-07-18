@@ -5,32 +5,28 @@ import "./styles.scss";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 
 class CartInfo extends Component {
-
   componentDidMount() {
     this.handleTotalItems();
   }
 
   handleTotalItems = () => {
-    const {cart:{ cartItems }} = this.props;  !!cartItems &&
-    this.props.totalCartItems(cartItems);
-  }
-
-
-
+    const {
+      cart: { cartItems },
+    } = this.props;
+    !!cartItems && this.props.totalCartItems(cartItems);
+  };
 
   render() {
     const {
-      cart: { cartItems,cartTotalItems }} = this.props;
+      cart: { cartItems, cartTotalItems },
+    } = this.props;
 
     return (
       <div className="cartDetails">
         {!!cartItems && (
           <span>
             Your cart:{" "}
-            {`${
-              !!cartTotalItems
-                ? cartTotalItems + " Item(s)" : "(empty)"
-            }`}{" "}
+            {`${cartTotalItems ? cartTotalItems + " Item(s)" : "(empty)"}`}{" "}
             <Link to="/shop/cart">
               <ShoppingCartIcon />
             </Link>

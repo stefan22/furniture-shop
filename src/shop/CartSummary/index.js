@@ -35,8 +35,7 @@ class CartSummary extends Component {
                 deleteFromCart={this.props.deleteFromCart}
                 getCartTotal={this.props.getCartTotal}
                 cartTotalPrice={cartTotalPrice}
-              />
-            }
+              />}
             <div className="cartButtons">
               <ButtonGroup variant="text" color="default">
                 <Button component={Link} to="/shop/">
