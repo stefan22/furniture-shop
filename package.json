@@ -26,6 +26,7 @@
     "redux-thunk": "^2.3.0"
   },
   "scripts": {
+    "lint": "./node_modules/.bin/eslint . --fix",
     "start": "npm-run-all --parallel react server",
     "react": "react-scripts start",
     "server": "node server.js",
@@ -50,7 +51,6 @@
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
-    "eslint": "^7.4.0",
     "eslint-config-prettier": "^6.11.0",
     "json-server": "^0.16.1",
     "node-sass": "^4.14.1",
