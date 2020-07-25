@@ -15,7 +15,7 @@ const Product = (props) => {
   };
 
   const randomImgs = [//prod cover img
-    "animals", "business","cats","city","food","nightlife",
+    "animals", "business","city","nightlife",
     "fashion", "people","sports","technics","transport"
   ];
 

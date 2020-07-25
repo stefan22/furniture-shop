@@ -132,10 +132,11 @@ $boxshadow2: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
   display: flex;
   background-color: $snow;
   border-bottom: 1px dashed lighten($gray, 50%);
-  transition: all 0.3s linear 0ms;
+  transition: all 0.35s linear 15ms;
   &:hover {
     mix-blend-mode: darken;
-    background-color: lighten($cardTitle, 15%);
+    background-color: lighten($cardTitle, 12%);
+    background-color: #9E9E9E;
     opacity: 0.9;
     color: $white;
   }
