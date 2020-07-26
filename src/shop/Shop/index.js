@@ -9,7 +9,9 @@ import CartInfo from "../CartInfo";
 // styles
 import "./styles.scss";
 
+
 const baseURL = "/shop/products";
+
 
 class Shop extends Component {
   handleFilterProducts = (cat, prdts) => {
@@ -39,16 +41,15 @@ class Shop extends Component {
           </Grid>
 
           <Grid item xs={12} md={10} lg={10}>
-            <MainNavigation />
 
+            <MainNavigation />
             <CartInfo
               deleteFromCart={this.props.deleteFromCart}
               totalCartItems={this.props.totalCartItems}
               cart={this.props.cart}
             />
-
             <MainShopContent
-              mainTitle={"Furniture"}
+              mainTitle={"Furniture Shop"}
               addToCart={this.props.addToCart}
               cart={this.props.cart}
               category={category}
@@ -57,6 +58,7 @@ class Shop extends Component {
                 this.props.products
               )}
             />
+
           </Grid>
         </div>
       </Grid>
@@ -65,3 +67,5 @@ class Shop extends Component {
 }
 
 export default Shop;
+
+

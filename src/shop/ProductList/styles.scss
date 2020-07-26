@@ -20,6 +20,7 @@
     @include p;
   }
   .actionButtonWrapper {
+    z-index: 10;
     padding: 1rem;
     margin-bottom: 1rem;
     button: {

@@ -46,14 +46,16 @@
   .mainHeader {
     margin: 3rem 0;
     width: 100%;
+    z-index: 0;
     h1 {
       text-align: center;
     }
   }
   .mainProducts {
+    transition: all .45s linear 0ms;
     margin-bottom: 3rem;
     width: 100%;
-    min-height: 600px;
+    min-height: 710px;
     height: auto;
   }
 }
@@ -74,3 +76,110 @@ footer,
 
 
 
+.topnav-container {
+  transition: top .3s linear, background .15s linear, color .1s linear,
+  box-shadow .3s linear, border .1s linear;
+  height: 66px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 83.43vw;
+  padding: 0;
+  display: flex;
+  z-index: 1;
+  &.headsup {
+    background: #FFF;
+    border-bottom: 1px solid #E5E5E5;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 83.4vw;
+
+    .topnav-logo {
+      position: absolute;
+      top: -14px;
+      left: 25px;
+
+      img {
+        background: url(../../images/fslogo.png) no-repeat 0 0;
+        max-width: 90px;
+        height: auto;
+        background-size: auto;
+        width: 100%;
+        z-index: 20;
+        display: flex;
+      }
+    }
+  }
+}
+
+
+
+/* mgkNav noheadsup */
+
+.topnav-logo {
+  img {
+    display: none;
+  }
+}
+
+.cartDetails {
+  z-index: 20;
+}
+
+.topnav-link {
+  display: hidden;
+}
+
+.mainHeader h1 {
+  max-width: 70vw;
+	padding: 30px;
+	margin: 0 auto;
+	position: relative;
+	top: 50%;
+	line-height: 1.5;
+	transform: translateY(-25%);
+	perspective: 400px;
+}
+
+
+
+/* ShopHeading */
+
+
+
+
+.topnav-container {
+	  -webkit-text-fill-color: transparent;
+    animation: aitf 80s linear infinite;
+	  -webkit-animation: aitf 80s linear infinite;
+    transform: translate3d(0,0,0);
+	  -webkit-transform: translate3d(0,0,0);
+    backface-visibility: hidden;
+	  -webkit-backface-visibility: hidden;
+    z-index: 0;
+}
+
+
+/* Animate Background Image */
+
+@keyframes aitf {
+	0% { background-position: 0% 50%; }
+	100% { background-position: 100% 50%; }
+}
+
+
+.topLiner {
+  display: flex;
+  width: 100%;
+  height: 3px;
+  background: $lightBlack;
+  transition: background .3s linear 0ms;
+}
+
+footer {
+  background: $black;
+  color: $white;
+}
