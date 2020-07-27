@@ -24,16 +24,16 @@
     }
     a {
       margin: 1rem;
-      border: 1px dashed lightgray;
+      border: 1px dashed $navigationBg;
     }
   }
 
   .cartDisplay .cartTableRow:nth-child(even) {
-    background: #f7f7f7;
+    background: $navigationBg;
   }
 
   .cartDisplay .cartTableRow:nth-child(odd) {
-    background: #f1f1f1;
+    background: $navigationBg;
   }
 
   .cartDisplay {

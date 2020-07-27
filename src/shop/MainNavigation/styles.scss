@@ -2,14 +2,12 @@
 
 .mobileMenu {
   position: fixed;
-  z-index: 10;
+  z-index: 20;
   display: flex;
-  height: 70px;
+  height: 66px;
   margin: 0 1rem;
   .hamburger {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
     align-items: center;
   }
 } // mobileMenu

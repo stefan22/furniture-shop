@@ -32,7 +32,7 @@
           @include aCategory;
         }
         &:hover {
-          background-color: #fff7b0;
+          background-color: $categoryHoverColor;
           mix-blend-mode: luminosity;
         }
       }
@@ -44,7 +44,7 @@
           @include aCategory;
         }
         &:hover {
-          background-color: #fff7b0;
+          background-color: $categoryHoverColor;
           mix-blend-mode: luminosity;
         }
       }
