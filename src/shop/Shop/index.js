@@ -14,19 +14,18 @@ const baseURL = "/shop/products";
 
 
 class Shop extends Component {
-  handleFilterProducts = (cat, prdts) => {
+
+  handleFilterProducts = (cat="all", prdts=[]) => {
+    if (cat === "all") return prdts; // show all
     let products = [];
-    if (cat === undefined) return prdts; //not predefined
-    prdts.filter((
-      p //by category
-    ) =>
-      p.category.toLowerCase() === cat.toLowerCase() ? products.push(p) : true
-    );
+    prdts.filter(p => // by category
+      p.category.toLowerCase() === cat.toLowerCase() ? products.push(p) : true);
     return products;
   };
 
   render() {
     const { category } = this.props.match.params;
+    const { products } = this.props;
 
     return (
       <Grid container justify={"center"} spacing={0}>
@@ -53,10 +52,7 @@ class Shop extends Component {
               addToCart={this.props.addToCart}
               cart={this.props.cart}
               category={category}
-              products={this.handleFilterProducts(
-                category,
-                this.props.products
-              )}
+              products={this.handleFilterProducts(category,products)}
             />
 
           </Grid>
