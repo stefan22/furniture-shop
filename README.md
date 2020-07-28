@@ -28,6 +28,7 @@ Download repository, install dependencies and type `npm start`
 - click [cart-icon] svg, it routes to `/shop/cart`
 
 
+
 • Cart `/shop/cart`
 
 - update quantity, it updates total
@@ -74,10 +75,15 @@ Download repository, install dependencies and type `npm start`
       • price <price>
 
 ```
+<br />
+<hr />
+<br />
 
+<kbd>screenshot</kbd>
 
+![](src/images/screenshot.png)
 
-
+<br/>
 
 
 
