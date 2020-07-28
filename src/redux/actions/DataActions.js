@@ -9,6 +9,8 @@ export const doLoadData = () => dispatch => {
     axios.get(Urls.LOAD_CATEGORIES)
   ])
   .then(axios.spread((prods,cats) => {
+    console.log(prods.headers);
+
     dispatch({
       type: type.SET_PRODUCTS,
       payload: prods.data,

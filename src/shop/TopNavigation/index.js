@@ -16,7 +16,7 @@ class TopNavigation extends Component {
         <div className="topnavCategoriesMain">
           <ul className="topnavCategories">
             <li className="categoryAll">
-              <Link to={this.props.baseURL} className="button">
+              <Link to={`${this.props.baseURL}/all`} className="button">
                 <HighlightIcon
                   className="categoryIcon"
                 /> All

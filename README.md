@@ -1,11 +1,9 @@
 # React Store
 
-##### ø Found :card_index: `placeholder data` for this project @ Haus furniture London.
-
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 
-### How-to
+### How-to :card_index:
 
 Download repository, install dependencies and type `npm start`
 
@@ -38,9 +36,47 @@ Download repository, install dependencies and type `npm start`
   button `/shop/checkout`
 
 
+### Data
+
+```
+  @ json-server
+  =============
+
+  @url => http://localhost:4000/api/products?
+  @param => category
+  @param => _page
+  @param => _limit
+  @param => _sort
+
+  # filter by param
+  # ex: http://localhost:4000/api/products?_page2&_limit=20&_sort=name
+
+```
 
 
-### Todo
+```
+  @ faker-data
+  ============
+
+    ø Categories
+      -----------
+      • furniture
+      • lighting
+      • accessories
+
+    ø Products
+      ------------
+      • id <number>
+      • name <string>
+      • image <string>
+      • category <string>
+      • description <string>
+      • price <price>
+
+```
+
+
+
 
 
 
