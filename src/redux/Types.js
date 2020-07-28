@@ -1,10 +1,12 @@
-/**
+ /**
  ¶  Types
  ¶  @return {string}
  */
 
 
 export default {
+  LOAD_PRODUCTS: "LOAD_PRODUCTS",
+  LOAD_CATEGORIES: "LOAD_CATEGORIES",
   SET_PRODUCTS:"SET_PRODUCTS",
   SET_CATEGORIES:"SET_CATEGORIES",
   LOAD_DATA: "LOAD_DATA",

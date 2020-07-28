@@ -1,23 +1,24 @@
-import type from '../Types';
-import { data as placeholder} from './PlaceholderData';
+import axios from "axios";
+import type from "../Types";
+import {Urls} from "../Urls";
 
-// placeholder data
+
 export const doLoadData = () => dispatch => {
-  let categories = new Promise(resolve => resolve(placeholder.categories));
-
-  categories.then(results => dispatch({
-      type: type.SET_CATEGORIES,
-      payload: results,
-    }))
-    .catch(err => console.log(err));
-
-  let products = new Promise(resolve => resolve(placeholder.products));
-  products.then(results => dispatch({
+  axios.all([
+    axios.get(Urls.LOAD_PRODUCTS),
+    axios.get(Urls.LOAD_CATEGORIES)
+  ])
+  .then(axios.spread((prods,cats) => {
+    dispatch({
       type: type.SET_PRODUCTS,
-      payload: results,
-    }))
-    .catch(err => console.log(err));
-
+      payload: prods.data,
+    });
+    dispatch({
+      type: type.SET_CATEGORIES,
+      payload: cats.data,
+    });
+  }))
+  .catch(err => console.log(err));
 }
 
 
@@ -25,3 +26,40 @@ export const doLoadData = () => dispatch => {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// export const doLoadData = () => dispatch => {
+//   axios.all([
+//     axios.get(Urls.LOAD_PRODUCTS),
+//     axios.get(Urls.LOAD_CATEGORIES)
+//   ])
+//   .then(axios.spread((prods,cats) => {
+//     console.log(prods.data,cats.data);
+//     dispatch({
+//       type: type.SET_PRODUCTS,
+//       payload: prods.data,
+//     });
+//     dispatch({
+//       type: type.SET_CATEGORIES,
+//       payload: cats.data,
+//     });
+//   }))
+//   .catch(err => console.log(err));
+// }

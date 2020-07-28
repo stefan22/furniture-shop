@@ -16,21 +16,16 @@ const Product = (props) => {
     props.addToCart(prod);
   };
 
-  const randomImgs = [//prod cover img
-    "animals", "business","city","nightlife",
-    "fashion", "people","sports","technics","transport"
-  ];
 
-  return props.products.map((p,idx) => {
-    let preImg = "http://lorempixel.com/640/480/";
-    let isImage = preImg + randomImgs[randomImgs.length < idx ? 0 : idx];
+
+  return props.products.map((p) => {
 
     return (
 
         <Grid key={p.id} item xs={12} sm={6} md={4} lg={3}>
           <ZoomInUpWrapperDiv>
             <Card key={p.id} className="productListWrapper">
-              <img src={isImage} alt={p.name} />
+              <img src={p.image} alt={p.name} />
               <CardContent key={p.id}>
                 <h4>{p.name}</h4>
                 <span className="productPriceTage">${p.price.toFixed(2)}</span>
