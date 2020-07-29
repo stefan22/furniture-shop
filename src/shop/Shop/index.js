@@ -29,6 +29,7 @@ class Shop extends Component {
   };
 
   render() {
+
     const { category } = this.props.match.params;
     const {
       products,

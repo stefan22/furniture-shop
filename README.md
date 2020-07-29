@@ -74,6 +74,15 @@ Download repository, install dependencies and type `npm start`
       • description <string>
       • price <number>
 
+
+  @ routes
+  ========
+  • /shop/products/:category
+  • /shop/products/cart
+  • /shop/produts/checkout
+  • /shop/products/:category/:id
+  • /shop/products/all <redirect>
+
 ```
 <br />
 <hr />

@@ -9,46 +9,41 @@ import Button from "@material-ui/core/Button";
 import { ZoomInUpWrapperDiv } from "./ProductListAnimation";
 import "./styles.scss";
 
-
 const Product = (props) => {
   const handleAddToCart = (prod) => {
     props.history.push("/shop/cart");
     props.addToCart(prod);
   };
 
-
-
   return props.products.map((p) => {
-
     return (
-
-        <Grid key={p.id} item xs={12} sm={6} md={4} lg={3}>
-          <ZoomInUpWrapperDiv>
-            <Card key={p.id} className="productListWrapper">
+      <Grid key={p.id} item xs={12} sm={6} md={4} lg={3}>
+        <ZoomInUpWrapperDiv>
+          <Card key={p.id} className="productListWrapper">
+            <Link to={`/shop/products/${p.category}/${p.id}`}>
               <img src={p.image} alt={p.name} />
-              <CardContent key={p.id}>
-                <h4>{p.name}</h4>
-                <span className="productPriceTage">${p.price.toFixed(2)}</span>
-                <p className="productDescription">{p.description}</p>
-              </CardContent>
-              <div className="actionButtonWrapper">
-                <Button
-                  onClick={() => handleAddToCart(p)}
-                  component={Link}
-                  to="/shop/cart"
-                  variant="outlined"
-                  size="small"
-                  color="default"
-                >
-                  Add To Cart
-                </Button>
-              </div>
-            </Card>
+            </Link>
+            <CardContent key={p.id}>
+              <h4>{p.name}</h4>
+              <span className="productPriceTage">${p.price.toFixed(2)}</span>
+              <p className="productDescription">{p.description}</p>
+            </CardContent>
+            <div className="actionButtonWrapper">
+              <Button
+                onClick={() => handleAddToCart(p)}
+                component={Link}
+                to="/shop/cart"
+                variant="outlined"
+                size="small"
+                color="default"
+              >
+                Add To Cart
+              </Button>
+            </div>
+          </Card>
         </ZoomInUpWrapperDiv>
       </Grid>
-
-    )
-
+    );
   });
 };
 

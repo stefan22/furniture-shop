@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 // comps
 import Shop from "./Shop/index";
 import CartSummary from "./CartSummary"
+import ProductDetails from "./ProductDetails";
 import { doLoadData,getPage } from "../redux/actions/DataActions";
 import {
   addToCart,
@@ -23,7 +24,8 @@ class ShopConnector extends Component {
     return (
       <Switch>
         <Route
-          path="/shop/products/:category?"
+          path="/shop/products/:category"
+          exact={true}
           render={(routeProps) => (
             <Shop
               doLoadData={this.props.doLoadData}
@@ -39,6 +41,7 @@ class ShopConnector extends Component {
 
         <Route
           path="/shop/cart"
+          exact={true}
           render={(routeProps) => (
             <CartSummary
               updateCart={this.props.updateCart}
@@ -50,6 +53,7 @@ class ShopConnector extends Component {
         />
 
         <Route
+          exact={true}
           path="/shop/checkout"
           render={(routeProps) => (
             <CartSummary {...this.props} {...routeProps}
@@ -58,7 +62,17 @@ class ShopConnector extends Component {
           )}
         />
 
-        <Redirect to="/shop/products" />
+         <Route
+          exact={true}
+          path="/shop/products/:category/:id"
+          render={(routeProps) => (
+            <ProductDetails {...this.props} {...routeProps}
+
+            />
+          )}
+        />
+
+        <Redirect to="/shop/products/all" />
       </Switch>
     );
   }
