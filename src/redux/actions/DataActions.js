@@ -2,19 +2,19 @@ import axios from "axios";
 import type from "../Types";
 import {Urls} from "../Urls";
 
-//http://localhost:4000/api/products?_page2&_limit=20&_sort=name
 
-
-export const doLoadData = () => dispatch => {
-  //console.log(`${Urls.LOAD_PRODUCTS}?_limit=20`);
+export const doLoadData = (page=1) => dispatch => {
 
   axios.all([
-    axios.get(`${Urls.LOAD_PRODUCTS}?_limit=20`),
+    axios.get(`${Urls.LOAD_PRODUCTS}?_page=${page}&_limit=20`),
     axios.get(Urls.LOAD_CATEGORIES)
   ])
   .then(axios.spread((prods,cats) => {
     const products = {};
-    products.total = Number(prods.headers["x-total-count"]);
+    products.perPage = 20;
+    products.page = 1;
+    products.totalCount = Number(prods.headers["x-total-count"]);
+    products.totalPages = Math.floor(products.totalCount/products.perPage);
     products.items = prods.data;
     dispatch({
       type: type.SET_PRODUCTS,
@@ -30,7 +30,16 @@ export const doLoadData = () => dispatch => {
 
 
 
+export const getPage = dir => dispatch => {
+  console.log(dir);
+  // todo
+  dispatch({
+    type: type.SET_PAGE,
+    payload: dir,
+  });
 
+
+} //getPage
 
 
 

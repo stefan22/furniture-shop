@@ -80,7 +80,7 @@ class MainShopContent extends Component {
             </div>
           </div>
         </main>
-        <footer><h3>Footer</h3></footer>
+
       </div>
     );
 

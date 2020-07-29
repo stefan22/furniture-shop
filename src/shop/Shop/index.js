@@ -6,6 +6,8 @@ import MainShopContent from "./MainShopContent";
 import TopNavigation from "../TopNavigation";
 import MainNavigation from "../MainNavigation";
 import CartInfo from "../CartInfo";
+import Pagination from "../Pagination/index";
+
 // styles
 import "./styles.scss";
 
@@ -14,6 +16,11 @@ const baseURL = "/shop/products";
 
 
 class Shop extends Component {
+
+
+  componentDidMount() {
+    this.props.doLoadData();
+  }
 
   handleFilterProducts = (cat="all", prdts=[]) => {
     if (cat === "all") return prdts; // show all
@@ -24,8 +31,9 @@ class Shop extends Component {
   };
 
   render() {
+    //console.log(this);
     const { category } = this.props.match.params;
-    const { products } = this.props;
+    const { products, shop:{totalCount,page,totalPages,perPage} } = this.props;
 
     return (
       <Grid container justify={"center"} spacing={0}>
@@ -55,6 +63,15 @@ class Shop extends Component {
               products={this.handleFilterProducts(category,products)}
             />
 
+            <Pagination
+              page={page}
+              perPage={perPage}
+              getPage={this.props.getPage}
+              totalCount={totalCount}
+              totalPages={totalPages}
+            />
+
+            <footer><h3>Footer</h3></footer>
           </Grid>
         </div>
       </Grid>

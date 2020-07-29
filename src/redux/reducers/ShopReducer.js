@@ -3,7 +3,9 @@ import types from "../Types";
 const initialState = {
   products: [],
   categories: [],
-  total: 0,
+  totalCount: 0,
+  page: 1,
+  totalPages: 0,
 };
 
 export const ShopReducer = (state = initialState, action) => {
@@ -12,7 +14,9 @@ export const ShopReducer = (state = initialState, action) => {
       return Object.assign({}, state, {
         ...state,
         products: [...action.payload.items],
-        total: action.payload.total,
+        totalCount: action.payload.totalCount,
+        page: action.payload.page,
+        totalPages: action.payload.totalPages
       });
 
     case types.SET_CATEGORIES:

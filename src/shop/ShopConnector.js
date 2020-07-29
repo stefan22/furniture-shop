@@ -3,10 +3,9 @@ import { Switch, Route, Redirect } from "react-router-dom";
 // redux
 import { connect } from "react-redux";
 // comps
-import ShopStore from "../redux/ShopStore";
 import Shop from "./Shop/index";
 import CartSummary from "./CartSummary"
-import { doLoadData } from "../redux/actions/DataActions";
+import { doLoadData,getPage } from "../redux/actions/DataActions";
 import {
   addToCart,
   updateCart,
@@ -15,9 +14,6 @@ import {
   getCartTotal,
 } from "../redux/actions/CartActions";
 
-
-// data placeholder
-ShopStore.dispatch(doLoadData());
 
 
 class ShopConnector extends Component {
@@ -80,6 +76,7 @@ const mapActionsToProps = {
   deleteFromCart,
   totalCartItems,
   getCartTotal,
+  getPage,
 };
 
 export default connect(mapStateToProps, mapActionsToProps)(ShopConnector);

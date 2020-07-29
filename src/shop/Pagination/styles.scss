@@ -1,0 +1,72 @@
+@import "../../styles/vars.scss";
+
+.pagination {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 3rem;
+  .paginationWrapper {
+    max-width: 350px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    .paginationButtonLeft,
+    .paginationButtonRight {
+      border-radius: 4px;
+      background-color: #797979;
+      font-size: 1.15rem;
+      transition: background-color .35s 0ms;
+      color: white;
+      cursor: pointer;
+      margin: 0 7px;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 100%;
+      align-items: center;
+      position: relative;
+      max-width: 110px;
+      svg {
+        font-size: 1.5rem;
+        vertical-align: middle;
+        position: absolute;
+      }
+      &:hover {
+        background-color: #457cb2;
+      }
+      &:focus {
+        outline: none;
+      }
+      &:disabled {
+        background-color: #1f364d;
+        cursor: not-allowed;
+      }
+    }
+    span {
+      flex: 1 0 auto;
+      display: flex;
+      font-size: 1.15rem;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  .paginationButtonLeft {
+    padding: 8px 15px 8px 20px;
+    svg {
+      left: 5px;
+    }
+  }
+  .paginationButtonRight {
+    padding: 8px 20px 8px 15px;
+    svg {
+      right: 19px;
+    }
+  }
+}
+
+.paginationInfo {
+  font-size: 1.5rem;
+}
