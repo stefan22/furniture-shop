@@ -2,66 +2,55 @@
 
 .pagination {
   display: flex;
+  transition: all .35s ease 0ms;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 3rem;
+  margin-bottom: 10rem;
+  padding: 0 1rem;
+  @media screen and (max-width: 960px) {
+    margin-bottom: 7rem;
+  }
   .paginationWrapper {
     max-width: 350px;
     width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-evenly;
     .paginationButtonLeft,
     .paginationButtonRight {
-      border-radius: 4px;
-      background-color: #797979;
-      font-size: 1.15rem;
-      transition: background-color .35s 0ms;
-      color: white;
-      cursor: pointer;
-      margin: 0 7px;
-      height: auto;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      width: 100%;
-      align-items: center;
-      position: relative;
-      max-width: 110px;
-      svg {
-        font-size: 1.5rem;
-        vertical-align: middle;
-        position: absolute;
+      font-size: .85rem !important;
+      & span {
+        // font-size: .9rem;
+        // text-align: center;
       }
       &:hover {
-        background-color: #457cb2;
+        // background-color: #457cb2;
       }
       &:focus {
         outline: none;
       }
       &:disabled {
-        background-color: #1f364d;
+        pointer-events: none;
         cursor: not-allowed;
       }
     }
     span {
       flex: 1 0 auto;
       display: flex;
-      font-size: 1.15rem;
       align-items: center;
-      justify-content: center;
+      justify-content: space-evenly;
     }
   }
   .paginationButtonLeft {
-    padding: 8px 15px 8px 20px;
     svg {
+      height: 26px;
       left: 5px;
     }
   }
   .paginationButtonRight {
-    padding: 8px 20px 8px 15px;
     svg {
+      height: 26px;
       right: 19px;
     }
   }
@@ -69,4 +58,48 @@
 
 .paginationInfo {
   font-size: 1.5rem;
+}
+
+.buttonDisabled {
+  background-color:$footerBg !important;
+  color: $lightBlack !important;
+  cursor: not-allowed !important;
+}
+
+.buttonEnabled {
+  background-color: initial;
+}
+
+
+
+.MuiButton-endIcon {
+  margin-left: 0 !important;
+  margin-right: -10px !important;
+}
+
+.MuiButton-startIcon {
+  margin-left: -10px !important;
+  margin-right: 0 !important;
+}
+
+button.MuiButton-containedSizeLarge {
+  padding: 6px 24px;
+}
+
+
+.paginationLeft {
+  color: $cardPrice !important;
+}
+
+
+span button.paginationLeft {
+  height: 36px;
+  min-width: 36px;
+  padding: 0 12px;
+}
+
+span button.paginationRight {
+  height: 36px;
+  min-width: 36px;
+  padding: 0 12px;
 }

@@ -65,6 +65,7 @@
 footer,
 .mainContent {
   padding: 1em;
+
 }
 
 
@@ -176,11 +177,15 @@ footer {
   background: $snow;
   border-top: 1px inset $white;
   box-shadow: $reg-boxshadow;
-  height: 10vh;
+  height: 7vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  display: none;
+  @media screen  and (min-width: 960px) {
+    display: none;
+  }
   p {
     width: 100%;
     text-align: center;

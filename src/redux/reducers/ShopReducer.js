@@ -5,6 +5,7 @@ const initialState = {
   categories: [],
   totalCount: 0,
   page: 1,
+  perPage: 20,
   totalPages: 0,
 };
 
@@ -16,7 +17,8 @@ export const ShopReducer = (state = initialState, action) => {
         products: [...action.payload.items],
         totalCount: action.payload.totalCount,
         page: action.payload.page,
-        totalPages: action.payload.totalPages
+        totalPages: action.payload.totalPages,
+        perPage: action.payload.perPage,
       });
 
     case types.SET_CATEGORIES:
@@ -24,6 +26,14 @@ export const ShopReducer = (state = initialState, action) => {
         ...state,
         categories: [...action.payload]
       })
+
+    case types.SET_PAGE:
+      return Object.assign({}, state, {
+        ...state,
+        page: action.payload.page,
+        products: action.payload.products,
+      })
+
     default:
       return {
         ...state,

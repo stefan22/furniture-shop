@@ -72,7 +72,7 @@ Download repository, install dependencies and type `npm start`
       • image <string>
       • category <string>
       • description <string>
-      • price <price>
+      • price <number>
 
 ```
 <br />

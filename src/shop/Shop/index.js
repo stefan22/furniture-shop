@@ -7,33 +7,33 @@ import TopNavigation from "../TopNavigation";
 import MainNavigation from "../MainNavigation";
 import CartInfo from "../CartInfo";
 import Pagination from "../Pagination/index";
-
 // styles
 import "./styles.scss";
 
-
 const baseURL = "/shop/products";
 
-
 class Shop extends Component {
-
-
   componentDidMount() {
     this.props.doLoadData();
   }
 
-  handleFilterProducts = (cat="all", prdts=[]) => {
+  handleFilterProducts = (cat = "all", prdts = []) => {
     if (cat === "all") return prdts; // show all
     let products = [];
-    prdts.filter(p => // by category
-      p.category.toLowerCase() === cat.toLowerCase() ? products.push(p) : true);
+    prdts.filter((
+      p // by category
+    ) =>
+      p.category.toLowerCase() === cat.toLowerCase() ? products.push(p) : true
+    );
     return products;
   };
 
   render() {
-    //console.log(this);
     const { category } = this.props.match.params;
-    const { products, shop:{totalCount,page,totalPages,perPage} } = this.props;
+    const {
+      products,
+      shop: { page, totalPages },
+    } = this.props;
 
     return (
       <Grid container justify={"center"} spacing={0}>
@@ -48,7 +48,6 @@ class Shop extends Component {
           </Grid>
 
           <Grid item xs={12} md={10} lg={10}>
-
             <MainNavigation />
             <CartInfo
               deleteFromCart={this.props.deleteFromCart}
@@ -60,18 +59,18 @@ class Shop extends Component {
               addToCart={this.props.addToCart}
               cart={this.props.cart}
               category={category}
-              products={this.handleFilterProducts(category,products)}
+              products={this.handleFilterProducts(category, products)}
             />
 
             <Pagination
               page={page}
-              perPage={perPage}
               getPage={this.props.getPage}
-              totalCount={totalCount}
               totalPages={totalPages}
             />
 
-            <footer><h3>Footer</h3></footer>
+            <footer>
+              <h3>Footer</h3>
+            </footer>
           </Grid>
         </div>
       </Grid>
@@ -80,5 +79,3 @@ class Shop extends Component {
 }
 
 export default Shop;
-
-

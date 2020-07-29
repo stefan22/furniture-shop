@@ -4,9 +4,9 @@ import {Urls} from "../Urls";
 
 
 export const doLoadData = (page=1) => dispatch => {
-
+  // fetch data
   axios.all([
-    axios.get(`${Urls.LOAD_PRODUCTS}?_page=${page}&_limit=20`),
+    axios.get(`${Urls.LOAD_PRODUCTS}_page=${page}&_limit=20`),
     axios.get(Urls.LOAD_CATEGORIES)
   ])
   .then(axios.spread((prods,cats) => {
@@ -30,15 +30,19 @@ export const doLoadData = (page=1) => dispatch => {
 
 
 
-export const getPage = dir => dispatch => {
-  console.log(dir);
-  // todo
-  dispatch({
-    type: type.SET_PAGE,
-    payload: dir,
-  });
-
-
+export const getPage = (pg=1) => dispatch => {
+  const pagination = {};
+  //fetch page
+  fetch(`${Urls.LOAD_PRODUCTS}_page=${pg}&_limit=20`)
+  .then(res => res.json())
+  .then(data => {
+    pagination.products = data;
+    pagination.page = pg;
+    dispatch({
+      type: type.SET_PAGE,
+      payload: pagination,
+    });
+  })
 } //getPage
 
 
