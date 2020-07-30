@@ -1,0 +1,180 @@
+@import "../../styles/vars.scss";
+
+.mainProductWrapper {
+  width: 100%;
+  height: auto;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 0;
+}
+
+.productImage {
+  width: 100%;
+  max-width: 410px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+}
+
+/**
+# above line top-right section details
+*/
+.productDetails {
+  min-height: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem 0;
+  @media screen and (max-width: 960px) {
+    h3,
+    h5 {
+      width: 100%;
+      text-align: center !important;
+    }
+    .productPrice h6,
+    .productSection h6,
+    .productColors,
+    .productSection .productQty,
+    .productSection .productButton {
+      text-align: center !important;
+      align-items: center !important;
+      margin: 0 auto !important;
+      justify-content: center !important;
+    }
+  }
+  h3 {
+    margin-top: 1.5rem;
+    padding: 0;
+    text-align: left;
+  }
+  h5 {
+    margin-top: 0;
+    line-height: 0;
+    color: darkgray;
+    text-align: left;
+  }
+  .productPrice {
+    width: 100%;
+    h6 {
+      text-align: left;
+    }
+    h3 {
+      margin: 0 0 1.5rem 0;
+      color: red;
+      text-align: left;
+    }
+  }
+  .productSection {
+    width: 100%;
+    h6 {
+      text-align: left;
+    }
+    .productQty {
+      max-width: 150px;
+      border: 1px solid lightgray;
+    }
+    .productButton {
+      text-align: left;
+      button {
+        .MuiButton-outlinedSecondary {
+          color: red !important;
+          border: 1px solid red !important;
+        }
+      }
+    }
+  }
+}
+
+/**
+# option colors
+*/
+
+.productColors {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  .productColor {
+    width: 1rem;
+    height: 1rem;
+    padding: 7px;
+    margin-right: 0.75rem;
+  }
+}
+
+.white {
+  background-color: $white;
+  border: 1px solid lightgray;
+}
+
+.black {
+  background-color: $cardTitle;
+  border: 1px solid $lightBlack;
+}
+
+/**
+# should add matui color to theme
+*/
+
+.MuiButton-outlinedSecondary {
+  color: red !important;
+  border: 1px solid red !important;
+}
+
+/**
+# below horizontal line (2nd section)
+*/
+.productDescription {
+  margin: 5rem 0;
+  .productMoreSubtitle {
+    padding-top: 10px;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    text-align: left;
+    font-size: 1rem;
+    border-top: 1px solid lightgray;
+    p {
+      padding: 0 1rem;
+    }
+  }
+
+  .productMoreDesc {
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 2rem 0;
+    text-align: justify;
+    > div {
+      padding: 0 5px;
+    }
+    h4 {
+      margin-bottom: 5px;
+    }
+    h6 {
+      margin-top: 5px;
+    }
+    section {
+      padding: 0 10px;
+      text-align: justify;
+      .productMoreLikethis {
+        ul {
+          list-style: square;
+          list-style-position: inside;
+          li {
+            padding-left: 7px;
+            a {
+              color: red;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+/**
+# need navigation
+*/
