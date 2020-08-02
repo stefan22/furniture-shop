@@ -6,6 +6,7 @@
   display: flex;
   height: 66px;
   margin: 0 1rem;
+
   .hamburger {
     display: flex;
     align-items: center;
@@ -16,6 +17,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
+  text-align: center;
   justify-content: center;
   align-items: center;
   width: 40px;

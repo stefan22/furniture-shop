@@ -12,11 +12,13 @@ class DetailsHeading extends Component {
 
     return (
       <>
-        <TopNavigation
-          baseURL={baseURL}
-          categories={this.props.categories}
-        />
-        <h1>Furniture Shop</h1>
+        <div className="sideNavCol">
+          <TopNavigation
+            baseURL={baseURL}
+            categories={this.props.categories}
+          />
+        </div>
+
       </>
 
     );

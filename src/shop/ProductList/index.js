@@ -19,7 +19,7 @@ const Product = (props) => {
     return (
       <Grid key={p.id} item xs={12} sm={6} md={4} lg={3}>
         <ZoomInUpWrapperDiv>
-          <Card key={p.id} className="productListWrapper">
+          <Card key={p.id} className="productListWrapper" elevation={2}>
             <Link to={`/shop/products/${p.category}/${p.id}`}>
               <img src={p.image} alt={p.name} />
             </Link>

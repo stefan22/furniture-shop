@@ -3,16 +3,23 @@
 .topnavCategoriesWrapper {
   @include mainBoxCategories;
   .furnlogo {
+    background: url(/static/media/fslogo.c598143d.png) no-repeat center 0px;
+    background-size: cover;
+    transition: all .35s linear 0ms;
     display: flex;
     width: 100%;
-    max-width: 250px;
-    height: auto;
+    padding: 1rem;
+    max-width: 230px;
+    mix-blend-mode: luminosity;
+    height: 215px;
     margin: 0 auto;
     justify-content: center;
+    @media screen and (max-width: 1190px) {
+      max-width: 190px;
+      height: 175px;
+    }
     @media screen and (max-width: 960px) {
-      max-width: 90px;
-      min-width: 75px;
-      height: auto;
+      display: none;
     }
   }
   .topnavCategoriesMain {
@@ -20,10 +27,13 @@
     .topnavCategories {
       display: flex;
       flex-flow: column;
+      transition: all .35s linear 500ms;
       justify-content: flex-start;
+      margin-top: 1.5rem;
       @media screen and (max-width: 960px) {
         display: none;
-      }
+      }//endof 960
+
       .categoryAll {
         a {
           .categoryIcon {
@@ -32,8 +42,8 @@
           @include aCategory;
         }
         &:hover {
-          background-color: $categoryHoverColor;
-          mix-blend-mode: luminosity;
+          // background-color: $categoryHoverColor;
+          // mix-blend-mode: luminosity;
         }
       }
       .categoryOther {
@@ -44,8 +54,8 @@
           @include aCategory;
         }
         &:hover {
-          background-color: $categoryHoverColor;
-          mix-blend-mode: luminosity;
+          // background-color: $categoryHoverColor;
+          // mix-blend-mode: luminosity;
         }
       }
     } //topnavCategories

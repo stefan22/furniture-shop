@@ -17,6 +17,7 @@ class CartInfo extends Component {
   };
 
   render() {
+
     const {
       cart: { cartItems, cartTotalItems },
     } = this.props;

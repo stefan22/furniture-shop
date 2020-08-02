@@ -8,16 +8,21 @@
   border-top: 1px solid lighten($gray, 45%);
   border-radius: 3px;
   padding: 5px 10px;
-  right: 18%;
-  top: 1.625%;
+  right: 18.875%;
+  z-index: 20;
+  top: 1.70%;
   transition: all .15s ease-in-out 0ms;
-  @media screen and (max-width: 960px) {
+  @media screen and (max-width: 1024px) {
     right: 3%;
-    top: 1.75%;
+    top: 1.42%;
     z-index: 20;
+  }
+  @media screen and (max-width: 960px) {
+    top: 1.81%;
   }
   @media screen and (max-width: 600px) {
     right: 5%;
+    top: 1.81%;
   }
   span {
     font-size: $p;

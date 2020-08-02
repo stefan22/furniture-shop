@@ -4,7 +4,6 @@
   display: flex;
   flex-flow: column;
   margin: 2rem 1rem;
-  background-color: $navigationBg !important;
   h4 {
     @include cardHeading;
   }

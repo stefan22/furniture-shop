@@ -3,7 +3,7 @@ import Link from "@material-ui/core/Link";
 // styles
 import "./styles.scss";
 
-class MainNavigation extends Component {
+class MobileNavigation extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -51,4 +51,4 @@ class MainNavigation extends Component {
   }
 }
 
-export default MainNavigation;
+export default MobileNavigation;
