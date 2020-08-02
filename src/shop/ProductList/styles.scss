@@ -1,8 +1,20 @@
 @import "../../styles/vars.scss";
 
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
 .productListWrapper {
   display: flex;
   flex-flow: column;
+  animation: fadeIn 0.35s;
+  transition: opacity 0.5s 350ms;
+  opacity: 1;
   margin: 2rem 1rem;
   h4 {
     @include cardHeading;

@@ -2,7 +2,7 @@ import React, { Component} from "react";
 import TopNavigation from "../TopNavigation";
 // comps
 import "./styles.scss";
-//import flogo from "../../images/fslogo.png";
+
 
 const baseURL = "/shop/products";
 

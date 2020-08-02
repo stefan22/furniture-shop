@@ -59,9 +59,6 @@ class Shop extends Component {
             />
             <ShopHeading
               mainTitle={"Furniture Shop"}
-              // deleteFromCart={this.props.deleteFromCart}
-              // totalCartItems={this.props.totalCartItems}
-              // cart={this.props.cart}
             />
 
             <MainShopContent

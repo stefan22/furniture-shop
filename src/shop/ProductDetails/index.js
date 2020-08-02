@@ -22,14 +22,18 @@ class ProductDetails extends Component {
     super(props);
     this.colorWhiteRef = createRef("");
     this.colorBlackRef = createRef("");
+    this.detailsPageRef = createRef("");
     this.state = {
       color: "",
       quantity: 1,
     };
   }
 
+  componentDidUpdate() {
+    this.detailsPageRef.current.scrollIntoView({ behavior: "smooth" });
+  }
+
   handleDataElement = (val) => {
-    console.log("ref is ", val);
     let isRef =
       val === "white" ? (this.colorWhiteRef = val) : (this.colorBlackRef = val);
     this.setState({ color: isRef });
@@ -44,7 +48,7 @@ class ProductDetails extends Component {
 
     return (
       <Grid container align={"justify"} spacing={0}>
-        <div className="mainWrapper">
+        <div ref={this.detailsPageRef} className="mainWrapper">
           <Grid item zeroMinWidth md={2} lg={2}>
             <div className="sideNavCol">
               <SideNavigation categories={this.props.shop.categories} />
@@ -55,16 +59,13 @@ class ProductDetails extends Component {
             <div className="mainProductWrapper">
               <Grid container justify={"center"} spacing={0}>
                 <Grid item xs={12} sm={12} md={12} lg={12}>
-                   <MobileNavigation />
-                    <CartInfo
-                      deleteFromCart={this.props.deleteFromCart}
-                      totalCartItems={this.props.totalCartItems}
-                      cart={this.props.cart}
-                    />
+                  <MobileNavigation />
+                  <CartInfo
+                    deleteFromCart={this.props.deleteFromCart}
+                    totalCartItems={this.props.totalCartItems}
+                    cart={this.props.cart}
+                  />
                   <ShopHeading
-                    // deleteFromCart={this.props.deleteFromCart}
-                    // totalCartItems={this.props.totalCartItems}
-                    // cart={this.props.cart}
                     mainTitle={"Furniture Shop"}
                   />
                   <div className="topLiner"></div>
@@ -72,7 +73,6 @@ class ProductDetails extends Component {
                   <div className="mainHeader">
                     <MainContentNav />
                   </div>
-
                 </Grid>
                 <div className="productInnerWrapper">
                   <Grid item xs={12} sm={12} md={6} lg={6}>
