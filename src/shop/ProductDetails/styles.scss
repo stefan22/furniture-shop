@@ -1,0 +1,300 @@
+@import "../../styles/vars.scss";
+
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+.mainProductWrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 5 1;
+  animation: fadeIn .35s;
+  transition: all .5s 300ms;
+  opacity:1;
+  z-index: 0;
+
+  .productInnerWrapper {
+    display: flex;
+    width: 100%;
+    padding: 1rem;
+    margin-top: 5rem;
+    @media screen and (max-width: 960px) {
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+}
+
+.productImage {
+  width: 100%;
+  max-width: 410px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+}
+
+/**
+# above line top-right section details
+*/
+.productDetails {
+  min-height: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem 0;
+  @media screen and (max-width: 960px) {
+    h3,
+    h5 {
+      width: 100%;
+      text-align: center !important;
+    }
+    .productPrice h6,
+    .productSection h6,
+    .productColors,
+    .productSection .productQty,
+    .productSection .productButton {
+      text-align: center !important;
+      align-items: center !important;
+      margin: 0 auto !important;
+      justify-content: center !important;
+    }
+  } //endof 960
+
+  h3 {
+    margin-top: 1.5rem;
+    text-align: left;
+    font-size: $h3;
+    color: $redreg;
+  }
+  h5 {
+    color: lighten($cardTitle, 25%);
+    font-size: $h5;
+    text-align: left;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    @media screen and (max-width: 960px) {
+      margin-bottom: 3rem;
+    }
+  }
+  .productPrice {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 100%;
+    h6 {
+      display: flex;
+      font-size: $h6;
+      margin-top: 1rem;
+      text-align: left;
+    }
+    .priceTag {
+      margin: 7px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      h3 {
+        margin: 0;
+        margin-bottom: 1rem;
+        color: red;
+      }
+    }
+  }
+  .productSection {
+    width: 100%;
+    margin-bottom: 1rem;
+    h6 {
+      text-align: left;
+    }
+    .productQty {
+      margin: 7px;
+      div {
+        width: 50%;
+        @media screen and (max-width: 960px) {
+          min-width: 42%;
+          width: 56%;
+          max-width: 60%;
+          display: flex;
+          margin: 0 auto;
+          input {
+            text-align: center;
+          }
+        }
+      }
+    }
+    .productButton {
+      text-align: left;
+      button {
+        margin: 2rem 0 1rem;
+        .MuiButton-outlinedSecondary {
+          color: red !important;
+          border: 1px solid red !important;
+        }
+      }
+    }
+  }
+}
+
+/**
+# option colors
+*/
+
+.productColors {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 27%;
+  @media screen and (max-width: 960px) {
+    p {
+      text-align: center;
+    }
+  }
+  .colorBoxes {
+    flex-flow: row wrap;
+    display: flex;
+    margin: 7px;
+    justify-content: flex-start;
+  }
+  .productColor {
+    width: 1rem;
+    height: 1rem;
+    padding: 7px;
+    margin-right: 0.75rem;
+    transition: all .3s linear 0ms;
+    &.whiteRef {
+      background-color: lighten($white,10%);
+      outline: 1px solid $cardPrice;
+    }
+    &.blackRef {
+      background-color: lighten($lightBlack,15%);
+      outline: 1px solid $cardPrice;
+    }
+  }
+}
+
+.white {
+  background-color: $whiteBg;
+  outline: 1px inset $tableHeadingBg;
+}
+
+.black {
+  background-color: $cardTitle;
+  outline: 1px inset lighten($lightBlack,15%);
+}
+
+/**
+# should add matui color to theme
+*/
+
+.MuiButton-outlinedSecondary {
+  color: red !important;
+  border: 1px solid red !important;
+}
+
+.MuiFab-primary  {
+  padding: 2.25rem !important;
+  font-size: 1rem !important;
+  line-height: 0 !important;
+}
+
+/**
+# below horizontal line (2nd section)
+*/
+.productDescription {
+  margin: 3rem 0;
+  .productMoreSubtitle {
+    padding-top: 10px;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    text-align: left;
+    font-size: 1rem;
+    border-top: 1px solid lightgray;
+    p {
+      padding: 0 1rem;
+      color: $lightBlack;
+    }
+    & > p {
+      @media screen and (max-width:960px) {
+        text-align: center;
+      }
+    }
+  }
+
+  .productMoreDesc {
+    padding: 0 1rem;
+    margin: 3rem 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    text-align: justify;
+    > div {
+      padding: 0 5px;
+      & p {
+        color: $lightBlack;
+      }
+    }
+    h4 {
+      color: $black;
+      margin-bottom: 5px;
+    }
+    h6 {
+      margin-top: 5px;
+    }
+    section {
+      padding: 0 1rem;
+      text-align: justify;
+      .productMoreLikethis {
+        ul {
+          list-style: square;
+          list-style-position: inside;
+          li {
+            padding-left: 7px;
+            a {
+              color: red;
+            }
+          }
+        }
+      }
+    }
+    section.productLastSection {
+      @media screen and (max-width:960px) {
+        margin-top: 1rem;
+        h6 {
+          margin-top: 2rem;
+        }
+      }
+    }
+  }
+}
+
+/**
+# need navigation
+*/
+
+.isShopHeading {
+  text-align: center;
+  // position: relative;
+  // height: 65px;
+}
+
+fieldset > legend {
+  display: none !important;
+}
+
+
+.MuiSelect-select.MuiSelect-select.MuiInputBase-input.MuiInput-input {
+  opacity: 1 !important;
+}
+
+
+
+.MuiInputBase-input::-webkit-input-placeholder {
+  opacity: .71 !important;
+}

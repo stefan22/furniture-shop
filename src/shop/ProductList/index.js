@@ -1,4 +1,4 @@
-import React from "react";
+import React, {Component} from "react";
 import { Link, withRouter } from "react-router-dom";
 // mui
 import Grid from "@material-ui/core/Grid";
@@ -19,7 +19,7 @@ const Product = (props) => {
     return (
       <Grid key={p.id} item xs={12} sm={6} md={4} lg={3}>
         <ZoomInUpWrapperDiv>
-          <Card key={p.id} className="productListWrapper">
+          <Card key={p.id} className="productListWrapper" elevation={2}>
             <Link to={`/shop/products/${p.category}/${p.id}`}>
               <img src={p.image} alt={p.name} />
             </Link>
@@ -47,16 +47,23 @@ const Product = (props) => {
   });
 };
 
-const ProductList = (props) => {
-  if (!props.products) {
-    return <h5 className="p-2">No Products</h5>;
+class ProductList extends Component {
+
+  componentDidUpdate() {
+    window.scrollTo(0,0);
   }
 
-  return (
-    <Grid container>
-      <Product addToCart={props.addToCart} {...props} />
-    </Grid>
-  );
+  render() {
+    if (!this.props.products) {
+      return <h5 className="p-2">No Products</h5>;
+    }
+
+    return (
+      <Grid container>
+        <Product addToCart={this.props.addToCart} {...this.props} />
+      </Grid>
+    );
+  }
 };
 
 export default withRouter(ProductList);

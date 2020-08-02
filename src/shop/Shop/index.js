@@ -3,8 +3,9 @@ import React, { Component } from "react";
 import Grid from "@material-ui/core/Grid";
 // comps
 import MainShopContent from "./MainShopContent";
-import TopNavigation from "../TopNavigation";
-import MainNavigation from "../MainNavigation";
+import ShopHeading from "./ShopHeading";
+import SideNavigation from "../SideNavigation";
+import MobileNavigation from "../MobileNavigation";
 import CartInfo from "../CartInfo";
 import Pagination from "../Pagination/index";
 // styles
@@ -37,11 +38,12 @@ class Shop extends Component {
     } = this.props;
 
     return (
+
       <Grid container justify={"center"} spacing={0}>
         <div className="mainWrapper">
           <Grid item zeroMinWidth md={2} lg={2}>
             <div className="sideNavCol">
-              <TopNavigation
+              <SideNavigation
                 baseURL={baseURL}
                 categories={this.props.shop.categories}
               />
@@ -49,14 +51,17 @@ class Shop extends Component {
           </Grid>
 
           <Grid item xs={12} md={10} lg={10}>
-            <MainNavigation />
+            <MobileNavigation />
             <CartInfo
               deleteFromCart={this.props.deleteFromCart}
               totalCartItems={this.props.totalCartItems}
               cart={this.props.cart}
             />
-            <MainShopContent
+            <ShopHeading
               mainTitle={"Furniture Shop"}
+            />
+
+            <MainShopContent
               addToCart={this.props.addToCart}
               cart={this.props.cart}
               category={category}
@@ -75,6 +80,7 @@ class Shop extends Component {
           </Grid>
         </div>
       </Grid>
+
     );
   }
 }

@@ -82,6 +82,7 @@ Download repository, install dependencies and type `npm start`
   • /shop/produts/checkout
   • /shop/products/:category/:id
   • /shop/products/all <redirect>
+  • /shop/products/:category/:id  (details page)
 
 ```
 <br />

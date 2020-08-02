@@ -1,6 +1,5 @@
 @import "../../styles/vars.scss";
 
-
 .cartWrapper {
   width: 100%;
   min-height: 100vh;
@@ -68,18 +67,17 @@
     border: 1px solid lighten($gray, 50%);
   }
 
-
   .cartCell {
     display: table-cell;
     padding: 1.5rem;
     font-size: $p;
     vertical-align: middle;
-    color: lighten($black,10%);
+    color: lighten($black, 10%);
     border: 1px solid lighten($gray, 50%);
     &.cartRemove button {
-      font-weight: 400;
-      color: $white;
-      background: lighten($cardPrice,12%);
+      font-weight: 500;
+      color: $white !important;
+      background: lighten($cardPrice, 12%);
       border: 1px solid $cardPrice;
     }
     & input {
@@ -90,9 +88,10 @@
     }
   }
 
-.cartHead, .cartCell {
-  width: 15%;
-}
+  .cartHead,
+  .cartCell {
+    width: 15%;
+  }
   .cartTableFooter {
     width: 100%;
     display: table-footer-group;
@@ -134,7 +133,4 @@
     background: transparent;
     width: 100%;
   }
-
-
-
 } //cartWrapper
