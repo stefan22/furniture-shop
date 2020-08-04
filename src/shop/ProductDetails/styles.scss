@@ -50,7 +50,7 @@
   justify-content: space-between;
   padding: 1rem 0;
   @media screen and (max-width: 960px) {
-    h3,
+    h2,
     h5 {
       width: 100%;
       text-align: center !important;
@@ -67,14 +67,14 @@
     }
   } //endof 960
 
-  h3 {
+  h2 {
     margin-top: 1.5rem;
     text-align: left;
-    font-size: $h3;
+    font-size: $h2;
     color: $redreg;
   }
   h5 {
-    color: lighten($cardTitle, 25%);
+    color: $lightBlack;
     font-size: $h5;
     text-align: left;
     font-weight: 400;
@@ -91,7 +91,7 @@
     h6 {
       display: flex;
       font-size: $h6;
-      margin-top: 1rem;
+      margin: 1rem 0;
       text-align: left;
     }
     .priceTag {
@@ -108,9 +108,10 @@
   }
   .productSection {
     width: 100%;
-    margin-bottom: 1rem;
+    margin: 1rem 0;
     h6 {
       text-align: left;
+      margin: 1rem 0;
     }
     .productQty {
       margin: 7px;
@@ -149,7 +150,12 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  margin: 7px;
   width: 27%;
+  & span.MuiTypography-body1 {
+    font-size: .9rem;
+    vertical-align: middle;
+  }
   @media screen and (max-width: 960px) {
     p {
       text-align: center;
@@ -240,12 +246,14 @@
         color: $lightBlack;
       }
     }
-    h4 {
+    h5 {
       color: $black;
+      font-size: $h5;
       margin-bottom: 5px;
     }
     h6 {
       margin-top: 5px;
+      font-size: $h6;
     }
     section {
       padding: 0 1rem;
