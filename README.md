@@ -1,5 +1,10 @@
 # React Store
 
+### endpoints
+https://fshop-f04aa.web.app/#home
+
+<hr />
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 
@@ -75,14 +80,9 @@ Download repository, install dependencies and type `npm start`
       • price <number>
 
 
-  @ routes
-  ========
-  • /shop/products/:category
-  • /shop/products/cart
-  • /shop/produts/checkout
-  • /shop/products/:category/:id
-  • /shop/products/all <redirect>
-  • /shop/products/:category/:id  (details page)
+  @ endpoints
+  ===========
+  https://fshop-f04aa.web.app/#products
 
 ```
 <br />

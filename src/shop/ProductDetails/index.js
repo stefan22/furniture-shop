@@ -6,7 +6,8 @@ import SideNavigation from "../SideNavigation";
 import MobileNavigation from "../MobileNavigation";
 import CartInfo from "../CartInfo";
 import ShopHeading from "../Shop/ShopHeading";
-import ColorSelect from "./ColorSelect";
+//import ColorSelect from "./ColorSelect";
+import RadioColors from "./RadioColors";
 // matui
 import Grid from "@material-ui/core/Grid";
 import TextField from "@material-ui/core/TextField";
@@ -34,17 +35,23 @@ class ProductDetails extends Component {
   }
 
   handleDataElement = (val) => {
+    console.log(val, val.color);
     let isRef =
-      val === "white" ? (this.colorWhiteRef = val) : (this.colorBlackRef = val);
+      val.color === "white" ? (this.colorWhiteRef = val.color) : (this.colorBlackRef = val.color);
     this.setState({ color: isRef });
   };
 
-  handleQuantity = (e) => {
-    console.log(e.target.value);
-  };
+  handleQuantity = (e) =>
+    this.setState({quantity: Number(e.target.value)})
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("submitted form");
+
+  }
 
   render() {
-    const { color } = this.state;
+    console.log(this);
 
     return (
       <Grid container align={"justify"} spacing={0}>
@@ -65,9 +72,7 @@ class ProductDetails extends Component {
                     totalCartItems={this.props.totalCartItems}
                     cart={this.props.cart}
                   />
-                  <ShopHeading
-                    mainTitle={"Furniture Shop"}
-                  />
+                  <ShopHeading mainTitle={"Furniture Shop"} />
                   <div className="topLiner"></div>
 
                   <div className="mainHeader">
@@ -87,11 +92,16 @@ class ProductDetails extends Component {
                   </Grid>
                   <Grid item xs={12} sm={12} md={6} lg={6}>
                     <div className="productDetails">
-                      <h3>Mens Plain Tshirt</h3>
+                      <h2>Mens Plain Tshirt</h2>
                       <h5>Seller: ClothesMart (50 sales)</h5>
+
+                      <form
+                        onSubmit={this.handleSubmit}
+                      >
+
                       <div className="productPrice">
                         <h6>
-                          <small>Price</small>
+                          Price
                         </h6>
                         <div className="priceTag">
                           <h3>
@@ -101,30 +111,18 @@ class ProductDetails extends Component {
                       </div>
                       <div className="productSection">
                         <h6>
-                          <small>Colour</small>
+                         Colour
                         </h6>
                         <div className="productColors">
-                          <div className="colorBoxes">
-                            <div
-                              className={`productColor ${
-                                color === "white" ? "whiteRef" : "white"
-                              }`}
-                            ></div>
-                            <div
-                              className={`
-                                productColor ${
-                                  color === "black" ? "blackRef" : "black"
-                                }`}
-                            ></div>
-                          </div>
-                          <ColorSelect
+
+                          <RadioColors
                             handleDataElement={this.handleDataElement}
                           />
                         </div>
                       </div>
                       <div className="productSection">
                         <h6>
-                          <small>Quantity</small>
+                          Quantity
                         </h6>
                         <div className="productQty">
                           <TextField
@@ -148,10 +146,12 @@ class ProductDetails extends Component {
                             size="large"
                             color="primary"
                           >
-                            Buy Now
+                            Add to Cart
                           </Button>
                         </div>
                       </div>
+                    </form>
+
                     </div>
                   </Grid>
                 </div>
@@ -168,7 +168,7 @@ class ProductDetails extends Component {
                       <Grid item xs={6} md={4} lg={4}>
                         <section>
                           <div>
-                            <h4>ProductDetails</h4>
+                            <h5>ProductDetails</h5>
                             <p>
                               Lorem ipsum dolor sit amet consectetur adipiscing
                               elit euismod magnis sodales habitasse ut pharetra
@@ -196,7 +196,7 @@ class ProductDetails extends Component {
                       <Grid item xs={6} md={4} lg={4}>
                         <section>
                           <div>
-                            <h4>Size Guide</h4>
+                            <h5>Size Guide</h5>
                             <p>
                               Bitasse ut pharetra enim, auctor sociis vestibulum
                               netus. Placerat sem sed erat parturient turpis et
@@ -218,7 +218,7 @@ class ProductDetails extends Component {
                       <Grid item xs={12} md={4} lg={4}>
                         <section className="productLastSection">
                           <div>
-                            <h4>Items Like This</h4>
+                            <h5>Items Like This</h5>
                             <p>
                               Libero feugiat pretium dis aliquet in hac, lectus
                               semper posuere arcu velit purus.
