@@ -28,9 +28,12 @@ class CartInfo extends Component {
           <span>
             Your cart:{" "}
             {`${cartTotalItems ? cartTotalItems + " Item(s)" : "(empty)"}`}{" "}
+
+          {cartTotalItems > 0 &&
             <Link to="/shop/cart">
               <ShoppingCartIcon />
             </Link>
+          }
           </span>
         )}
       </div>
