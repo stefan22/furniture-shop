@@ -93,12 +93,18 @@
       font-size: $h6;
       margin: 1rem 0;
       text-align: left;
+      @media screen and (max-width: 960px) {
+        margin-bottom: 1rem !important;
+      }
     }
     .priceTag {
       margin: 7px;
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
+      @media screen and (max-width: 960px) {
+        margin: 0 auto;
+      }
       h3 {
         margin: 0;
         margin-bottom: 1rem;
@@ -112,15 +118,17 @@
     h6 {
       text-align: left;
       margin: 1rem 0;
+      @media screen and (max-width: 960px) {
+        margin-bottom: 1rem !important;
+      }
     }
     .productQty {
       margin: 7px;
+      width: 100%;
       div {
-        width: 50%;
+        width: 115px;
+        font-size: $small;
         @media screen and (max-width: 960px) {
-          min-width: 42%;
-          width: 56%;
-          max-width: 60%;
           display: flex;
           margin: 0 auto;
           input {
@@ -276,6 +284,7 @@
         margin-top: 1rem;
         h6 {
           margin-top: 2rem;
+          font-size: $h6;
         }
       }
     }
