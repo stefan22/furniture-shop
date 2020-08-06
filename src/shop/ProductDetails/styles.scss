@@ -107,8 +107,9 @@
       }
       h3 {
         margin: 0;
+        font-size: $h3;
         margin-bottom: 1rem;
-        color: red;
+        color: $redreg;
       }
     }
   }
@@ -116,6 +117,7 @@
     width: 100%;
     margin: 1rem 0;
     h6 {
+      font-size: $h6;
       text-align: left;
       margin: 1rem 0;
       @media screen and (max-width: 960px) {
@@ -142,8 +144,8 @@
       button {
         margin: 2rem 0 1rem;
         .MuiButton-outlinedSecondary {
-          color: red !important;
-          border: 1px solid red !important;
+          color: $redreg !important;
+          border: 1px solid $redreg !important;
         }
       }
     }
@@ -169,38 +171,9 @@
       text-align: center;
     }
   }
-  .colorBoxes {
-    flex-flow: row wrap;
-    display: flex;
-    margin: 7px;
-    justify-content: flex-start;
-  }
-  .productColor {
-    width: 1rem;
-    height: 1rem;
-    padding: 7px;
-    margin-right: 0.75rem;
-    transition: all .3s linear 0ms;
-    &.whiteRef {
-      background-color: lighten($white,10%);
-      outline: 1px solid $cardPrice;
-    }
-    &.blackRef {
-      background-color: lighten($lightBlack,15%);
-      outline: 1px solid $cardPrice;
-    }
-  }
+
 }
 
-.white {
-  background-color: $whiteBg;
-  outline: 1px inset $tableHeadingBg;
-}
-
-.black {
-  background-color: $cardTitle;
-  outline: 1px inset lighten($lightBlack,15%);
-}
 
 /**
 # should add matui color to theme

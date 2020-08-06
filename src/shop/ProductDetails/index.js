@@ -13,16 +13,33 @@ import Grid from "@material-ui/core/Grid";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import Fab from "@material-ui/core/Fab";
+import LoyaltyTwoToneIcon from "@material-ui/icons/LoyaltyTwoTone";
 // styles
+import { withStyles } from "@material-ui/core/styles";
 import "./styles.scss";
 // imgs
 import sample from "../../images/betty.jpg";
 
+const styles = theme => ({
+  fabActionButton: {
+    padding: "0 !important",
+    borderRadius: "50%",
+    height: "96px",
+    width: "100px",
+    "& span": {
+      fontSize: "1.15rem",
+    },
+    "& span svg": {
+      fill: theme.palette.colors.lgray,
+      width: "18px",
+      transform: "perspective(10px) translate(5px, 0px)",
+    },
+  },
+});
+
 class ProductDetails extends Component {
   constructor(props) {
     super(props);
-    this.colorWhiteRef = createRef("");
-    this.colorBlackRef = createRef("");
     this.detailsPageRef = createRef("");
     this.state = {
       color: "",
@@ -34,24 +51,20 @@ class ProductDetails extends Component {
     this.detailsPageRef.current.scrollIntoView({ behavior: "smooth" });
   }
 
-  handleDataElement = (val) => {
-    console.log(val, val.color);
-    let isRef =
-      val.color === "white" ? (this.colorWhiteRef = val.color) : (this.colorBlackRef = val.color);
-    this.setState({ color: isRef });
-  };
+  handleDataElement = val =>
+    this.setState({ color: val.color });
 
-  handleQuantity = (e) =>
-    this.setState({quantity: Number(e.target.value)})
+
+  handleQuantity = (e) => this.setState({ quantity: Number(e.target.value) });
 
   handleSubmit = (e) => {
     e.preventDefault();
     console.log("submitted form");
-
-  }
+  };
 
   render() {
     console.log(this);
+    const { classes } = this.props;
 
     return (
       <Grid container align={"justify"} spacing={0}>
@@ -95,63 +108,57 @@ class ProductDetails extends Component {
                       <h2>Mens Plain Tshirt</h2>
                       <h5>Seller: ClothesMart (50 sales)</h5>
 
-                      <form
-                        onSubmit={this.handleSubmit}
-                      >
-
-                      <div className="productPrice">
-                        <h6>
-                          Price
-                        </h6>
-                        <div className="priceTag">
-                          <h3>
-                            <Fab color="primary">£44.99</Fab>
-                          </h3>
+                      <form onSubmit={this.handleSubmit}>
+                        <div className="productPrice">
+                          <h6>Price</h6>
+                          <div className="priceTag">
+                            <Fab
+                              className={classes.fabActionButton}
+                              variant={"extended"}
+                              color="primary"
+                            >
+                              £44.99
+                              <LoyaltyTwoToneIcon />
+                            </Fab>
+                          </div>
                         </div>
-                      </div>
-                      <div className="productSection">
-                        <h6>
-                         Colour
-                        </h6>
-                        <div className="productColors">
-
-                          <RadioColors
-                            handleDataElement={this.handleDataElement}
-                          />
+                        <div className="productSection">
+                          <h6>Colour</h6>
+                          <div className="productColors">
+                            <RadioColors
+                              handleDataElement={this.handleDataElement}
+                            />
+                          </div>
                         </div>
-                      </div>
-                      <div className="productSection">
-                        <h6>
-                          Quantity
-                        </h6>
-                        <div className="productQty">
-                          <TextField
-                            color="secondary"
-                            type="number"
-                            placeholder="Enter quantity"
-                            InputProps={{
-                              inputProps: { min: 0, max: 10 },
-                            }}
-                            InputLabelProps={{ shrink: true }}
-                            onChange={(e) => this.handleQuantity(e)}
-                            id="outlined-secondary"
-                            // label="Enter quantity"
-                          />
+                        <div className="productSection">
+                          <h6>Quantity</h6>
+                          <div className="productQty">
+                            <TextField
+                              color="secondary"
+                              type="number"
+                              placeholder="Enter quantity"
+                              InputProps={{
+                                inputProps: { min: 0, max: 10 },
+                              }}
+                              InputLabelProps={{ shrink: true }}
+                              onChange={(e) => this.handleQuantity(e)}
+                              id="outlined-secondary"
+                              // label="Enter quantity"
+                            />
+                          </div>
                         </div>
-                      </div>
-                      <div className="productSection">
-                        <div className="productButton">
-                          <Button
-                            variant="contained"
-                            size="large"
-                            color="primary"
-                          >
-                            Add to Cart
-                          </Button>
+                        <div className="productSection">
+                          <div className="productButton">
+                            <Button
+                              variant="contained"
+                              size="large"
+                              color="primary"
+                            >
+                              Add to Cart
+                            </Button>
+                          </div>
                         </div>
-                      </div>
-                    </form>
-
+                      </form>
                     </div>
                   </Grid>
                 </div>
@@ -300,4 +307,4 @@ class ProductDetails extends Component {
   }
 }
 
-export default withRouter(ProductDetails);
+export default withRouter(withStyles(styles)(ProductDetails));
