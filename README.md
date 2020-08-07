@@ -102,6 +102,26 @@ Download repository, install dependencies and type `npm start`
 
 
 
+### firebase GCP functions
+(production)
+
+- deployed fb functions
+- endpoints:
+
+```
+  app.get("/shop/products/all", getProducts );
+
+  app.get("/shop/products/:category/:id", getProduct);
+
+  app.get("/shop/categories/all", getCategories);
+
+  app.get("/shop/cart", getCart);
+
+  app.post("/shop/product", createProduct);
+
+```
+
+
 
 
 
