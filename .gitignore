@@ -33,3 +33,7 @@ yarn-error.log*
 # firebase
 .firebase.json
 .firebaserc
+
+
+**/dbURL.js
+**/fshop-key.json

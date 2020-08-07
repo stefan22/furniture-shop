@@ -3,7 +3,7 @@
 .topnavCategoriesWrapper {
   @include mainBoxCategories;
   .furnlogo {
-    background: url(/static/media/fslogo.c598143d.png) no-repeat center 0px;
+    background: url("../../images/fslogo.png") no-repeat center 0px;
     background-size: cover;
     transition: all .35s linear 0ms;
     display: flex;
