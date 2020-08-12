@@ -7,7 +7,8 @@ import ShopHeading from "./ShopHeading";
 import SideNavigation from "../SideNavigation";
 import MobileNavigation from "../MobileNavigation";
 import CartInfo from "../CartInfo";
-import Pagination from "../Pagination/index";
+import Pagination from "../Pagination";
+
 // styles
 import "./styles.scss";
 
@@ -15,7 +16,8 @@ const baseURL = "/shop/products";
 
 class Shop extends Component {
   componentDidMount() {
-    this.props.doLoadData();
+    //this.props.doLoadData();
+    this.props.getAuthenticatedData();
   }
 
   handleFilterProducts = (cat = "all", prdts = []) => {
@@ -30,7 +32,6 @@ class Shop extends Component {
   };
 
   render() {
-
     const { category } = this.props.match.params;
     const {
       products,
@@ -38,7 +39,6 @@ class Shop extends Component {
     } = this.props;
 
     return (
-
       <Grid container justify={"center"} spacing={0}>
         <div className="mainWrapper">
           <Grid item zeroMinWidth md={2} lg={2}>
@@ -57,9 +57,7 @@ class Shop extends Component {
               totalCartItems={this.props.totalCartItems}
               cart={this.props.cart}
             />
-            <ShopHeading
-              mainTitle={"Furniture Shop"}
-            />
+            <ShopHeading mainTitle={"Furniture Shop"} />
 
             <MainShopContent
               addToCart={this.props.addToCart}
@@ -80,7 +78,6 @@ class Shop extends Component {
           </Grid>
         </div>
       </Grid>
-
     );
   }
 }

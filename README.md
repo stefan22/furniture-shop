@@ -85,6 +85,17 @@ Download repository, install dependencies and type `npm start`
   • /shop/products/:category/:id  (details page)
 
 ```
+
+
+#### Moved data to GCFirebase
+
+- Need to redo pagination
+
+
+
+
+
+
 <br />
 <hr />
 <br />
@@ -133,3 +144,12 @@ Download repository, install dependencies and type `npm start`
 
 
 
+
+```
+
+ Options -MultiViews
+RewriteEngine On
+Rewritecond %{REQUEST_FILENAME} !-f
+RewriteRule ^ index.html [QSA,L]
+
+```
