@@ -37,3 +37,4 @@ yarn-error.log*
 
 **/dbURL.js
 **/fshop-key.json
+*/API/
