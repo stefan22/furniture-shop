@@ -12,14 +12,10 @@ const initialState = {
 export const ShopReducer = (state = initialState, action) => {
   switch (action.type) {
     case types.SET_PRODUCTS:
-      return Object.assign({}, state, {
+      return {
         ...state,
-        products: [...action.payload.items],
-        totalCount: action.payload.totalCount,
-        page: action.payload.page,
-        totalPages: action.payload.totalPages,
-        perPage: action.payload.perPage,
-      });
+        products: [...action.payload]
+      }
 
     case types.SET_CATEGORIES:
       return Object.assign({}, state, {
