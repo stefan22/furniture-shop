@@ -1,7 +1,5 @@
 # React Store
 
-### endpoints
-https://fshop-f04aa.web.app/#home
 
 <hr />
 
@@ -85,6 +83,24 @@ Download repository, install dependencies and type `npm start`
   https://fshop-f04aa.web.app/#products
 
 ```
+<<<<<<< HEAD
+=======
+
+
+#### Moved data to GCFirebase
+
+- No longer using faker data
+- Need to redo pagination
+
+
+#### endpoints
+https://fshop-f04aa.web.app/#home
+
+
+
+
+
+>>>>>>> faae006... [readme] update
 <br />
 <hr />
 <br />
