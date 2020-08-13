@@ -16,8 +16,8 @@ const baseURL = "/shop/products";
 
 class Shop extends Component {
   componentDidMount() {
-    //this.props.doLoadData();
-    this.props.getAuthenticatedData();
+    this.props.doLoadData();
+    //this.props.getAuthenticatedData();
   }
 
   handleFilterProducts = (cat = "all", prdts = []) => {
