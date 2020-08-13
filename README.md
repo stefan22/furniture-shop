@@ -1,16 +1,26 @@
 # React Store
 
+- No longer fetching data with Express/jsonServer/FakerData
+  * pdetails branch and it works great.
+  * npm install dependencies and npm start
+- Now fetching data from my GC Functions and Firestore db.
+
+- New Data info:  https://fshop-f04aa.web.app/#home
+- Need to redo pagination
+
 
 <hr />
+<br />
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 
-### How-to :card_index:
 
-Download repository, install dependencies and type `npm start`
+### Start [master branch]
+- `npm start` opens in browser:
+  + `localhost:3000` [client]
 
-### Start
+
+### Start [pDetails branch]
 - `npm start` opens in browser:
   + `localhost:3000` [client]
   + `localhost:4000` [server]
@@ -19,7 +29,7 @@ Download repository, install dependencies and type `npm start`
 ### Folders
 - redux [actions,reducers,store,types]
 - shop [shopConnector & components: index.js,styles.scss, ]
-- server `localhost:4000/api/products`
+- server `localhost:4000/api/products`  [pDetails branch]
 
 
 ### Functionality so far
@@ -40,7 +50,7 @@ Download repository, install dependencies and type `npm start`
   button `/shop/checkout`
 
 
-### Data
+### Data [pDetails branch]
 
 ```
   @ json-server
@@ -59,7 +69,7 @@ Download repository, install dependencies and type `npm start`
 
 
 ```
-  @ faker-data
+  @ faker-data  [pDetails branch]
   ============
 
     ø Categories
@@ -83,24 +93,10 @@ Download repository, install dependencies and type `npm start`
   https://fshop-f04aa.web.app/#products
 
 ```
-<<<<<<< HEAD
-=======
-
-
-#### Moved data to GCFirebase
-
-- No longer using faker data
-- Need to redo pagination
-
-
-#### endpoints
-https://fshop-f04aa.web.app/#home
 
 
 
 
-
->>>>>>> faae006... [readme] update
 <br />
 <hr />
 <br />
@@ -118,22 +114,21 @@ https://fshop-f04aa.web.app/#home
 
 
 
-### firebase GCP functions
-(production)
-
-- deployed fb functions
-- endpoints:
+### GC functions endpoints
 
 ```
+  //products
   app.get("/shop/products/all", getProducts );
-
   app.get("/shop/products/:category/:id", getProduct);
-
+  //categories
   app.get("/shop/categories/all", getCategories);
-
+  //cart
   app.get("/shop/cart", getCart);
-
+  //product
   app.post("/shop/product", createProduct);
+  //user
+  app.post("/user/signup", registerUser);
+  app.post("/user/login", loginUser);
 
 ```
 

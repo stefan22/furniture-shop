@@ -1,6 +1,6 @@
 import axios from "axios";
 import type from "../Types";
-import * as api from "../../API";
+import { api } from "../../API";
 
 /**
 * @ Fetching data from GC Firebase
@@ -21,17 +21,19 @@ export const setAuthToken = (token) => {
 // get token from local storage
 export const getAuthToken = (token) => localStorage.getItem(token);
 
-
 // get token
 export const getAuthenticatedData = () => (dispatch) => {
   const user = {
     email: api.email,
     password: api.password,
   };
-  
+
+  console.log(user);
+
   axios
     .post(`${api.newBaseURl}/user/login`, user)
     .then((response) => {
+      console.log(response)
       idToken = response.data;
       setAuthToken(idToken); // save to local storage
       dispatch(getProductsData());
