@@ -7,7 +7,7 @@ import Shop from "./Shop/index";
 import CartSummary from "./CartSummary"
 import ProductDetails from "./ProductDetails";
 import { doLoadData,getPage } from "../redux/actions/DataActions";
-import {getAuthenticatedData} from "../redux/actions/Products";
+//import {getAuthenticatedData} from "../redux/actions/Products";
 import {
   addToCart,
   updateCart,
@@ -30,7 +30,7 @@ class ShopConnector extends Component {
           render={(routeProps) => (
             <Shop
               doLoadData={this.props.doLoadData}
-              getAuthenticatedData={this.props.getAuthenticatedData}
+              //getAuthenticatedData={this.props.getAuthenticatedData}
               addToCart={this.props.addToCart}
               deleteFromCart={this.props.deleteFromCart}
               totalCartItems={this.props.totalCartItems}
