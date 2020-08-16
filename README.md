@@ -6,6 +6,7 @@
 - Now fetching data from my GC Functions and Firestore db.
 
 - New Data info:  https://fshop-f04aa.web.app/#home
+- Live preview https://donpio.tech/repositories/fshop/
 - Need to redo pagination
 
 
