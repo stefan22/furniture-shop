@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
 // mui
 import Grid from "@material-ui/core/Grid";
@@ -9,7 +9,7 @@ import Button from "@material-ui/core/Button";
 import { ZoomInUpWrapperDiv } from "./ProductListAnimation";
 import "./styles.scss";
 
-import {SET_PATH as path } from "../../helpers";
+import { SET_PATH as path } from "../../helpers";
 
 const Product = (props) => {
   const handleAddToCart = (prod) => {
@@ -50,9 +50,8 @@ const Product = (props) => {
 };
 
 class ProductList extends Component {
-
   componentDidUpdate() {
-    window.scrollTo(0,0);
+    window.scrollTo(0, 0);
   }
 
   render() {
@@ -66,6 +65,6 @@ class ProductList extends Component {
       </Grid>
     );
   }
-};
+}
 
 export default withRouter(ProductList);
