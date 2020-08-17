@@ -4,6 +4,8 @@ import "./styles.scss";
 // icons
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 
+import {SET_PATH as path } from "../../helpers";
+
 class CartInfo extends Component {
   componentDidMount() {
     this.handleTotalItems();
@@ -30,7 +32,7 @@ class CartInfo extends Component {
             {`${cartTotalItems ? cartTotalItems + " Item(s)" : "(empty)"}`}{" "}
 
           {cartTotalItems > 0 &&
-            <Link to="/shop/cart">
+            <Link to={`${path()}shop/cart`}>
               <ShoppingCartIcon />
             </Link>
           }

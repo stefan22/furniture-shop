@@ -3,8 +3,10 @@ import TopNavigation from "../TopNavigation";
 // comps
 import "./styles.scss";
 
+import {SET_PATH as path } from "../../helpers";
 
-const baseURL = "/shop/products";
+
+const baseURL = `${path()}shop/products`;
 
 class DetailsHeading extends Component {
 

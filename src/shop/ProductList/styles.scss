@@ -29,6 +29,9 @@
     height: auto;
     overflow-y: hidden;
     @include p;
+    @media screen and (max-width: 1024px) {
+      font-size: $small;
+    }
   }
   .actionButtonWrapper {
     z-index: 10;

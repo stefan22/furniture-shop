@@ -6,8 +6,7 @@ import { connect } from "react-redux";
 import Shop from "./Shop/index";
 import CartSummary from "./CartSummary"
 import ProductDetails from "./ProductDetails";
-import {getPage } from "../redux/actions/DataActions";
-import {getAuthenticatedData} from "../redux/actions/Products";
+import {getAuthenticatedData} from "../redux/actions/ProductsData";
 import {
   addToCart,
   updateCart,
@@ -16,7 +15,7 @@ import {
   getCartTotal,
 } from "../redux/actions/CartActions";
 
-
+import {SET_PATH as path } from "../helpers";
 
 class ShopConnector extends Component {
   render() {
@@ -25,7 +24,7 @@ class ShopConnector extends Component {
     return (
       <Switch>
         <Route
-          path="/shop/products/:category"
+          path={`${path()}shop/products/:category`}
           exact={true}
           render={(routeProps) => (
             <Shop
@@ -41,7 +40,7 @@ class ShopConnector extends Component {
         />
 
         <Route
-          path="/shop/cart"
+          path={`${path()}shop/cart`}
           exact={true}
           render={(routeProps) => (
             <CartSummary
@@ -55,7 +54,7 @@ class ShopConnector extends Component {
 
         <Route
           exact={true}
-          path="/shop/checkout"
+          path={`${path()}shop/checkout`}
           render={(routeProps) => (
             <CartSummary {...this.props} {...routeProps}
 
@@ -65,7 +64,7 @@ class ShopConnector extends Component {
 
          <Route
           exact={true}
-          path="/shop/products/:category/:id"
+          path={`${path()}shop/products/:category/:id`}
           render={(routeProps) => (
             <ProductDetails {...this.props} {...routeProps}
 
@@ -73,7 +72,7 @@ class ShopConnector extends Component {
           )}
         />
 
-        <Redirect to="/shop/products/all" />
+        <Redirect to={`${path()}shop/products/all`} />
       </Switch>
     );
   }
@@ -91,7 +90,7 @@ const mapActionsToProps = {
   deleteFromCart,
   totalCartItems,
   getCartTotal,
-  getPage,
+
 };
 
 export default connect(mapStateToProps, mapActionsToProps)(ShopConnector);

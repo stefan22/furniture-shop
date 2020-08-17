@@ -145,6 +145,9 @@ $nav-boxshadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 
   background-color: $snow;
   border-bottom: 1px dashed lighten($gray, 50%);
   transition: all 0.35s linear 15ms;
+  @media screen and (max-width: 1024px) {
+    font-size: $p;
+  }
   &:hover {
     mix-blend-mode: darken;
     background-color: lighten($cardTitle, 12%);
@@ -180,4 +183,7 @@ $nav-boxshadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 
   color: $cardTitle;
   background: $whiteBg;
   margin: 1rem 0 1.25rem;
+  @media screen and (max-width: 1024px) {
+    font-size: $h5;
+  }
 }

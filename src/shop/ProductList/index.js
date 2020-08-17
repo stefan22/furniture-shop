@@ -9,9 +9,11 @@ import Button from "@material-ui/core/Button";
 import { ZoomInUpWrapperDiv } from "./ProductListAnimation";
 import "./styles.scss";
 
+import {SET_PATH as path } from "../../helpers";
+
 const Product = (props) => {
   const handleAddToCart = (prod) => {
-    props.history.push("/shop/cart");
+    props.history.push(`${path()}shop/cart`);
     props.addToCart(prod);
   };
 
@@ -20,7 +22,7 @@ const Product = (props) => {
       <Grid key={p.id} item xs={12} sm={6} md={4} lg={3}>
         <ZoomInUpWrapperDiv>
           <Card key={p.id} className="productListWrapper" elevation={2}>
-            <Link to={`/shop/products/${p.category}/${p.id}`}>
+            <Link to={`${path()}shop/products/${p.category}/${p.id}`}>
               <img src={p.image} alt={p.name} />
             </Link>
             <CardContent key={p.id}>
@@ -32,7 +34,7 @@ const Product = (props) => {
               <Button
                 onClick={() => handleAddToCart(p)}
                 component={Link}
-                to="/shop/cart"
+                to={`${path()}shop/cart`}
                 variant="outlined"
                 size="small"
                 color="default"
