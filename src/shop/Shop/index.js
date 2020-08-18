@@ -11,11 +11,10 @@ import Pagination from "../Pagination/index";
 // styles
 import "./styles.scss";
 
-const baseURL = "/shop/products";
+const baseURL = "/repositories/fshop/shop/products";
 
 class Shop extends Component {
   componentDidMount() {
-    //this.props.doLoadData();
     this.props.getAuthenticatedData();
   }
 

@@ -17,8 +17,8 @@ import LoyaltyTwoToneIcon from "@material-ui/icons/LoyaltyTwoTone";
 // styles
 import { withStyles } from "@material-ui/core/styles";
 import "./styles.scss";
-// imgs
-import sample from "../../images/betty.jpg";
+
+
 
 const styles = theme => ({
   fabActionButton: {
@@ -47,6 +47,23 @@ class ProductDetails extends Component {
     };
   }
 
+  componentDidMount() {
+    const { id,category }  = this.props.match.params;
+    this.getProductDetails(id);
+    this.formatCategory(category);
+  }
+
+  formatCategory = category => {
+    let cat = category.slice(0,2).toUpperCase();
+    return this.setState({cat});
+  }
+
+  getProductDetails = (id) => {
+    const { products } = this.props.shop;
+    let product = products.filter(itm => itm.id === id)[0];
+    return this.setState({...product});
+  }
+
   componentDidUpdate() {
     this.detailsPageRef.current.scrollIntoView({ behavior: "smooth" });
   }
@@ -63,8 +80,9 @@ class ProductDetails extends Component {
   };
 
   render() {
-    console.log(this);
+
     const { classes } = this.props;
+    const { cat,color,description,image,name,price,quantity } = this.state;
 
     return (
       <Grid container align={"justify"} spacing={0}>
@@ -96,17 +114,17 @@ class ProductDetails extends Component {
                   <Grid item xs={12} sm={12} md={6} lg={6}>
                     <div className="productImage">
                       <img
-                        src={sample}
-                        alt={"product"}
-                        width="650"
-                        height="450"
+                        src={image}
+                        alt={name}
+                        width="640"
+                        height="480"
                       />
                     </div>
                   </Grid>
                   <Grid item xs={12} sm={12} md={6} lg={6}>
                     <div className="productDetails">
-                      <h2>Mens Plain Tshirt</h2>
-                      <h5>Seller: ClothesMart (50 sales)</h5>
+                      <h2>{name} <span className="detailsCat">[{cat}]</span></h2>
+                      <h5>{description}</h5>
 
                       <form onSubmit={this.handleSubmit}>
                         <div className="productPrice">
@@ -117,7 +135,7 @@ class ProductDetails extends Component {
                               variant={"extended"}
                               color="primary"
                             >
-                              £44.99
+                              £{price}
                               <LoyaltyTwoToneIcon />
                             </Fab>
                           </div>
@@ -126,6 +144,7 @@ class ProductDetails extends Component {
                           <h6>Colour</h6>
                           <div className="productColors">
                             <RadioColors
+                              color={color}
                               handleDataElement={this.handleDataElement}
                             />
                           </div>
@@ -136,6 +155,7 @@ class ProductDetails extends Component {
                             <TextField
                               color="secondary"
                               type="number"
+                              value={quantity}
                               placeholder="Enter quantity"
                               InputProps={{
                                 inputProps: { min: 0, max: 10 },

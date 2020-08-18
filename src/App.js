@@ -19,7 +19,7 @@ class App extends Component {
         <Provider store={ShopStore}>
           <Router>
             <Switch>
-              <Route path='/' component={ShopConnector} />
+              <Route path="/" component={ShopConnector} />
             </Switch>
           </Router>
         </Provider>

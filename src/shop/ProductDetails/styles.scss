@@ -1,6 +1,5 @@
 @import "../../styles/vars.scss";
 
-
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -14,9 +13,9 @@
   display: flex;
   flex-direction: column;
   flex: 5 1;
-  animation: fadeIn .35s;
-  transition: all .5s 300ms;
-  opacity:1;
+  animation: fadeIn 0.35s;
+  transition: all 0.5s 300ms;
+  opacity: 1;
   z-index: 0;
 
   .productInnerWrapper {
@@ -32,12 +31,24 @@
 }
 
 .productImage {
-  width: 100%;
-  max-width: 410px;
-  height: auto;
-  display: flex;
   align-items: center;
-  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  margin-right: 2rem;
+  @media screen and (max-width: 960px) {
+    margin-right: 0;
+  }
+  img {
+    margin: 0;
+    margin-bottom: 3rem;
+    border-radius: 4px;
+    width: 100%;
+    max-width: 640px;
+    height: auto;
+    background-size: cover;
+    box-shadow: $reg-boxshadow;
+  }
 }
 
 /**
@@ -48,7 +59,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 1rem 0;
+
   @media screen and (max-width: 960px) {
     h2,
     h5 {
@@ -68,7 +79,6 @@
   } //endof 960
 
   h2 {
-    margin-top: 1.5rem;
     text-align: left;
     font-size: $h2;
     color: $redreg;
@@ -163,7 +173,7 @@
   margin: 7px;
   width: 27%;
   & span.MuiTypography-body1 {
-    font-size: .9rem;
+    font-size: 0.9rem;
     vertical-align: middle;
   }
   @media screen and (max-width: 960px) {
@@ -171,9 +181,7 @@
       text-align: center;
     }
   }
-
 }
-
 
 /**
 # should add matui color to theme
@@ -184,7 +192,7 @@
   border: 1px solid red !important;
 }
 
-.MuiFab-primary  {
+.MuiFab-primary {
   padding: 2.25rem !important;
   font-size: 1rem !important;
   line-height: 0 !important;
@@ -207,7 +215,7 @@
       color: $lightBlack;
     }
     & > p {
-      @media screen and (max-width:960px) {
+      @media screen and (max-width: 960px) {
         text-align: center;
       }
     }
@@ -253,7 +261,7 @@
       }
     }
     section.productLastSection {
-      @media screen and (max-width:960px) {
+      @media screen and (max-width: 960px) {
         margin-top: 1rem;
         h6 {
           margin-top: 2rem;
@@ -278,13 +286,15 @@ fieldset > legend {
   display: none !important;
 }
 
-
 .MuiSelect-select.MuiSelect-select.MuiInputBase-input.MuiInput-input {
   opacity: 1 !important;
 }
 
-
-
 .MuiInputBase-input::-webkit-input-placeholder {
-  opacity: .71 !important;
+  opacity: 0.71 !important;
+}
+
+.detailsCat {
+  color: $black;
+  font-size: large;
 }

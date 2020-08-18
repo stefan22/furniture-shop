@@ -4,7 +4,8 @@ import TopNavigation from "../TopNavigation";
 import "./styles.scss";
 
 
-const baseURL = "/shop/products";
+
+const baseURL = `/repositories/fshop/shop/products`;
 
 class DetailsHeading extends Component {
 

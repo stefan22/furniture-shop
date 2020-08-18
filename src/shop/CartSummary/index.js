@@ -13,6 +13,7 @@ import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
 import StoreIcon from "@material-ui/icons/Store";
 
+
 class CartSummary extends Component {
 
   render() {
@@ -38,13 +39,13 @@ class CartSummary extends Component {
               />}
             <div className="cartButtons">
               <ButtonGroup variant="text" color="default">
-                <Button component={Link} to="/shop/">
+                <Button component={Link} to={`/repositories/fshop/shop/`}>
                   {" "}
                   &nbsp;
                   <StoreIcon />
                   &nbsp; Continue Shopping{" "}
                 </Button>
-                <Button component={Link} to="/shop/checkout">
+                <Button component={Link} to={`/repositories/fshop/shop/checkout`}>
                   &nbsp; <ShoppingCartIcon /> &nbsp; Checkout{" "}
                   <ArrowForwardIcon />
                 </Button>

@@ -22,15 +22,13 @@ $lightBlack: #757575;
 $cardTitle: #727272;
 $tableHeadingBg: #e0e0e0;
 $footerBg: #e6e6e6;
-$borderBottomLight: #E5E5E5;
+$borderBottomLight: #e5e5e5;
 
 // other
 $cardPrice: #f44336;
 $redreg: #d25151;
 $categoryHoverColor: #fff4d5;
 $shopHeading: #8c7c6e;
-
-
 
 /**
 @  font-size
@@ -56,7 +54,8 @@ $reg-boxshadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
 $min-boxshadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
 $boxshadow2: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
   0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
-$nav-boxshadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 1px 0px rgba(0, 0, 0, 0.12);
+$nav-boxshadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
+  0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 1px 0px rgba(0, 0, 0, 0.12);
 
 /**
 @  alink mixin
@@ -145,10 +144,13 @@ $nav-boxshadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 
   background-color: $snow;
   border-bottom: 1px dashed lighten($gray, 50%);
   transition: all 0.35s linear 15ms;
+  @media screen and (max-width: 1024px) {
+    font-size: $p;
+  }
   &:hover {
     mix-blend-mode: darken;
     background-color: lighten($cardTitle, 12%);
-    background-color: #9E9E9E;
+    background-color: #9e9e9e;
     opacity: 0.9;
     color: $white;
   }
@@ -180,4 +182,7 @@ $nav-boxshadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 
   color: $cardTitle;
   background: $whiteBg;
   margin: 1rem 0 1.25rem;
+  @media screen and (max-width: 1024px) {
+    font-size: $h5;
+  }
 }
