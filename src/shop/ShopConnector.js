@@ -15,7 +15,7 @@ import {
   getCartTotal,
 } from "../redux/actions/CartActions";
 
-import {SET_PATH as path } from "../helpers";
+
 
 class ShopConnector extends Component {
   render() {
@@ -24,7 +24,7 @@ class ShopConnector extends Component {
     return (
       <Switch>
         <Route
-          path={`${path()}shop/products/:category`}
+          path={`/repositories/fshop/shop/products/:category`}
           exact={true}
           render={(routeProps) => (
             <Shop
@@ -40,7 +40,7 @@ class ShopConnector extends Component {
         />
 
         <Route
-          path={`${path()}shop/cart`}
+          path={`/repositories/fshop/shop/cart`}
           exact={true}
           render={(routeProps) => (
             <CartSummary
@@ -54,7 +54,7 @@ class ShopConnector extends Component {
 
         <Route
           exact={true}
-          path={`${path()}shop/checkout`}
+          path={`/repositories/fshop/shop/checkout`}
           render={(routeProps) => (
             <CartSummary {...this.props} {...routeProps}
 
@@ -64,7 +64,7 @@ class ShopConnector extends Component {
 
          <Route
           exact={true}
-          path={`${path()}shop/products/:category/:id`}
+          path={`/repositories/fshop/shop/products/:category/:id`}
           render={(routeProps) => (
             <ProductDetails {...this.props} {...routeProps}
 
@@ -72,7 +72,7 @@ class ShopConnector extends Component {
           )}
         />
 
-        <Redirect to={`${path()}shop/products/all`} />
+        <Redirect to={`/repositories/fshop/shop/products/all`} />
       </Switch>
     );
   }

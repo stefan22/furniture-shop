@@ -143,4 +143,7 @@
 <hr />
 
 
-
+deployment - todo
+---------
+getting error [production only] whenever trying to retrieve localStorage stored
+product data/ token |  @ => actions => products data (so disabled localStorage/Production atm)

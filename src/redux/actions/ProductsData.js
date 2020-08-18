@@ -103,12 +103,12 @@ export const getAuthenticatedData = () => (dispatch) => {
     password: api.password,
   };
 
-  if (token !== null) {
-    getProductsNCategoriesFromStorage(dispatch);
-  }
-  else {
+   if (token !== null) {
+     getProductsNCategoriesFromStorage(dispatch);
+   }
+   else {
     getProductsNCategoriesFromDB(user,dispatch);
-  }
+   }
 };
 
 

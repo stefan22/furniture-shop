@@ -3,10 +3,9 @@ import TopNavigation from "../TopNavigation";
 // comps
 import "./styles.scss";
 
-import {SET_PATH as path } from "../../helpers";
 
 
-const baseURL = `${path()}shop/products`;
+const baseURL = `/repositories/fshop/shop/products`;
 
 class DetailsHeading extends Component {
 

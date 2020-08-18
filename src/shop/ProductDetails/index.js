@@ -17,8 +17,8 @@ import LoyaltyTwoToneIcon from "@material-ui/icons/LoyaltyTwoTone";
 // styles
 import { withStyles } from "@material-ui/core/styles";
 import "./styles.scss";
-// imgs
-import sample from "../../images/betty.jpg";
+
+
 
 const styles = theme => ({
   fabActionButton: {
@@ -80,7 +80,7 @@ class ProductDetails extends Component {
   };
 
   render() {
-    console.log(this);
+
     const { classes } = this.props;
     const { cat,color,description,image,name,price,quantity } = this.state;
 
