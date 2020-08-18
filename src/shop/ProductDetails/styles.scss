@@ -137,6 +137,14 @@
     .productQty {
       margin: 7px;
       width: 100%;
+      display: flex;
+      min-height: 59px;
+      flex-direction: column;
+      & span.addToCart {
+        margin-top: .5rem;
+        color: red;
+        font-size: $small;
+      }
       div {
         width: 115px;
         font-size: $small;
@@ -172,9 +180,14 @@
   justify-content: flex-start;
   margin: 7px;
   width: 27%;
+  min-height: 92px;
   & span.MuiTypography-body1 {
     font-size: 0.9rem;
     vertical-align: middle;
+  }
+  & span.addToCart {
+    color: red;
+    font-size: $small;
   }
   @media screen and (max-width: 960px) {
     p {

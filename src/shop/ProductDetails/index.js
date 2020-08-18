@@ -6,7 +6,6 @@ import SideNavigation from "../SideNavigation";
 import MobileNavigation from "../MobileNavigation";
 import CartInfo from "../CartInfo";
 import ShopHeading from "../Shop/ShopHeading";
-//import ColorSelect from "./ColorSelect";
 import RadioColors from "./RadioColors";
 // matui
 import Grid from "@material-ui/core/Grid";
@@ -44,6 +43,7 @@ class ProductDetails extends Component {
     this.state = {
       color: "",
       quantity: 1,
+      addToCart: false,
     };
   }
 
@@ -68,16 +68,33 @@ class ProductDetails extends Component {
     this.detailsPageRef.current.scrollIntoView({ behavior: "smooth" });
   }
 
-  handleDataElement = val =>
-    this.setState({ color: val.color });
+  handleDataElement = val => {
+    this.setState({
+      color: (val.value === false) ? "" : val.name,
+      addToCart: val.value === true ? true : false,
+    });
+  }
 
 
-  handleQuantity = (e) => this.setState({ quantity: Number(e.target.value) });
+  handleQuantity = (e) => {
+    this.setState({
+      quantity: Number(e.target.value),
+      addToCart: Number(e.target.value) > 0 ? true : false,
+    });
+  }
 
   handleSubmit = (e) => {
+    const { color, quantity, addToCart } = this.state;
     e.preventDefault();
-    console.log("submitted form");
+    if (color !== "" && quantity === 1 && addToCart === true )
+      {
+        this.props.addToCart(this.state);
+        return this.props.history.push("/repositories/fshop/shop/cart");
+      }
+    return true;
   };
+
+
 
   render() {
 
@@ -147,6 +164,8 @@ class ProductDetails extends Component {
                               color={color}
                               handleDataElement={this.handleDataElement}
                             />
+                            {color === "" &&
+                            <span className="addToCart">Please choose color</span>}
                           </div>
                         </div>
                         <div className="productSection">
@@ -163,13 +182,16 @@ class ProductDetails extends Component {
                               InputLabelProps={{ shrink: true }}
                               onChange={(e) => this.handleQuantity(e)}
                               id="outlined-secondary"
-                              // label="Enter quantity"
                             />
+                             {quantity !== 1 &&
+                            <span className="addToCart">Please update quantity in cart</span>}
                           </div>
                         </div>
                         <div className="productSection">
                           <div className="productButton">
+
                             <Button
+                              type="submit"
                               variant="contained"
                               size="large"
                               color="primary"

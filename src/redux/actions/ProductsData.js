@@ -28,7 +28,6 @@ const getProductsNCategoriesFromStorage = dispatch => {
     type: type.SET_CATEGORIES,
     payload: categories,
   });
-
 }
 
 // without token
@@ -103,7 +102,7 @@ export const getAuthenticatedData = () => (dispatch) => {
     password: api.password,
   };
 
-   if (token !== null) {
+   if (token !== null && token.includes("Bearer")) {
      getProductsNCategoriesFromStorage(dispatch);
    }
    else {

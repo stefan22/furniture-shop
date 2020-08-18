@@ -49,7 +49,7 @@ const initialItems = [
   },
 ];
 
-export default function CustomizingCheckboxItems({ handleDataElement }) {
+export default function RadioColors(props) {
   const classes = useStyles();
   const [items, setItems] = useState({});
 
@@ -66,7 +66,7 @@ export default function CustomizingCheckboxItems({ handleDataElement }) {
     setItems({ [e.target.name]: e.target.checked });
     let checked = {};
     checked.color = e.target.name;
-    handleDataElement(checked);
+    props.handleDataElement({name: e.target.name, value: e.target.checked});
   };
 
   return (
