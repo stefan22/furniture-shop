@@ -45,6 +45,7 @@ class Shop extends Component {
             <div className="sideNavCol">
               <SideNavigation
                 baseURL={baseURL}
+                currentCategory={category}
                 categories={this.props.shop.categories}
               />
             </div>

@@ -24,6 +24,7 @@
   }
   .topnavCategoriesMain {
     padding: 0 0.1rem;
+    position: relative;
     .topnavCategories {
       display: flex;
       flex-flow: column;
@@ -35,10 +36,15 @@
       }//endof 960
 
       .categoryAll {
+        position: relative;
         a {
           .categoryIcon {
             margin-right: 10px;
+            margin-left: 10px;
+
           }
+
+
           @include aCategory;
         }
         &:hover {
@@ -47,9 +53,11 @@
         }
       }
       .categoryOther {
+        position: relative;
         a {
           .categoryIcon {
             margin-right: 10px;
+            margin-left: 10px;
           }
           @include aCategory;
         }
@@ -61,3 +69,73 @@
     } //topnavCategories
   } //topnavCategoriesMain
 } //topnavCategoriesWrapper
+
+
+
+
+
+
+
+/* productsScrollTop */
+
+  .categoryAll a {
+    .productsScrollTop {
+      transition: all .35s linear 0ms;
+      position: absolute;
+      max-width: 24px;
+      left: 3px;
+      top: 34px;
+      svg {
+        font-size: 1.27rem;
+      }
+    }
+
+    @media screen and (min-width: 1450px) {
+      .productsScrollTop {
+        transition: all .35s linear 0ms;
+        position: absolute;
+        max-width: 35px;
+        left: 12px;
+        top: 27px;
+      }
+    }
+  }
+
+
+  .categoryOther a {
+    .productsScrollTop {
+      position: absolute;
+      max-width: 24px;
+      left: 3px;
+      top: 34px;
+      svg {
+        font-size: 1.27rem;
+      }
+    }
+    @media screen and (min-width: 1450px) {
+      .productsScrollTop {
+        position: absolute;
+        max-width: 35px;
+        left: 12px;
+        top: 27px;
+      }
+    }
+  }
+
+
+  @media screen and (min-width: 1450px) {
+    .productsScrollTop::after {
+      content: "Scroll Top";
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      max-width: 35px;
+      font-size: .65rem;
+      font-weight: 500;
+      letter-spacing: 0;
+      line-height: 1;
+    }
+  } // media query
+
+
+/* end productsScrollTop */
