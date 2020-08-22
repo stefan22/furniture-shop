@@ -1,4 +1,4 @@
-@import "../../styles/vars.scss";
+@import '../../styles/vars.scss';
 
 @keyframes fadeIn {
   0% {
@@ -29,7 +29,7 @@
     height: auto;
     overflow-y: hidden;
     @include p;
-    @media screen and (max-width: 1024px) {
+    @media screen and (max-width: 1279px) {
       font-size: $small;
     }
   }

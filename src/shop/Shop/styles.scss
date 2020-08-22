@@ -1,5 +1,4 @@
-@import "../../styles/vars.scss";
-
+@import '../../styles/vars.scss';
 
 .mainWrapper {
   display: flex;
@@ -8,9 +7,6 @@
   flex-direction: row-reverse;
   margin: 0;
   z-index: 0;
-  @media screen and (max-width: 960px) {
-    height: auto;
-  }
 }
 .sideNavCol {
   flex: 1;
@@ -20,7 +16,7 @@
   bottom: 0;
   right: 0;
   transition: all 0.35s ease-in-out 0ms;
-  @media screen and (max-width: 960px) {
+  @media screen and (max-width: 1279px) {
     display: none;
   }
 }
@@ -46,12 +42,10 @@
   display: flex;
   z-index: 0;
   .mainHeader {
-    margin: 3rem 0;
+    margin: 1rem 0;
     width: 100%;
     z-index: 0;
-    @media screen and (max-width: 1024px) {
-      margin: 1rem 0;
-    }
+
     h1 {
       text-align: center;
     }
@@ -66,15 +60,20 @@
   }
 }
 
+
+
 footer,
 .mainContent {
-  padding: 1em;
+  padding: 0 1rem;
+  @media screen and (min-width: 1279px) {
+    padding: 0 2rem;
+  }
 }
 
 .topnav-container {
   transition: top 0.3s linear, background 0.15s linear, color 0.1s linear,
     box-shadow 0.3s linear, border 0.1s linear;
-  height: 66px;
+  height: 67px;
   position: fixed;
   top: 0;
   left: 0;
@@ -82,12 +81,12 @@ footer,
   padding: 0;
   display: flex;
   z-index: 1;
-  @media screen and (max-width: 960px) {
-      width: 100%;
+  @media screen and (max-width: 1279px) {
+    width: 100%;
   }
   &.headsup {
     @include headsup;
-    @media screen and (max-width: 960px) {
+    @media screen and (max-width: 1279px) {
       width: 100%;
     }
     .topnav-logo {
@@ -95,7 +94,7 @@ footer,
       position: absolute;
       top: -14px;
       left: 25px;
-      @media screen and (max-width: 960px) {
+      @media screen and (max-width: 1279px) {
         display: none;
       }
       img {
@@ -151,6 +150,7 @@ footer,
   z-index: 0;
 }
 
+
 .isShopHeading {
   width: 100%;
   padding: 0 1rem;
@@ -159,16 +159,16 @@ footer,
   opacity: 1;
   transform: scale(1);
   color: $lightBlack;
+
   h1 {
-    font-size: 2.5rem;
-    transition: visibility .3s ease 0ms;
-    margin: 4px 0;
-    padding: 2px 0;
+    font-size: $h2;
+    transition: visibility 0.3s ease 0ms;
+    margin: 0;
+    padding: 8px 0;
     visibility: visible;
     @media screen and (max-width: 850px) {
       visibility: hidden;
     }
-
   }
   &.isShopHeadingUp {
     opacity: 0;
@@ -205,7 +205,7 @@ footer {
   align-items: center;
   justify-content: center;
   display: none;
-  @media screen and (min-width: 960px) {
+  @media screen and (min-width: 1279px) {
     display: none;
   }
   p {

@@ -1,147 +1,61 @@
-# React Store
+# React Store &nbsp; :department_store:
 
-- No longer fetching data with Express/jsonServer/FakerData
-  * pdetails branch and it works great.
-  * npm install dependencies and npm start
-- Now fetching data from my GC Functions and Firestore db.
+See [Repo Link](https://donpio.tech/repositories/fshop/)
 
-- New Data info:  https://fshop-f04aa.web.app/#home
-- Live preview https://donpio.tech/repositories/fshop/  [behind]
-- Need to redo pagination
+Changes: no longer fetching data with Node/Express, JSONServer/FakerData
 
+- Moved proj to [PDETAILS] Branch
 
-<hr />
-<br />
+## Installation
 
+Install the dependencies and run by:
 
+```sh
 
-
-### Start [master branch]
-- `npm start` opens in browser:
-  + `localhost:3000` [client]
-
-
-### Start [pDetails branch]
-- `npm start` opens in browser:
-  + `localhost:3000` [client]
-  + `localhost:4000` [server]
-
-
-### Folders
-- redux [actions,reducers,store,types]
-- shop [shopConnector & components: index.js,styles.scss, ]
-- server `localhost:4000/api/products`  [pDetails branch]
-
-
-### Functionality so far
-
-• Products  `/shop/products`
-- categories/data filtered-by, right-side menu
-- click a product [add-to-cart] button & goto `/shop/cart`
-- [cart badge] upper-right side, displays items currently on cart
-- click [cart-icon] svg, it routes to `/shop/cart`
-
-
-
-• Cart `/shop/cart`
-
-- update quantity, it updates total
-- remove item, it updates total
-- option to [continue-shopping] button (back to `/shop/products`) || [proceed to checkout]
-  button `/shop/checkout`
-
-
-### Data [pDetails branch]
-
-```
-  @ json-server
-  =============
-
-  @url => http://localhost:4000/api/products?
-  @param => category
-  @param => _page
-  @param => _limit
-  @param => _sort
-
-  # filter by param
-  # ex: http://localhost:4000/api/products?_page2&_limit=20&_sort=name
+cd [to-local-folder]
+$ npm install
+$ npm start
 
 ```
 
+### New data
 
-```
-  @ faker-data  [pDetails branch]
-  ============
+- Hosted with GC Functions Firestore DB
+- See [DataLink](https://fshop-f04aa.web.app/#home)
 
-    ø Categories
-      -----------
-      • furniture
-      • lighting
-      • accessories
+#### Main folders
 
-    ø Products
-      ------------
-      • id <number>
-      • name <string>
-      • image <string>
-      • category <string>
-      • description <string>
-      • price <number>
+- Redux: actions, reducers, store, types
+- Shop: react components
 
+#### Old data
 
-  @ endpoints
-  ===========
-  https://fshop-f04aa.web.app/#products
+- Url: "http://localhost:4000/api/products>?"
 
-```
+| Param | Url |
+| ------ | ------ |
+| category | localhost:4000/api/products?category=furniture |
+| _page | localhost:4000/api/products?_page2  |
+| _limit | localhost:4000/api/products?_page2&_limit=20  |
+| _sort | localhost:4000/api/products?_page2&_limit=20&_sort=name  |
 
+##### Faker data products & categories
 
+###### cateogries
 
+- [Category] - furniture
+- [Category] - lighting
+- [Category] - accessories
 
-<br />
-<hr />
-<br />
+###### products
 
-<kbd>screenshot</kbd>
+- [product] - id :number
+- [product] - name :string
+- [product] - image :string
+- [product] - category :string
+- [product] - description :string
+- [product] - price :number
 
-![](src/images/screenshot.png)
+### Todos
 
-<br/>
-
-
-
-
-
-
-
-
-### GC functions endpoints
-
-```
-  //products
-  app.get("/shop/products/all", getProducts );
-  app.get("/shop/products/:category/:id", getProduct);
-  //categories
-  app.get("/shop/categories/all", getCategories);
-  //cart
-  app.get("/shop/cart", getCart);
-  //product
-  app.post("/shop/product", createProduct);
-  //user
-  app.post("/user/signup", registerUser);
-  app.post("/user/login", loginUser);
-
-```
-
-
-
-
-
-
-<br />
-<br />
-
-<hr />
-
-
-
+- Redo pagination

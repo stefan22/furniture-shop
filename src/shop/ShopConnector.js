@@ -1,28 +1,26 @@
-import React, { Component } from "react";
-import { Switch, Route, Redirect } from "react-router-dom";
+import React, { Component } from 'react';
+import { Switch, Route, Redirect } from 'react-router-dom';
 // redux
-import { connect } from "react-redux";
+import { connect } from 'react-redux';
 // comps
-import Shop from "./Shop/index";
-import CartSummary from "./CartSummary"
-import ProductDetails from "./ProductDetails";
-import {getAuthenticatedData} from "../redux/actions/ProductsData";
+import Shop from './Shop/index';
+import CartSummary from './CartSummary';
+import ProductDetails from './ProductDetails';
+import { getAuthenticatedData } from '../redux/actions/ProductsData';
 import {
   addToCart,
   updateCart,
   deleteFromCart,
   totalCartItems,
-  getCartTotal,
-} from "../redux/actions/CartActions";
-
-
+  getCartTotal
+} from '../redux/actions/CartActions';
 
 class ShopConnector extends Component {
   render() {
     const { products } = this.props.shop;
 
     return (
-      <Switch>
+      <Switch location={this.props.location}>
         <Route
           path={`/repositories/fshop/shop/products/:category`}
           exact={true}
@@ -47,7 +45,8 @@ class ShopConnector extends Component {
               updateCart={this.props.updateCart}
               deleteFromCart={this.props.deleteFromCart}
               getCartTotal={this.props.getCartTotal}
-              {...this.props} {...routeProps}
+              {...this.props}
+              {...routeProps}
             />
           )}
         />
@@ -56,19 +55,15 @@ class ShopConnector extends Component {
           exact={true}
           path={`/repositories/fshop/shop/checkout`}
           render={(routeProps) => (
-            <CartSummary {...this.props} {...routeProps}
-
-            />
+            <CartSummary {...this.props} {...routeProps} />
           )}
         />
 
-         <Route
+        <Route
           exact={true}
           path={`/repositories/fshop/shop/products/:category/:id`}
           render={(routeProps) => (
-            <ProductDetails {...this.props} {...routeProps}
-
-            />
+            <ProductDetails {...this.props} {...routeProps} />
           )}
         />
 
@@ -80,7 +75,7 @@ class ShopConnector extends Component {
 
 const mapStateToProps = (state) => ({
   shop: state.shop,
-  cart: state.cart,
+  cart: state.cart
 });
 
 const mapActionsToProps = {
@@ -89,8 +84,7 @@ const mapActionsToProps = {
   updateCart,
   deleteFromCart,
   totalCartItems,
-  getCartTotal,
-
+  getCartTotal
 };
 
 export default connect(mapStateToProps, mapActionsToProps)(ShopConnector);

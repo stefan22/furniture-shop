@@ -35,7 +35,7 @@ class MobileNavigation extends Component {
     const { windowWidth, menuOpen } = this.state;
     return (
       <div className="mobileMenu">
-        {windowWidth <= 960 && (
+        {windowWidth <= 1279 && (
           <Link
             rel="nonreferer nonopener"
             className="hamburger"

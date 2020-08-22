@@ -16,16 +16,17 @@
     "react-redux": "^7.2.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
+    "react-transition-group": "^4.4.1",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
     "styled-components": "^5.1.1"
   },
   "scripts": {
-    "lint": "./node_modules/.bin/eslint . --fix",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "./node_modules/.bin/eslint --fix --ignore-path .gitignore ."
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -46,6 +47,9 @@
     "babel-eslint": "^10.1.0",
     "eslint-config-prettier": "^6.11.0",
     "node-sass": "^4.14.1",
-    "prettier": "2.0.5"
+    "prettier": "2.0.5",
+    "prettier-eslint": "^11.0.0",
+    "prettier-eslint-cli": "^5.0.0",
+    "sass-vars-to-js-loader": "^2.1.1"
   }
 }
