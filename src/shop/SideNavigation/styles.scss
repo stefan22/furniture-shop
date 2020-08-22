@@ -1,19 +1,14 @@
 @import '../../styles/vars.scss';
 
 .topnavCategoriesWrapper {
+  background: url("../../images/bgside1.png") center 24% no-repeat;
+  background-blend-mode: lighten;
+  background-size: auto;
   @include mainBoxCategories;
   .furnlogo {
     background: url('../../images/fslogo.png') no-repeat center 0px;
-    background-size: cover;
-    transition: all 0.35s linear 0ms;
-    display: flex;
-    width: 100%;
-    padding: 1rem;
-    max-width: 230px;
-    mix-blend-mode: luminosity;
-    height: 215px;
-    margin: 0 auto;
-    justify-content: center;
+    mix-blend-mode: multiply;
+    @include sidenavLogo;
 
     @media screen and (max-width: 1279px) {
       display: none;
@@ -39,13 +34,9 @@
             margin-right: 10px;
             margin-left: 10px;
           }
-
           @include aCategory;
         }
-        &:hover {
-          // background-color: $categoryHoverColor;
-          // mix-blend-mode: luminosity;
-        }
+
       }
       .categoryOther {
         position: relative;
@@ -56,17 +47,17 @@
           }
           @include aCategory;
         }
-        &:hover {
-          // background-color: $categoryHoverColor;
-          // mix-blend-mode: luminosity;
-        }
       }
     } //topnavCategories
+
   } //topnavCategoriesMain
+
 } //topnavCategoriesWrapper
 
-/* productsScrollTop */
 
+/**
+*  productsScrollTop
+*/
 .categoryAll a {
   .productsScrollTop {
     transition: all 0.35s linear 0ms;
@@ -122,6 +113,6 @@
     letter-spacing: 0;
     line-height: 1;
   }
-} // media query
+}
 
 /* end productsScrollTop */

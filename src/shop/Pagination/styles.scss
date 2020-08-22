@@ -19,13 +19,8 @@
     justify-content: space-evenly;
     .paginationButtonLeft,
     .paginationButtonRight {
-      font-size: .85rem !important;
       & span {
-        // font-size: .9rem;
-        // text-align: center;
-      }
-      &:hover {
-        // background-color: #457cb2;
+        font-size: $small;
       }
       &:focus {
         outline: none;
@@ -56,9 +51,6 @@
   }
 }
 
-.paginationInfo {
-  font-size: 1.5rem;
-}
 
 .buttonDisabled {
   background-color:$footerBg !important;
@@ -70,7 +62,20 @@
   background-color: initial;
 }
 
+.paginationLeft {
+  color: $pri !important;
+}
 
+span button.paginationLeft, span button.paginationRight {
+  height: 36px;
+  min-width: 36px;
+  padding: 0 12px;
+}
+
+
+
+
+/* other */
 
 .MuiButton-endIcon {
   margin-left: 0 !important;
@@ -84,22 +89,4 @@
 
 button.MuiButton-containedSizeLarge {
   padding: 6px 24px;
-}
-
-
-.paginationLeft {
-  color: $cardPrice !important;
-}
-
-
-span button.paginationLeft {
-  height: 36px;
-  min-width: 36px;
-  padding: 0 12px;
-}
-
-span button.paginationRight {
-  height: 36px;
-  min-width: 36px;
-  padding: 0 12px;
 }

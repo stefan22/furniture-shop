@@ -13,6 +13,8 @@ import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import Fab from "@material-ui/core/Fab";
 import LoyaltyTwoToneIcon from "@material-ui/icons/LoyaltyTwoTone";
+import { FadeInAnimationDiv } from "../../components/ProductListFadeIn";
+import { BounceInDownAnimation } from "../../components/BounceInDownAnimation";
 // styles
 import { withStyles } from "@material-ui/core/styles";
 import "./styles.scss";
@@ -104,16 +106,16 @@ class ProductDetails extends Component {
     return (
       <Grid container align={"justify"} spacing={0}>
         <div ref={this.detailsPageRef} className="mainWrapper">
-          <Grid item zeroMinWidth md={2} lg={2}>
+          <Grid item zeroMinWidth lg={2}>
             <div className="sideNavCol">
               <SideNavigation categories={this.props.shop.categories} />
             </div>
           </Grid>
 
-          <Grid item zeroMinWidth md={10} lg={10}>
+          <Grid item zeroMinWidth  lg={10}>
             <div className="mainProductWrapper">
               <Grid container justify={"center"} spacing={0}>
-                <Grid item xs={12} sm={12} md={12} lg={12}>
+                <Grid item xs={12} sm={12} lg={12}>
                   <MobileNavigation />
                   <CartInfo
                     deleteFromCart={this.props.deleteFromCart}
@@ -127,83 +129,93 @@ class ProductDetails extends Component {
                     <MainContentNav />
                   </div>
                 </Grid>
-                <div className="productInnerWrapper">
-                  <Grid item xs={12} sm={12} md={6} lg={6}>
-                    <div className="productImage">
-                      <img
-                        src={image}
-                        alt={name}
-                        width="640"
-                        height="480"
-                      />
-                    </div>
-                  </Grid>
-                  <Grid item xs={12} sm={12} md={6} lg={6}>
-                    <div className="productDetails">
-                      <h2>{name} <span className="detailsCat">[{cat}]</span></h2>
-                      <h5>{description}</h5>
 
-                      <form onSubmit={this.handleSubmit}>
-                        <div className="productPrice">
-                          <h6>Price</h6>
-                          <div className="priceTag">
-                            <Fab
-                              className={classes.fabActionButton}
-                              variant={"extended"}
-                              color="primary"
-                            >
-                              £{price}
-                              <LoyaltyTwoToneIcon />
-                            </Fab>
-                          </div>
-                        </div>
-                        <div className="productSection">
-                          <h6>Colour</h6>
-                          <div className="productColors">
-                            <RadioColors
-                              color={color}
-                              handleDataElement={this.handleDataElement}
-                            />
-                            {color === "" &&
-                            <span className="addToCart">Please choose color</span>}
-                          </div>
-                        </div>
-                        <div className="productSection">
-                          <h6>Quantity</h6>
-                          <div className="productQty">
-                            <TextField
-                              color="secondary"
-                              type="number"
-                              value={quantity}
-                              placeholder="Enter quantity"
-                              InputProps={{
-                                inputProps: { min: 0, max: 10 },
-                              }}
-                              InputLabelProps={{ shrink: true }}
-                              onChange={(e) => this.handleQuantity(e)}
-                              id="outlined-secondary"
-                            />
-                             {quantity !== 1 &&
-                            <span className="addToCart">Please update quantity in cart</span>}
-                          </div>
-                        </div>
-                        <div className="productSection">
-                          <div className="productButton">
 
-                            <Button
-                              type="submit"
-                              variant="contained"
-                              size="large"
-                              color="primary"
-                            >
-                              Add to Cart
-                            </Button>
-                          </div>
+                  <div className="productInnerWrapper">
+
+                    <Grid item xs={12} sm={12} lg={6}>
+                      <BounceInDownAnimation>
+                        <div className="productImage">
+                          <img
+                            src={image}
+                            alt={name}
+                            width="640"
+                            height="480"
+                          />
                         </div>
-                      </form>
-                    </div>
-                  </Grid>
-                </div>
+                      </BounceInDownAnimation>
+                    </Grid>
+                    <Grid item xs={12} sm={12} lg={6}>
+                      <FadeInAnimationDiv>
+                        <div className="productDetails">
+                          <h2>{name} <span className="detailsCat">[{cat}]</span></h2>
+                          <h5>{description}</h5>
+
+                          <form onSubmit={this.handleSubmit}>
+                            <div className="productPrice">
+                              <h6>Price</h6>
+                              <div className="priceTag">
+                                <Fab
+                                  className={classes.fabActionButton}
+                                  variant={"extended"}
+                                  color="primary"
+                                >
+                                  £{price}
+                                  <LoyaltyTwoToneIcon />
+                                </Fab>
+                              </div>
+                            </div>
+                            <div className="productSection">
+                              <h6>Colour</h6>
+                              <div className="productColors">
+                                <RadioColors
+                                  color={color}
+                                  handleDataElement={this.handleDataElement}
+                                />
+                                {color === "" &&
+                                <span className="addToCart">Please choose color</span>}
+                              </div>
+                            </div>
+                            <div className="productSection">
+                              <h6>Quantity</h6>
+                              <div className="productQty">
+                                <TextField
+                                  color="secondary"
+                                  type="number"
+                                  value={quantity}
+                                  placeholder="Enter quantity"
+                                  InputProps={{
+                                    inputProps: { min: 0, max: 10 },
+                                  }}
+                                  InputLabelProps={{ shrink: true }}
+                                  onChange={(e) => this.handleQuantity(e)}
+                                  id="outlined-secondary"
+                                />
+                                {quantity !== 1 &&
+                                <span className="addToCart">Please update quantity in cart</span>}
+                              </div>
+                            </div>
+                            <div className="productSection">
+                              <div className="productButton">
+
+                                <Button
+                                  type="submit"
+                                  variant="contained"
+                                  size="large"
+                                  color="primary"
+                                >
+                                  Add to Cart
+                                </Button>
+                              </div>
+                            </div>
+                          </form>
+                        </div>
+                      </FadeInAnimationDiv>
+                    </Grid>
+
+                  </div>
+
+
                 <Grid item xs={12} sm={12} md={12} lg={12}>
                   <div className="productDescription">
                     <div className="productMoreSubtitle">

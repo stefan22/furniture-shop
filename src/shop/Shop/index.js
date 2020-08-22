@@ -63,14 +63,16 @@ class Shop extends Component {
                   />
                 </header>
 
-                <MainShopContent
-                  addToCart={this.props.addToCart}
-                  deleteFromCart={this.props.deleteFromCart}
-                  totalCartItems={this.props.totalCartItems}
-                  cart={this.props.cart}
-                  category={category}
-                  products={this.handleFilterProducts(category, products)}
-                />
+               
+                  <MainShopContent
+                    addToCart={this.props.addToCart}
+                    deleteFromCart={this.props.deleteFromCart}
+                    totalCartItems={this.props.totalCartItems}
+                    cart={this.props.cart}
+                    category={category}
+                    products={this.handleFilterProducts(category, products)}
+                  />
+               
 
                 <Pagination
                   page={page}

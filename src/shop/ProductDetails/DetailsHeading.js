@@ -1,6 +1,7 @@
 import React, { Component} from "react";
 import TopNavigation from "../TopNavigation";
 // comps
+import ProductListFadeIn from "../../components/ProductListFadeIn";
 import "./styles.scss";
 
 
@@ -12,7 +13,7 @@ class DetailsHeading extends Component {
   render() {
 
     return (
-      <>
+      <ProductListFadeIn>
         <div className="sideNavCol">
           <TopNavigation
             baseURL={baseURL}
@@ -20,7 +21,7 @@ class DetailsHeading extends Component {
           />
         </div>
 
-      </>
+      </ProductListFadeIn>
 
     );
   }

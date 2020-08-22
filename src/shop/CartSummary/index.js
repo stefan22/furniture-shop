@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import Grid from "@material-ui/core/Grid";
 import ButtonGroup from "@material-ui/core/ButtonGroup";
 import Button from "@material-ui/core/Button";
+import { SlideInUpDiv } from "../../components/SlideInUpDiv";
 // styles
 import "./styles.scss";
 // icons
@@ -25,33 +26,35 @@ class CartSummary extends Component {
     return (
       <Grid container justify={"center"} spacing={0}>
         <Grid item xs={10} md={10} lg={10}>
-          <div className="cartWrapper">
-            <div className="cartHeader">
-              <h2>Furniture SinNombre Cart</h2>
-            </div>
-            {!!cartItems &&
+          <SlideInUpDiv>
+            <div className="cartWrapper">
+              <div className="cartHeader">
+                <h2>Furniture SinNombre Cart</h2>
+              </div>
+              {!!cartItems &&
 
-              <ShoppingCart cartItems={cartItems}
-                updateCart={this.props.updateCart}
-                deleteFromCart={this.props.deleteFromCart}
-                getCartTotal={this.props.getCartTotal}
-                cartTotalPrice={cartTotalPrice}
-              />}
-            <div className="cartButtons">
-              <ButtonGroup variant="text" color="default">
-                <Button component={Link} to={`/repositories/fshop/shop/`}>
-                  {" "}
-                  &nbsp;
-                  <StoreIcon />
-                  &nbsp; Continue Shopping{" "}
-                </Button>
-                <Button component={Link} to={`/repositories/fshop/shop/checkout`}>
-                  &nbsp; <ShoppingCartIcon /> &nbsp; Checkout{" "}
-                  <ArrowForwardIcon />
-                </Button>
-              </ButtonGroup>
+                <ShoppingCart cartItems={cartItems}
+                  updateCart={this.props.updateCart}
+                  deleteFromCart={this.props.deleteFromCart}
+                  getCartTotal={this.props.getCartTotal}
+                  cartTotalPrice={cartTotalPrice}
+                />}
+              <div className="cartButtons">
+                <ButtonGroup variant="text" color="default">
+                  <Button component={Link} to={`/repositories/fshop/shop/`}>
+                    {" "}
+                    &nbsp;
+                    <StoreIcon />
+                    &nbsp; Continue Shopping{" "}
+                  </Button>
+                  <Button component={Link} to={`/repositories/fshop/shop/checkout`}>
+                    &nbsp; <ShoppingCartIcon /> &nbsp; Checkout{" "}
+                    <ArrowForwardIcon />
+                  </Button>
+                </ButtonGroup>
+              </div>
             </div>
-          </div>
+          </SlideInUpDiv>
         </Grid>
       </Grid>
     );

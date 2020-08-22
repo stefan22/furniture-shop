@@ -1,43 +1,32 @@
 @import '../../styles/vars.scss';
 
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0.5;
-  }
-}
 
-.productListWrapper {
-  display: flex;
-  flex-flow: column;
-  animation: fadeIn 0.35s;
-  transition: opacity 0.5s 350ms;
-  opacity: 1;
-  margin: 2rem 1rem;
-  h4 {
-    @include cardHeading;
-  }
-  .productPriceTage {
-    font-size: $h5;
-    color: $cardPrice;
-    display: block;
-    margin: 1.5rem 0 1.25rem;
-  }
-  .productDescription {
-    height: auto;
-    overflow-y: hidden;
-    @include p;
-    @media screen and (max-width: 1279px) {
-      font-size: $small;
+
+  .productListWrapper {
+    display: flex;
+    flex-flow: column;
+    opacity: 1;
+    margin: 2rem .5rem;
+    h4 {
+      @include cardHeading;
     }
-  }
-  .actionButtonWrapper {
-    z-index: 10;
-    padding: 1rem;
-    margin-bottom: 1rem;
-    button: {
+    .productPriceTage {
+      font-size: $h5;
+      color: $pri;
+      display: block;
+      margin: 1.5rem 0 1.25rem;
     }
-  }
-} //productListWrapper
+    .productDescription {
+      height: auto;
+      overflow-y: hidden;
+      @include p;
+    }
+    .actionButtonWrapper {
+      z-index: 10;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      button: {
+      }
+    }
+  } //productListWrapper
+

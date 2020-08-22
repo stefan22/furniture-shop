@@ -8,7 +8,7 @@ import ShopStore from './redux/ShopStore';
 import { ThemeProvider } from '@material-ui/styles';
 import ShopConnector from './shop/ShopConnector';
 
-import theme from "./styles/theme";
+import theme from "./theme";
 
 class App extends Component {
 

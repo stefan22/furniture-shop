@@ -41,6 +41,7 @@
 .mainContent {
   display: flex;
   z-index: 0;
+  background-color: $pribg;
   .mainHeader {
     margin: 1rem 0;
     width: 100%;
@@ -52,7 +53,7 @@
   }
   .mainProducts {
     z-index: -1;
-    transition: all 0.45s linear 0ms;
+    transition: all 0.5s linear 150ms;
     margin-bottom: 3rem;
     width: 100%;
     min-height: 710px;
@@ -80,7 +81,7 @@ footer,
   width: 83.43vw;
   padding: 0;
   display: flex;
-  z-index: 1;
+  z-index: 20 !important;
   @media screen and (max-width: 1279px) {
     width: 100%;
   }
@@ -102,6 +103,7 @@ footer,
         max-width: 85px;
         height: auto;
         background-size: auto;
+        mix-blend-mode: multiply;
         width: 100%;
         z-index: 20;
         padding-top: 5px;
@@ -150,22 +152,24 @@ footer,
   z-index: 0;
 }
 
+header,.isShopHeading {
+  height: 67px;
+  background-color: $sec;
+  border-bottom: 1px solid darken($sec,10%);
+}
 
 .isShopHeading {
   width: 100%;
   padding: 0 1rem;
   position: relative;
   transition: all 0.45s ease 0ms;
+  background-color: $sec;
   opacity: 1;
   transform: scale(1);
-  color: $lightBlack;
+  color: $white;
 
   h1 {
-    font-size: $h2;
-    transition: visibility 0.3s ease 0ms;
-    margin: 0;
-    padding: 8px 0;
-    visibility: visible;
+    @include heading1;
     @media screen and (max-width: 850px) {
       visibility: hidden;
     }
@@ -188,15 +192,11 @@ footer,
 }
 
 .topLiner {
-  display: flex;
-  width: 100%;
-  height: 2px;
-  background: lighten($footerBg, 3%);
-  transition: all 0.35s ease 500ms;
+  @include topliner;
 }
 
 footer {
-  background: $snow;
+  //background: $snow;
   border-top: 1px inset $white;
   box-shadow: $reg-boxshadow;
   height: 7vh;
@@ -209,8 +209,7 @@ footer {
     display: none;
   }
   p {
-    width: 100%;
-    text-align: center;
+    @include p;
   }
 }
 
@@ -227,7 +226,7 @@ footer {
     list-style: none;
     li {
       a {
-        color: $black;
+        //color: $black;
       }
     }
   }
