@@ -104,21 +104,20 @@ $nav-boxshadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
   width: 100%;
   display: flex;
   border-bottom: 1px solid lighten($lightBlack, 50%);
-  transition: all 0.35s linear 15ms;
+  transition: mix-blend-mode 0.35s linear 15ms background-color .35s linear 15ms color .35s linear 15ms;
 
   &:hover {
     mix-blend-mode: darken;
     background-color: $sec;
     opacity: 0.9;
-    mix-blend-mode: hard-light;
+    mix-blend-mode: normal;
     color: $white;
   }
   &:active,&:visited,&:active {
-    mix-blend-mode: initial;
     opacity: 1;
   }
   &:focus {
-    mix-blend-mode: overlay;
+    mix-blend-mode: darken;
     background-color: transparent;
     color: $pri;
 

@@ -1,6 +1,5 @@
 import axios from "axios";
 
-
 // Add token to local storage
 export const setAuthToken = (token) => {
   let fbToken = `Bearer ${token}`;

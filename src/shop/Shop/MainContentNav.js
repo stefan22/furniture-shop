@@ -9,7 +9,7 @@ class MainContentNav extends Component {
     this.topNavRef = createRef(null);
     this.state = {
       didScroll: false,
-      lastScrolledTop: 0,
+      lastScrolledTop: 0
     };
   }
 
@@ -31,7 +31,7 @@ class MainContentNav extends Component {
       this.setState(
         {
           lastScrolledTop: scrolledAmount,
-          didScroll: true,
+          didScroll: true
         },
         () => header.classList.add("headsup")
       );
@@ -44,7 +44,6 @@ class MainContentNav extends Component {
   }
 
   render() {
-
     const mainContentNav = (
       <div ref={this.topNavRef} className={"topnav-container"}>
         <div className="topnav-logo">
@@ -54,8 +53,7 @@ class MainContentNav extends Component {
       </div>
     );
 
-    return mainContentNav
-
+    return mainContentNav;
   }
 }
 

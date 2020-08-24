@@ -13,8 +13,8 @@ import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import Fab from "@material-ui/core/Fab";
 import LoyaltyTwoToneIcon from "@material-ui/icons/LoyaltyTwoTone";
-import { FadeInAnimationDiv } from "../../components/ProductListFadeIn";
-import { BounceInDownAnimation } from "../../components/BounceInDownAnimation";
+import { FadeInAnimationDiv } from "../../components/animations/FadeInAnimationDiv";
+import { BounceInDownAnimation } from "../../components/animations/BounceInDownAnimation";
 // styles
 import { withStyles } from "@material-ui/core/styles";
 import "./styles.scss";

@@ -9,22 +9,14 @@ module.exports = function overrideCRA(config, env) {
   ∞  ¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶ ∞
  `);
 
-   //node_modules/react-scripts/config/webpack.config.dev
+  //node_modules/react-scripts/config/webpack.config.dev
 
-   let loaders = config.module.rules[2].oneOf;
-   // second-to-last
-   loaders.splice(loaders.length - 1, 0, {
+  let loaders = config.module.rules[2].oneOf;
+  // second-to-last
+  loaders.splice(loaders.length - 1, 0, {
+    test: /\.scss$/,
+    use: ["style-loader", "css-loader", "sass-loader"]
+  });
 
-      test: /\.scss$/,
-      use: ["style-loader","css-loader","sass-loader"]
-
-   });
-
-   return config;
-
+  return config;
 }; // overrideCRA
-
-
-
-
-

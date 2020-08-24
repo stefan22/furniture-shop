@@ -30,14 +30,14 @@ $ npm start
 
 #### Old data
 
-- Url: "http://localhost:4000/api/products>?"
+- Url: "localhost:4000/api/products>?"
 
-| Param | Url |
-| ------ | ------ |
-| category | localhost:4000/api/products?category=furniture |
-| _page | localhost:4000/api/products?_page2  |
-| _limit | localhost:4000/api/products?_page2&_limit=20  |
-| _sort | localhost:4000/api/products?_page2&_limit=20&_sort=name  |
+| Param    | Url                                                        |
+| -------- | ---------------------------------------------------------- |
+| category | localhost:4000/api/products?category=furniture             |
+| \_page   | localhost:4000/api/products?\_page2                        |
+| \_limit  | localhost:4000/api/products?\_page2&\_limit=20             |
+| \_sort   | localhost:4000/api/products?\_page2&\_limit=20&\_sort=name |
 
 ##### Faker data products & categories
 

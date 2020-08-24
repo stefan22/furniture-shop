@@ -2,13 +2,11 @@ import React, { Component } from "react";
 // comp
 import MainContentNav from "./MainContentNav";
 import ProductList from "../ProductList";
-import { FadeInAnimationDiv } from "../../components/ProductListFadeIn";
+import { FadeInAnimationDiv } from "../../components/animations/FadeInAnimationDiv";
 // styles
 import "./styles.scss";
 
-
 class MainShopContent extends Component {
-
   render() {
     const { products, addToCart, cart } = this.props;
 
@@ -18,22 +16,18 @@ class MainShopContent extends Component {
         <main className="content">
           <div className="mainContent">
             <div className="mainHeader">
-
               <MainContentNav />
-
             </div>
 
-
-              <div className="mainProducts">
-                <FadeInAnimationDiv>
-                  <ProductList
-                    addToCart={addToCart}
-                    cart={cart}
-                    products={products}
-                  />
-                </FadeInAnimationDiv>
-              </div>
-
+            <div className="mainProducts">
+              <FadeInAnimationDiv>
+                <ProductList
+                  addToCart={addToCart}
+                  cart={cart}
+                  products={products}
+                />
+              </FadeInAnimationDiv>
+            </div>
           </div>
         </main>
       </div>

@@ -14,11 +14,7 @@
     "es2020": true
   },
 
-  "extends": [
-    "react-app",
-    "eslint:recommended",
-    "plugin:react/recommended"
-  ],
+  "extends": ["react-app", "eslint:recommended", "plugin:react/recommended"],
 
   "settings": {
     "react": {
@@ -28,7 +24,7 @@
     }
   },
 
-  "plugins": ["react","prettier"],
+  "plugins": ["react", "prettier"],
 
   "rules": {
     "no-case-declarations": 0,

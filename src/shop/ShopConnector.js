@@ -1,19 +1,19 @@
-import React, { Component } from 'react';
-import { Switch, Route, Redirect } from 'react-router-dom';
+import React, { Component } from "react";
+import { Switch, Route, Redirect } from "react-router-dom";
 // redux
-import { connect } from 'react-redux';
+import { connect } from "react-redux";
 // comps
-import Shop from './Shop/index';
-import CartSummary from './CartSummary';
-import ProductDetails from './ProductDetails';
-import { getAuthenticatedData } from '../redux/actions/ProductsData';
+import Shop from "./Shop/index";
+import CartSummary from "./CartSummary";
+import ProductDetails from "./ProductDetails";
+import { getAuthenticatedData } from "../redux/actions/ProductsData";
 import {
   addToCart,
   updateCart,
   deleteFromCart,
   totalCartItems,
   getCartTotal
-} from '../redux/actions/CartActions';
+} from "../redux/actions/CartActions";
 
 class ShopConnector extends Component {
   render() {

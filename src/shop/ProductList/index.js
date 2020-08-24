@@ -6,7 +6,7 @@ import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import Button from "@material-ui/core/Button";
 // styles
-import { ZoomInUpWrapperDiv } from "./ProductListAnimation";
+import { ZoomInUpDiv } from "../../components/animations/ZoomInUp";
 
 import "./styles.scss";
 
@@ -19,10 +19,10 @@ const Product = (props) => {
 
   return props.products.map((p) => {
     return (
-      
+
       <Grid key={p.id} item xs={12} sm={6} md={4} lg={3}>
-        <ZoomInUpWrapperDiv>
-        
+        <ZoomInUpDiv>
+
           <Card key={p.id} className="productListWrapper" elevation={2}>
             <Link to={`/repositories/fshop/shop/products/${p.category}/${p.id}`}>
               <img src={p.image} alt={p.name} />
@@ -45,10 +45,10 @@ const Product = (props) => {
               </Button>
             </div>
           </Card>
-        
-        </ZoomInUpWrapperDiv>
+
+        </ZoomInUpDiv>
       </Grid>
-      
+
     );
   });
 };

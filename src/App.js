@@ -1,18 +1,17 @@
-import React, { Component } from 'react';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import React, { Component } from "react";
+import CssBaseline from "@material-ui/core/CssBaseline";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 // redux
-import { Provider } from 'react-redux';
-import ShopStore from './redux/ShopStore';
+import { Provider } from "react-redux";
+import ShopStore from "./redux/ShopStore";
 // comps
-import { ThemeProvider } from '@material-ui/styles';
-import ShopConnector from './shop/ShopConnector';
+import { ThemeProvider } from "@material-ui/styles";
+import ShopConnector from "./shop/ShopConnector";
 
 import theme from "./theme";
 
 class App extends Component {
-
-  render () {
+  render() {
     return (
       <ThemeProvider theme={theme}>
         <CssBaseline />

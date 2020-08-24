@@ -5,18 +5,16 @@ import "./styles.scss";
 // icons
 import DeckIcon from "@material-ui/icons/Deck";
 import HighlightIcon from "@material-ui/icons/Highlight";
-import VerticalAlignTopIcon from '@material-ui/icons/VerticalAlignTop';
-
+import VerticalAlignTopIcon from "@material-ui/icons/VerticalAlignTop";
 
 
 class SideNavigation extends Component {
-
   constructor(props) {
     super(props);
     this.state = {
       scrolledAmount: 0,
-      scrollButton: false,
-    }
+      scrollButton: false
+    };
   }
 
   componentDidMount() {
@@ -24,40 +22,36 @@ class SideNavigation extends Component {
   }
 
   winScrollAmount = () => {
-    let scrollAmt = document.body.scrollTop || document.documentElement.scrollTop;
+    let scrollAmt =
+      document.body.scrollTop || document.documentElement.scrollTop;
     return scrollAmt;
-  }
+  };
 
-  winScrollShow = (amt) => (
+  winScrollShow = (amt) =>
     this.setState({
       scrolledAmount: amt,
-      scrollButton: true,
-    })
-  )
+      scrollButton: true
+    });
 
-  winScrollHide = (amt) => (
+  winScrollHide = (amt) =>
     this.setState({
       scrolledAmount: amt,
-      scrollButton: false,
-    })
-  )
+      scrollButton: false
+    });
 
   listenToScroll = () => {
     let scroll = Number(this.winScrollAmount());
-    if ( scroll > 900) return this.winScrollShow(scroll);
+    if (scroll > 900) return this.winScrollShow(scroll);
     return this.winScrollHide(scroll);
-  } // listenToScroll
-
+  }; // listenToScroll
 
   componentWillUnmount() {
     window.removeEventListener("scroll", this.listenToScroll, false);
   }
 
-
   render() {
     const { currentCategory } = this.props;
     const { scrollButton } = this.state;
-
 
     return (
       <nav className={"topnavCategoriesWrapper"}>
@@ -66,11 +60,14 @@ class SideNavigation extends Component {
         <div className="topnavCategoriesMain">
           <ul className="topnavCategories">
             <li className="categoryAll">
-              <Link to={`/repositories/fshop/shop/products/all`} className="button">
-
-                { currentCategory === "all" && !!scrollButton &&
-                <span className="productsScrollTop"><VerticalAlignTopIcon /></span>
-                }
+              <Link
+                to={`/repositories/fshop/shop/products/all`}
+                className="button">
+                {currentCategory === "all" && !!scrollButton && (
+                  <span className="productsScrollTop">
+                    <VerticalAlignTopIcon />
+                  </span>
+                )}
                 <HighlightIcon className="categoryIcon" /> All
               </Link>
             </li>
@@ -81,11 +78,12 @@ class SideNavigation extends Component {
                   <Link
                     rel="noreferrer nonopener"
                     to={`/repositories/fshop/shop/products/${cat.category}`}
-                    className="button"
-                  >
-                    { currentCategory === cat.category &&  !!scrollButton &&
-                    <span className="productsScrollTop"><VerticalAlignTopIcon /></span>
-                    }
+                    className="button">
+                    {currentCategory === cat.category && !!scrollButton && (
+                      <span className="productsScrollTop">
+                        <VerticalAlignTopIcon />
+                      </span>
+                    )}
                     <DeckIcon className="categoryIcon" /> {cat.category}
                   </Link>
                 </li>
