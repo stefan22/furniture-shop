@@ -1,6 +1,5 @@
 import { createMuiTheme } from "@material-ui/core";
 import vars from "../styles/vars.scss";
-import typography from "./typography";
 
 const theme = createMuiTheme({
   palette: {
@@ -43,10 +42,7 @@ const theme = createMuiTheme({
         fontWeight: "500"
       }
     }
-  },
-  typography
+  }
 });
-
-console.log(theme);
 
 export default theme;
