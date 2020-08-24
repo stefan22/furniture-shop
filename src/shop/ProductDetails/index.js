@@ -199,7 +199,6 @@ class ProductDetails extends Component {
                           </div>
                           <div className="productSection">
                             <div className="productButton">
-
                               <Button
                                 type="submit"
                                 variant="contained"
@@ -207,7 +206,6 @@ class ProductDetails extends Component {
                                 color="primary">
                                 Add to Cart
                               </Button>
-
                             </div>
                           </div>
                         </form>
