@@ -6,10 +6,9 @@ import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import Button from "@material-ui/core/Button";
 // styles
-import { ZoomInUpDiv } from "../../components/animations/ZoomInUp";
+import { ZoomInUpDiv } from "../../components/animations/ZoomInUpDiv";
 
 import "./styles.scss";
-
 
 const Product = (props) => {
   const handleAddToCart = (prod) => {
@@ -19,12 +18,11 @@ const Product = (props) => {
 
   return props.products.map((p) => {
     return (
-
       <Grid key={p.id} item xs={12} sm={6} md={4} lg={3}>
         <ZoomInUpDiv>
-
           <Card key={p.id} className="productListWrapper" elevation={2}>
-            <Link to={`/repositories/fshop/shop/products/${p.category}/${p.id}`}>
+            <Link
+              to={`/repositories/fshop/shop/products/${p.category}/${p.id}`}>
               <img src={p.image} alt={p.name} />
             </Link>
             <CardContent key={p.id}>
@@ -39,16 +37,13 @@ const Product = (props) => {
                 to={`/repositories/fshop/shop/cart`}
                 variant="outlined"
                 size="small"
-                color="default"
-              >
+                color="default">
                 Add To Cart
               </Button>
             </div>
           </Card>
-
         </ZoomInUpDiv>
       </Grid>
-
     );
   });
 };
@@ -65,9 +60,9 @@ class ProductList extends Component {
 
     return (
       <div className="productsWrapper">
-      <Grid container>
-        <Product addToCart={this.props.addToCart} {...this.props} />
-      </Grid>
+        <Grid container>
+          <Product addToCart={this.props.addToCart} {...this.props} />
+        </Grid>
       </div>
     );
   }

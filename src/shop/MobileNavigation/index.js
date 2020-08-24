@@ -8,7 +8,7 @@ class MobileNavigation extends Component {
     super(props);
     this.state = {
       windowWidth: window.innerWidth,
-      menuOpen: false,
+      menuOpen: false
     };
   }
 
@@ -27,7 +27,7 @@ class MobileNavigation extends Component {
 
   handleClick = () => {
     this.setState((prevState) => ({
-      menuOpen: !prevState.menuOpen,
+      menuOpen: !prevState.menuOpen
     }));
   };
 
@@ -39,8 +39,7 @@ class MobileNavigation extends Component {
           <Link
             rel="nonreferer nonopener"
             className="hamburger"
-            onClick={this.handleClick}
-          >
+            onClick={this.handleClick}>
             <div className={`${menuOpen ? "menuButton open" : "menuButton"}`}>
               <div className="menuButtonBurger"></div>
             </div>

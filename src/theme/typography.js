@@ -1,7 +1,6 @@
 import vars from "../styles/vars.scss";
 
 export default {
-
   h1: {
     fontWeight: 500,
     fontSize: vars.h1,
@@ -40,20 +39,15 @@ export default {
 
   subtitle1: {
     fontWeight: 400,
-    fontSize: vars.p,
+    fontSize: vars.p
   },
 
   body1: {
     fontWeight: 400,
-    fontSize: vars.reg,
+    fontSize: vars.reg
   },
   button: {
     fontWeight: 400,
-    fontSize: vars.small,
-  },
-
-
-
-
-
-}
+    fontSize: vars.small
+  }
+};

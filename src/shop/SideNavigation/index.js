@@ -7,7 +7,6 @@ import DeckIcon from "@material-ui/icons/Deck";
 import HighlightIcon from "@material-ui/icons/Highlight";
 import VerticalAlignTopIcon from "@material-ui/icons/VerticalAlignTop";
 
-
 class SideNavigation extends Component {
   constructor(props) {
     super(props);

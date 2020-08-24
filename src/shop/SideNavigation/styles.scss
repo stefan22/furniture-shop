@@ -63,20 +63,20 @@
     transition: all 0.35s linear 0ms;
     position: absolute;
     max-width: 24px;
-    left: 3px;
-    top: 34px;
+    left: 9px;
+    top: 25px;
     svg {
       font-size: 1.27rem;
     }
   }
 
-  @media screen and (min-width: 1279px) {
+  @media screen and (max-width: 1280px) {
     .productsScrollTop {
       transition: all 0.35s linear 0ms;
       position: absolute;
       max-width: 35px;
-      left: 12px;
-      top: 27px;
+      left: 3px;
+      top: 15px;
     }
   }
 }
@@ -85,34 +85,33 @@
   .productsScrollTop {
     position: absolute;
     max-width: 24px;
-    left: 3px;
-    top: 34px;
+    left: 9px;
+    top: 25px;
     svg {
       font-size: 1.27rem;
     }
   }
-  @media screen and (min-width: 1279px) {
+  @media screen and (max-width: 1280px) {
     .productsScrollTop {
       position: absolute;
       max-width: 35px;
-      left: 12px;
-      top: 27px;
+      left: 3px;
+      top: 15px;
     }
   }
 }
-
-@media screen and (min-width: 1279px) {
-  .productsScrollTop::after {
-    content: 'Scroll Top';
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    max-width: 35px;
-    font-size: 0.65rem;
-    font-weight: 500;
-    letter-spacing: 0;
-    line-height: 1;
-  }
+.productsScrollTop::after {
+  content: 'Scroll Top';
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 35px;
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1;
 }
+
+
 
 /* end productsScrollTop */
