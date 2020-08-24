@@ -154,19 +154,22 @@ footer,
 
 header,.isShopHeading {
   height: 67px;
-  background-color: $sec;
-  border-bottom: 1px solid darken($sec,10%);
+  border-bottom: 1px solid darken(#eff2f7,10%);
 }
 
 .isShopHeading {
+  //background: url("../../images/bgside1.png") repeat left top;
+  background: url("../../images/topbg.png") repeat left top;
+  transform: rotate(90deg);
   width: 100%;
   padding: 0 1rem;
   position: relative;
   transition: all 0.45s ease 0ms;
-  background-color: $sec;
+  background-color: #eff2f7;
+  border-bottom: 1px solid darken(#eff2f7,10%);
   opacity: 1;
   transform: scale(1);
-  color: $white;
+  color: $black;
 
   h1 {
     @include heading1;
