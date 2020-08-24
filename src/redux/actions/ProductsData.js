@@ -4,34 +4,32 @@ import { api } from "../../API";
 
 import { setAuthToken, getAuthToken } from "../../helpers";
 
-
 /**
-* @ Fetching data from GC Firebase
-* @ Todo: rebuild pagination.
-*/
+ * @ Fetching data from GC Firebase
+ * @ Todo: rebuild pagination.
+ */
 
 let idToken;
 let authProducts = [];
 let categories = [];
 
-
 // with token
-const getProductsNCategoriesFromStorage = dispatch => {
+const getProductsNCategoriesFromStorage = (dispatch) => {
   // get products & categories
   authProducts = JSON.parse(localStorage.getItem("products"));
   categories = JSON.parse(localStorage.getItem("categories"));
   dispatch({
     type: type.SET_PRODUCTS,
-    payload: authProducts,
+    payload: authProducts
   });
   dispatch({
     type: type.SET_CATEGORIES,
-    payload: categories,
+    payload: categories
   });
-}
+};
 
 // without token
-const getProductsNCategoriesFromDB = (user,dispatch) => {
+const getProductsNCategoriesFromDB = (user, dispatch) => {
   axios //get token
     .post(`${api.newBaseURl}/user/login`, user)
     .then((response) => {
@@ -43,7 +41,7 @@ const getProductsNCategoriesFromDB = (user,dispatch) => {
     .catch((err) => {
       console.log(err.response);
     });
-}
+};
 
 // fetch products db
 const getProductsData = () => (dispatch) => {
@@ -51,26 +49,26 @@ const getProductsData = () => (dispatch) => {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
-      Authorization: `Bearer ${idToken}`,
+      Authorization: `Bearer ${idToken}`
     },
     referrer: "",
     mode: "cors",
     cache: "reload",
-    redirect: "follow",
+    redirect: "follow"
   })
     .then((data) => data.json())
     .then((res) => {
-      localStorage.setItem("products",JSON.stringify(res));
+      localStorage.setItem("products", JSON.stringify(res));
       dispatch({
         type: type.SET_PRODUCTS,
-        payload: res,
+        payload: res
       });
     })
     .catch((err) => console.log(err));
 };
 
 // fetch categories db
-const getCategoriesData = () => dispatch => {
+const getCategoriesData = () => (dispatch) => {
   fetch(`${api.newBaseURl}/shop/categories/all`, {
     method: "GET",
     headers: {
@@ -79,19 +77,18 @@ const getCategoriesData = () => dispatch => {
     referrer: "",
     mode: "cors",
     cache: "reload",
-    redirect: "follow",
+    redirect: "follow"
   })
-  .then(data => data.json())
-  .then(res => {
-    localStorage.setItem("categories",JSON.stringify(res));
-    dispatch({
-      type: type.SET_CATEGORIES,
-      payload: res
-    });
-  })
-  .catch(err => console.log(err));
+    .then((data) => data.json())
+    .then((res) => {
+      localStorage.setItem("categories", JSON.stringify(res));
+      dispatch({
+        type: type.SET_CATEGORIES,
+        payload: res
+      });
+    })
+    .catch((err) => console.log(err));
 };
-
 
 // auth data
 export const getAuthenticatedData = () => (dispatch) => {
@@ -99,24 +96,12 @@ export const getAuthenticatedData = () => (dispatch) => {
   let token = getAuthToken("fbToken");
   const user = {
     email: api.email,
-    password: api.password,
+    password: api.password
   };
 
-   if (token !== null && token.includes("Bearer")) {
-     getProductsNCategoriesFromStorage(dispatch);
-   }
-   else {
-    getProductsNCategoriesFromDB(user,dispatch);
-   }
+  if (token !== null && token.includes("Bearer")) {
+    getProductsNCategoriesFromStorage(dispatch);
+  } else {
+    getProductsNCategoriesFromDB(user, dispatch);
+  }
 };
-
-
-
-
-
-
-
-
-
-
-

@@ -9,7 +9,7 @@ const middlewares = [thunk];
 // rootReducer
 const rootReducer = combineReducers({
   shop: ShopReducer,
-  cart: CartReducer,
+  cart: CartReducer
 });
 
 const composeEnhancer =

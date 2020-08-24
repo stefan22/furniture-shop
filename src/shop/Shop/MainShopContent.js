@@ -2,7 +2,7 @@ import React, { Component } from "react";
 // comp
 import MainContentNav from "./MainContentNav";
 import ProductList from "../ProductList";
-import { FadeInAnimationDiv } from "../../components/animations/FadeInAnimationDiv";
+import { FadeInDiv } from "../../components/animations/FadeInDiv";
 // styles
 import "./styles.scss";
 
@@ -20,13 +20,13 @@ class MainShopContent extends Component {
             </div>
 
             <div className="mainProducts">
-              <FadeInAnimationDiv>
+              <FadeInDiv>
                 <ProductList
                   addToCart={addToCart}
                   cart={cart}
                   products={products}
                 />
-              </FadeInAnimationDiv>
+              </FadeInDiv>
             </div>
           </div>
         </main>

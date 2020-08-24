@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import Button from '@material-ui/core/Button';
-import Fab from '@material-ui/core/Fab';
+import Button from "@material-ui/core/Button";
+import Fab from "@material-ui/core/Fab";
 import "./styles.scss";
 // icons
 import ArrowLeftIcon from "@material-ui/icons/ArrowLeft";
@@ -38,14 +38,17 @@ class Pagination extends Component {
                 ? "paginationButtonLeft buttonDisabled"
                 : "paginationButtonLeft buttonEnabled"
             }
-            onClick={() => this.handleTotalPages("prev")}
-          >
+            onClick={() => this.handleTotalPages("prev")}>
             Prev
           </Button>
           <span>
-            <Fab className="paginationLeft" variant="extended">{page}</Fab>
+            <Fab className="paginationLeft" variant="extended">
+              {page}
+            </Fab>
             <b>{" of "}</b>
-                  <Fab className="paginationRight" variant="extended">{totalPages}</Fab>
+            <Fab className="paginationRight" variant="extended">
+              {totalPages}
+            </Fab>
           </span>
           <Button
             variant="contained"
@@ -56,8 +59,7 @@ class Pagination extends Component {
                 ? "paginationButtonRight buttonDisabled"
                 : "paginationButtonRight buttonEnabled"
             }
-            onClick={() => this.handleTotalPages("next")}
-          >
+            onClick={() => this.handleTotalPages("next")}>
             Next
           </Button>
         </div>

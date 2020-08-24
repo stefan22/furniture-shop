@@ -18,7 +18,7 @@ const useStyles = makeStyles({
     height: "18px",
     background: "white",
     border: "1px solid gray",
-    borderRadius: "0",
+    borderRadius: "0"
   },
 
   postCheck: {
@@ -30,8 +30,8 @@ const useStyles = makeStyles({
     padding: 0,
     outline: "1px solid white",
     boxShadow: "0 3px 5px 2px rgb(208, 208, 208)",
-    borderRadius: "3px",
-  },
+    borderRadius: "3px"
+  }
 });
 
 const initialItems = [
@@ -39,14 +39,14 @@ const initialItems = [
     name: "white",
     label: "White",
     Icon: CheckBoxOutlineBlankOutlinedIcon,
-    CheckedIcon: CheckBoxIcon,
+    CheckedIcon: CheckBoxIcon
   },
   {
     name: "black",
     label: "Black",
     Icon: CheckBoxOutlineBlankSharpIcon,
-    CheckedIcon: CheckBoxSharpIcon,
-  },
+    CheckedIcon: CheckBoxSharpIcon
+  }
 ];
 
 export default function RadioColors(props) {
@@ -66,7 +66,7 @@ export default function RadioColors(props) {
     setItems({ [e.target.name]: e.target.checked });
     let checked = {};
     checked.color = e.target.name;
-    props.handleDataElement({name: e.target.name, value: e.target.checked});
+    props.handleDataElement({ name: e.target.name, value: e.target.checked });
   };
 
   return (
@@ -83,7 +83,7 @@ export default function RadioColors(props) {
                 <Icon
                   fontSize="small"
                   classes={{
-                    root: classes.initCheck,
+                    root: classes.initCheck
                   }}
                 />
               }
@@ -92,7 +92,7 @@ export default function RadioColors(props) {
                   color="primary"
                   fontSize="small"
                   classes={{
-                    root: classes.postCheck,
+                    root: classes.postCheck
                   }}
                 />
               }

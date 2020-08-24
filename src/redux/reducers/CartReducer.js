@@ -4,7 +4,7 @@ const initialState = {
   cartItems: [],
   currentItem: 0,
   cartTotalItems: 0,
-  cartTotalPrice: 0,
+  cartTotalPrice: 0
 };
 
 export const CartReducer = (state = initialState, action) => {
@@ -17,12 +17,12 @@ export const CartReducer = (state = initialState, action) => {
         exist = item;
         return {
           ...state,
-          cartItems: [...state.cartItems],
+          cartItems: [...state.cartItems]
         };
       } else {
         return {
           ...state,
-          cartItems: state.cartItems.concat(item),
+          cartItems: state.cartItems.concat(item)
         };
       }
 
@@ -31,13 +31,13 @@ export const CartReducer = (state = initialState, action) => {
       if (upItem) upItem.qty = action.payload.qty;
       return {
         ...state,
-        currentItem: { ...state.currentItem, ...upItem },
+        currentItem: { ...state.currentItem, ...upItem }
       };
 
     case types.CART_TOTAL_ITEMS:
       return {
         ...state,
-        cartTotalItems: action.payload,
+        cartTotalItems: action.payload
       };
 
     case types.CART_DELETE:
@@ -57,7 +57,7 @@ export const CartReducer = (state = initialState, action) => {
       }
       return {
         ...state,
-        cartItems: newStore,
+        cartItems: newStore
       };
 
     case types.CART_TOTAL_PRICE:
@@ -65,12 +65,12 @@ export const CartReducer = (state = initialState, action) => {
 
       return {
         ...state,
-        cartTotalPrice: total,
+        cartTotalPrice: total
       };
 
     default:
       return {
-        ...state,
+        ...state
       };
   }
 };
