@@ -33,7 +33,7 @@ class ShoppingCart extends Component {
                 <div className="cartHead">Description</div>
                 <div className="cartHead">Price</div>
                 <div className="cartHead">Subtotal</div>
-                <div className="cartHead"></div>
+                <div className="cartHead">Edit Cart</div>
               </div>
             </div>
 
@@ -54,9 +54,9 @@ class ShoppingCart extends Component {
                   <div className="cartCell cartRemove">
                     <Button
                       onClick={() => this.handleDeleteFromCart(itm)}
-                      variant="outlined"
+                      variant="contained"
                       size="small"
-                      color="secondary">
+                      color="primary">
                       Remove
                     </Button>
                   </div>

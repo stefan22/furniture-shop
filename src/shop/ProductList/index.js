@@ -35,9 +35,9 @@ const Product = (props) => {
                 onClick={() => handleAddToCart(p)}
                 component={Link}
                 to={`/repositories/fshop/shop/cart`}
-                variant="outlined"
-                size="small"
-                color="default">
+                variant="contained"
+                size="medium"
+                color="primary">
                 Add To Cart
               </Button>
             </div>

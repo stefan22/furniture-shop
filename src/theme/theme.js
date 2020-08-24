@@ -25,21 +25,26 @@ const theme = createMuiTheme({
       navigationBg: vars.navigationBg,
       tableHeadingBg: vars.tableHeadingBg,
       borderBottomLight: vars.borderBottomLight
-    },
+    }
+  },
 
-    overrides: {
-      MuiButton: {
-        text: {
-          paddingLeft: "14px",
-          paddingRight: "14px"
-        },
-        root: {
-          fontWeight: "normal"
-        }
+  overrides: {
+    MuiButton: {
+      text: {
+        paddingLeft: "14px",
+        paddingRight: "14px"
+      },
+      root: {
+        fontWeight: "500"
       }
     },
-    typography
-  }
+    MuiFab: {
+      root: {
+        fontWeight: "500"
+      }
+    }
+  },
+  typography
 });
 
 console.log(theme);

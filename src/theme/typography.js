@@ -47,7 +47,7 @@ export default {
     fontSize: vars.reg
   },
   button: {
-    fontWeight: 400,
-    fontSize: vars.small
+    fontWeight: 700,
+    fontSize: vars.p
   }
 };

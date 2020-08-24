@@ -156,7 +156,7 @@ $nav-boxshadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
 
 @mixin p {
   font-size: $p;
-  color: $lightBlack;
+  color:lighten($black, 7%);
   font-weight: 400;
   text-align: center;
   margin: 1rem 0;
