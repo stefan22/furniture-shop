@@ -50,6 +50,7 @@ class Shop extends Component {
           <Grid item zeroMinWidth lg={2}>
             <div className="sideNavCol">
               <SideNavigation
+                handleJumboOff={this.props.handleJumboOff}
                 baseURL={baseURL}
                 currentCategory={category}
                 categories={this.props.shop.categories}

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 // comp
+import MainJumbo from "../../components/MainJumbo";
 import MainContentNav from "./MainContentNav";
 import ProductList from "../ProductList";
 import { FadeInDiv } from "../../components/animations/FadeInDiv";
@@ -11,26 +12,29 @@ class MainShopContent extends Component {
     const { products, addToCart, cart } = this.props;
 
     return (
-      <div className="mainCol">
-        <div className="topLiner"></div>
-        <main className="content">
-          <div className="mainContent">
-            <div className="mainHeader">
-              <MainContentNav />
-            </div>
+      <>
+        <MainJumbo />
+        <div className="mainCol">
+          <div className="topLiner"></div>
+          <main className="content">
+            <div className="mainContent">
+              <div className="mainHeader">
+                <MainContentNav />
+              </div>
 
-            <div className="mainProducts">
-              <FadeInDiv>
-                <ProductList
-                  addToCart={addToCart}
-                  cart={cart}
-                  products={products}
-                />
-              </FadeInDiv>
+              <div className="mainProducts">
+                <FadeInDiv>
+                  <ProductList
+                    addToCart={addToCart}
+                    cart={cart}
+                    products={products}
+                  />
+                </FadeInDiv>
+              </div>
             </div>
-          </div>
-        </main>
-      </div>
+          </main>
+        </div>
+      </>
     );
   }
 }

@@ -58,7 +58,7 @@ class SideNavigation extends Component {
 
         <div className="topnavCategoriesMain">
           <ul className="topnavCategories">
-            <li className="categoryAll">
+            <li onClick={this.props.handleJumboOff} className="categoryAll">
               <Link
                 to={`/repositories/fshop/shop/products/all`}
                 className="button">
@@ -73,7 +73,10 @@ class SideNavigation extends Component {
 
             {this.props.categories.length > 0 &&
               this.props.categories.map((cat) => (
-                <li className="categoryOther" key={cat.category}>
+                <li
+                  onClick={this.props.handleJumboOff}
+                  className="categoryOther"
+                  key={cat.category}>
                   <Link
                     rel="noreferrer nonopener"
                     to={`/repositories/fshop/shop/products/${cat.category}`}

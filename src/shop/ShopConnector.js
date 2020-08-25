@@ -7,6 +7,7 @@ import Shop from "./Shop/index";
 import CartSummary from "./CartSummary";
 import ProductDetails from "./ProductDetails";
 import { getAuthenticatedData } from "../redux/actions/ProductsData";
+import { handleJumboOff } from "../redux/actions/UIActions";
 import {
   addToCart,
   updateCart,
@@ -84,7 +85,8 @@ const mapActionsToProps = {
   updateCart,
   deleteFromCart,
   totalCartItems,
-  getCartTotal
+  getCartTotal,
+  handleJumboOff
 };
 
 export default connect(mapStateToProps, mapActionsToProps)(ShopConnector);
