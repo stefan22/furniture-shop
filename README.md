@@ -59,3 +59,6 @@ $ npm start
 ### Todos
 
 - Redo pagination
+- design-on-the-fly update: new hero/jumbotron
+- theme merge: mui/sass  finish/up
+- single source admin app GCfunctions finish up
