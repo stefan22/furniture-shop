@@ -11,12 +11,13 @@
 
 $pri:  #f44336;
 $pribg: #f8f8ff;
-$sec:   #3a6efe;
+$sec:   #062886;
 $black: #000000;
 
 // light
 $white: #fffafa;
 $snow: #fffafa;
+$jumbg: #f5f7fb;
 
 // dark
 $black: #484848;
@@ -28,6 +29,7 @@ $footerBg: #e6e6e6;
 $navigationBg: #f5f5f5;
 $tableHeadingBg: #e0e0e0;
 $borderBottomLight: #e5e5e5;
+$darkblue: #2b3f53;
 
 
 
@@ -36,7 +38,7 @@ $borderBottomLight: #e5e5e5;
 * -----------
 */
 $h1: 2.75rem;
-$h2: 2.25rem;
+$h2: 2.45rem;
 $h3: 1.9rem;
 $h4: 1.65rem;
 $h5: 1.4rem;
@@ -171,8 +173,10 @@ $nav-boxshadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
   display: flex;
   width: 100%;
   height: 2px;
+  margin-bottom: 2rem;
   background: lighten($footerBg, 3%);
   transition: all 0.35s ease 500ms;
+
 }
 
 @mixin sidenavLogo {
@@ -217,14 +221,16 @@ $nav-boxshadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
   tableHeadingBg: $tableHeadingBg;
   footerBg:  $footerBg;
   borderBottomLight: $borderBottomLight;
+  jumbg: $jumbg;
+  darkblue: $darkblue;
 
   // redreg: $redreg;
 
   // box-shadows
-  reg-boxshadow:  $reg-boxshadow;
-  min-boxshadow:  $min-boxshadow;
+  regboxshadow:  $reg-boxshadow;
+  minboxshadow:  $min-boxshadow;
   boxshadow2:  $boxshadow2;
-  nav-boxshadow:  $nav-boxshadow;
+  navboxshadow:  $nav-boxshadow;
 
   // mixins
   cardHeading: cardHeading;
