@@ -37,7 +37,6 @@ const theme = createMuiTheme({
       h4: vars.h4,
       h5: vars.h5,
       h6: vars.h6
-
     }
   },
 
@@ -58,5 +57,7 @@ const theme = createMuiTheme({
     }
   }
 });
+
+console.log(theme);
 
 export default theme;

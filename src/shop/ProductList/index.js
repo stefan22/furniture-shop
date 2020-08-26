@@ -36,7 +36,7 @@ const Product = (props) => {
                 component={Link}
                 to={`/repositories/fshop/shop/cart`}
                 variant="contained"
-                size="medium"
+                size={`${window.innerWidth <= 1280 ? "small" : "medium"}`}
                 color="primary">
                 Add To Cart
               </Button>
@@ -49,6 +49,29 @@ const Product = (props) => {
 };
 
 class ProductList extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      size: "medium",
+      wi: window.innerWidth
+    };
+  }
+
+  componentDidMount() {
+    window.addEventListener("resize", this.handleButtonSize, false);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.handleButtonSize, false);
+  }
+
+  handleButtonSize = () => {
+    const { wi } = this.state;
+    return wi <= 1280
+      ? this.setState({ size: "small" })
+      : this.setState({ size: "medium" });
+  };
+
   componentDidUpdate() {
     window.scrollTo(0, 0);
   }
@@ -57,11 +80,15 @@ class ProductList extends Component {
     if (!this.props.products) {
       return <h5 className="p-2">No Products</h5>;
     }
-
+    const { size } = this.state;
     return (
       <div className="productsWrapper">
         <Grid container>
-          <Product addToCart={this.props.addToCart} {...this.props} />
+          <Product
+            size={size}
+            addToCart={this.props.addToCart}
+            {...this.props}
+          />
         </Grid>
       </div>
     );

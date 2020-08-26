@@ -86,11 +86,15 @@ $nav-boxshadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
 
 // Sidemenu mixins
 
-@mixin mainBoxCategories {
+@mixin mainBoxCategories {// sidenav cats
   height: calc(100vh);
   border-left: 1px solid lighten($lightBlack, 50%);
   border-right: 1px solid lighten($lightBlack, 50%);
-  box-shadow: $reg-boxshadow;
+  box-shadow: 3px 0px 3px -2px rgba(0, 0, 0, 0.2), 7px 7px 3px 0px rgba(0, 0, 0, 0.14), -2px 11px 3px -1px rgba(0, 0, 0, 0.12);
+
+  @media screen and (max-width: 1279px) {
+    display: none;
+  }
 }
 
 @mixin aCategory {
@@ -110,14 +114,7 @@ $nav-boxshadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
     font-size: $p;
     padding: 1.35rem 1rem;
   }
-
-  &:hover {
-    mix-blend-mode: darken;
-    background-color: $sec;
-    opacity: 0.9;
-    mix-blend-mode: normal;
-    color: $white;
-  }
+  // sidenav a link
   &:active,&:visited,&:active {
     opacity: 1;
   }
@@ -129,27 +126,27 @@ $nav-boxshadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
   }
 }
 
+// topnav flap
 @mixin headsup {
-  background: $white;
-  border-bottom: 1px solid $borderBottomLight;
-  box-shadow: $nav-boxshadow;
+  background: #fffafa;
+  border-bottom: 1px solid #e5e5e5;
+  box-shadow: 0px 0px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 3px 0px rgba(0, 0, 0, 0.14), 0px 0px 0px 1px rgba(0, 0, 0, 0.12);
   border-bottom-right-radius: 4px;
-  z-index: 1 !important;
+  z-index: 10 !important;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: flex-end;
-  border-right: 2px inset $snow;
 }
 
 
 // heading
 
-@mixin heading1 {
-  font-size: $h2;
+@mixin heading3FS{
+  font-size: $h3;
   transition: visibility 0.3s ease 0ms;
   margin: 0;
-  padding: 8px 0;
+  padding: 12px 0;
   visibility: visible;
 }
 
@@ -180,15 +177,12 @@ $nav-boxshadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
 }
 
 @mixin sidenavLogo {
-  background-size: cover;
   transition: all 0.35s linear 0ms;
-  display: flex;
+  background-size: auto 100%;
   width: 100%;
-  padding: 1rem;
-  max-width: 230px;
-  height: 215px;
+  min-height: 188px;
+  height: auto;
   margin: 0 auto;
-  justify-content: center;
 }
 
 
@@ -238,7 +232,7 @@ $nav-boxshadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
   aCategory:  aCategory;
   headsup: headsup;
   alink:  alink;
-  heading1:  heading1;
+  heading3FS:  heading3FS;
 
   p:  p;
 

@@ -76,7 +76,8 @@ class ShopConnector extends Component {
 
 const mapStateToProps = (state) => ({
   shop: state.shop,
-  cart: state.cart
+  cart: state.cart,
+  ui: state.ui
 });
 
 const mapActionsToProps = {

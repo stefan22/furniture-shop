@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+// comps
+import MainContentNav from "./MainContentNav";
 // mui
 import Grid from "@material-ui/core/Grid";
 // comps
@@ -41,7 +43,8 @@ class Shop extends Component {
     const { category } = this.props.match.params;
     const {
       products,
-      shop: { page, totalPages }
+      shop: { page, totalPages },
+      ui
     } = this.props;
 
     return (
@@ -71,8 +74,9 @@ class Shop extends Component {
                   cart={this.props.cart}
                 />
               </header>
-
+              <MainContentNav />
               <MainShopContent
+                bigJumbo={ui.bigJumbo}
                 addToCart={this.props.addToCart}
                 deleteFromCart={this.props.deleteFromCart}
                 totalCartItems={this.props.totalCartItems}

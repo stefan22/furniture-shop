@@ -72,8 +72,7 @@ footer,
 }
 
 .topnav-container {
-  transition: top 0.3s linear, background 0.15s linear, color 0.1s linear,
-    box-shadow 0.3s linear, border 0.1s linear;
+  transition: all linear .35s 10ms;
   height: 67px;
   position: fixed;
   top: 0;
@@ -91,7 +90,6 @@ footer,
       width: 100%;
     }
     .topnav-logo {
-      transition: all 0.3s linear 0ms;
       position: absolute;
       top: -14px;
       left: 25px;
@@ -129,7 +127,7 @@ footer,
   display: hidden;
 }
 
-.mainHeader h1 {
+.mainHeader h3 {
   padding: 30px;
   margin: 0 auto;
   position: relative;
@@ -141,16 +139,6 @@ footer,
 
 /* ShopHeading */
 
-.topnav-container {
-  -webkit-text-fill-color: transparent;
-  animation: aitf 80s linear infinite;
-  -webkit-animation: aitf 80s linear infinite;
-  transform: translate3d(0, 0, 0);
-  -webkit-transform: translate3d(0, 0, 0);
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  z-index: 0;
-}
 
 header,.isShopHeading {
   height: 67px;
@@ -158,9 +146,7 @@ header,.isShopHeading {
 }
 
 .isShopHeading {
-  //background: url("../../images/bgside1.png") repeat left top;
   background: url("../../images/topbg.png") repeat left top;
-  transform: rotate(90deg);
   width: 100%;
   padding: 0 1rem;
   position: relative;
@@ -168,38 +154,27 @@ header,.isShopHeading {
   background-color: #eff2f7;
   border-bottom: 1px solid darken(#eff2f7,10%);
   opacity: 1;
-  transform: scale(1);
+
   color: $black;
 
-  h1 {
-    @include heading1;
+  h3 {
+    @include heading3FS;
     @media screen and (max-width: 850px) {
       visibility: hidden;
     }
   }
   &.isShopHeadingUp {
     opacity: 0;
-    transform: scale(0);
   }
 }
 
 /* Animate Background Image */
-
-@keyframes aitf {
-  0% {
-    background-position: 0% 50%;
-  }
-  100% {
-    background-position: 100% 50%;
-  }
-}
 
 .topLiner {
   @include topliner;
 }
 
 footer {
-  //background: $snow;
   border-top: 1px inset $white;
   box-shadow: $reg-boxshadow;
   height: 7vh;

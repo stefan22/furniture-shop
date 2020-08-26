@@ -76,34 +76,38 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const MainJumbo = () => {
+const MainJumbo = ({ bigJumbo }) => {
   const classes = useStyles();
 
   return (
-    <main className={classes.mainJumbo}>
-      <div className={classes.innerShade}></div>
+    <>
+      {!!bigJumbo && (
+        <main className={classes.mainJumbo}>
+          <div className={classes.innerShade}></div>
 
-      <Grid item xs={12} sm={12} md={12} lg={5}>
-        <CardMedia
-          elevation={2}
-          className={classes.cardMedia}
-          image={bigLiving}
-          title="Image title"></CardMedia>
-      </Grid>
+          <Grid item xs={12} sm={12} md={12} lg={5}>
+            <CardMedia
+              elevation={2}
+              className={classes.cardMedia}
+              image={bigLiving}
+              title="Image title"></CardMedia>
+          </Grid>
 
-      <Grid item xs={12} sm={12} md={12} lg={6}>
-        <div className={classes.jumboHeading}>
-          <h1>
-            Welcome,
-            <br /> Casino furniture
-          </h1>
-          <p>
-            Whether you're spending your days working from lorem Ipsum vamos
-            hola valaumos workday at home
-          </p>
-        </div>
-      </Grid>
-    </main>
+          <Grid item xs={12} sm={12} md={12} lg={6}>
+            <div className={classes.jumboHeading}>
+              <h1>
+                Welcome,
+                <br /> Casino furniture
+              </h1>
+              <p>
+                Whether you're spending your days working from lorem Ipsum vamos
+                hola valaumos workday at home
+              </p>
+            </div>
+          </Grid>
+        </main>
+      )}
+    </>
   );
 };
 

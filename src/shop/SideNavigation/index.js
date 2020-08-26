@@ -50,7 +50,7 @@ class SideNavigation extends Component {
 
   render() {
     const { currentCategory } = this.props;
-    const { scrollButton } = this.state;
+    const { scrollButton } = this.state; debugger;
 
     return (
       <nav className={"topnavCategoriesWrapper"}>

@@ -6,7 +6,7 @@ const ShopHeading = ({ heading }) => {
   let isHeading = heading || "Furniture Shop";
   return (
     <div className="isShopHeading">
-      <h1>{isHeading}</h1>
+      <h3>{isHeading}</h3>
     </div>
   );
 };
