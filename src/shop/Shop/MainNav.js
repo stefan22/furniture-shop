@@ -44,7 +44,7 @@ class MainContentNav extends Component {
   }
 
   render() {
-    const mainContentNav = (
+    const mainNav = (
       <div ref={this.topNavRef} className={"topnav-container"}>
         <div className="topnav-logo">
           <img src={flogo} alt={"Furniture Shop"} width="640" height="627" />
@@ -53,7 +53,7 @@ class MainContentNav extends Component {
       </div>
     );
 
-    return mainContentNav;
+    return mainNav;
   }
 }
 

@@ -1,15 +1,10 @@
 import React, { Component } from "react";
 // comps
-import MainContentNav from "./MainContentNav";
+import MainContent from "../layout/MainContent";
 // mui
 import Grid from "@material-ui/core/Grid";
 // comps
-import MainShopContent from "./MainShopContent";
-import ShopHeading from "./ShopHeading";
 import SideNavigation from "../SideNavigation";
-import MobileNavigation from "../MobileNavigation";
-import CartInfo from "../CartInfo";
-import Pagination from "../Pagination/index";
 import Spinner from "../../components/Spinner";
 // styles
 import "./styles.scss";
@@ -51,50 +46,30 @@ class Shop extends Component {
       <Grid container justify={"center"} spacing={0}>
         <div className="mainWrapper">
           <Grid item zeroMinWidth lg={2}>
-            <div className="sideNavCol">
-              <SideNavigation
-                handleJumboOff={this.props.handleJumboOff}
-                baseURL={baseURL}
-                currentCategory={category}
-                categories={this.props.shop.categories}
-              />
-            </div>
+            <SideNavigation
+              handleJumboOff={this.props.handleJumboOff}
+              baseURL={baseURL}
+              currentCategory={category}
+              categories={this.props.shop.categories}
+            />
           </Grid>
 
           {products.length === 0 ? (
             <Spinner />
           ) : (
-            <Grid item xs={12} md={12} lg={10}>
-              <header>
-                <MobileNavigation />
-                <ShopHeading mainTitle={"Furniture Shop"} />
-                <CartInfo
-                  deleteFromCart={this.props.deleteFromCart}
-                  totalCartItems={this.props.totalCartItems}
-                  cart={this.props.cart}
-                />
-              </header>
-              <MainContentNav />
-              <MainShopContent
-                bigJumbo={ui.bigJumbo}
-                addToCart={this.props.addToCart}
-                deleteFromCart={this.props.deleteFromCart}
-                totalCartItems={this.props.totalCartItems}
-                cart={this.props.cart}
-                category={category}
-                products={this.handleFilterProducts(category, products)}
-              />
-
-              <Pagination
-                page={page}
-                getPage={this.props.getPage}
-                totalPages={totalPages}
-              />
-
-              <footer>
-                <h3>Footer</h3>
-              </footer>
-            </Grid>
+            <MainContent
+              mainTitle={"Furniture Shop"}
+              deleteFromCart={this.props.deleteFromCart}
+              totalCartItems={this.props.totalCartItems}
+              cart={this.props.cart}
+              bigJumbo={ui.bigJumbo}
+              addToCart={this.props.addToCart}
+              category={category}
+              products={this.handleFilterProducts(category, products)}
+              page={page}
+              getPage={this.props.getPage}
+              totalPages={totalPages}
+            />
           )}
         </div>
       </Grid>
