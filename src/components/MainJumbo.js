@@ -2,7 +2,8 @@ import React from "react";
 import CardMedia from "@material-ui/core/CardMedia";
 import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
-
+import { ZoomInUpDiv } from "./animations/ZoomInUpDiv";
+import { FadeInUpDiv } from "./animations/FadeInUpDiv";
 // images
 import bigLiving from "../images/livingtopoftheworld.jpeg";
 
@@ -39,12 +40,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "flex-end",
     height: "255px",
     marginLeft: "-3rem",
-    [theme.breakpoints.down("sm")]: {
-      padding: "0 1rem",
-      "& h1": {
-        fontSize: theme.palette.fontSizes.h2
-      }
-    },
+
     "& h1, & p": {
       textAlign: "left",
       width: "fit-content",
@@ -62,48 +58,63 @@ const useStyles = makeStyles((theme) => ({
       justifyContent: "center",
       "& h1, & p": {
         textAlign: "center",
-        width: "100%"
+        width: "100%",
+        margin: "0 auto",
+        [theme.breakpoints.down("sm")]: {
+          padding: "0 1rem"
+        }
+      }
+    },
+    [theme.breakpoints.down("sm")]: {
+      padding: "0 1rem",
+      "& h1": {
+        fontSize: theme.palette.fontSizes.h2
       }
     }
   },
 
   cardMedia: {
     paddingTop: "56.25%", // 16:9
+    backgroundPosition: "center 0",
     backgroundSize: "contain",
     [theme.breakpoints.down("sm")]: {
       backgroundSize: "cover"
     }
   }
 }));
-
-const MainJumbo = ({ bigJumbo }) => {
+//bigJumbo
+const MainJumbo = (props) => {
   const classes = useStyles();
 
   return (
     <>
-      {!!bigJumbo && (
+      {props.category === "all" && (
         <main className={classes.mainJumbo}>
           <div className={classes.innerShade}></div>
 
           <Grid item xs={12} sm={12} md={12} lg={5}>
-            <CardMedia
-              elevation={2}
-              className={classes.cardMedia}
-              image={bigLiving}
-              title="Image title"></CardMedia>
+            <ZoomInUpDiv>
+              <CardMedia
+                elevation={2}
+                className={classes.cardMedia}
+                image={bigLiving}
+                title="Image title"></CardMedia>
+            </ZoomInUpDiv>
           </Grid>
 
           <Grid item xs={12} sm={12} md={12} lg={6}>
-            <div className={classes.jumboHeading}>
-              <h1>
-                Welcome,
-                <br /> Casino furniture
-              </h1>
-              <p>
-                Whether you're spending your days working from lorem Ipsum vamos
-                hola valaumos workday at home
-              </p>
-            </div>
+            <FadeInUpDiv>
+              <div className={classes.jumboHeading}>
+                <h1>
+                  Welcome,
+                  <br /> Jumbo furniture
+                </h1>
+                <p>
+                  Whether jumbo suheading lorem Ipsum tara sam ealium corinani
+                  lorem no nulla virusasem abbiamo lavoratum moltissimeum
+                </p>
+              </div>
+            </FadeInUpDiv>
           </Grid>
         </main>
       )}

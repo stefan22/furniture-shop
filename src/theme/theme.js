@@ -47,7 +47,8 @@ const theme = createMuiTheme({
         paddingRight: "14px"
       },
       root: {
-        fontWeight: "500"
+        fontWeight: "600",
+        fontSize: ".8rem"
       }
     },
     MuiFab: {
