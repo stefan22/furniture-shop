@@ -37,6 +37,8 @@ $darkblue: #2b3f53;
 @ font-sizes
 * -----------
 */
+$xlg: 3.5rem;
+$lg: 3.00rem;
 $h1: 2.25rem;
 $h2: 2rem;
 $h3: 1.8rem;
@@ -204,6 +206,8 @@ $nav-boxshadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
   p: $p;
   reg: $reg;
   small: $small;
+  lg: $lg;
+  xlg: $xlg;
 
   // colors
   pri: $pri;

@@ -40,3 +40,5 @@ yarn-error.log*
 **/fshop-key.json
 */API/
 /build.*
+
+*.txt

@@ -81,19 +81,17 @@ footer,
   z-index: 20 !important;
   @media screen and (max-width: 1279px) {
     width: 100%;
+    @include headsup;
+    .topnav-logo {
+      display: none;
+    }
   }
   &.headsup {
     @include headsup;
-    @media screen and (max-width: 1279px) {
-      width: 100%;
-    }
     .topnav-logo {
       position: absolute;
       top: -14px;
       left: 25px;
-      @media screen and (max-width: 1279px) {
-        display: none;
-      }
       img {
         background: url(../../images/fslogo.png) no-repeat 0 0;
         max-width: 85px;
@@ -141,21 +139,27 @@ header,
 .isShopHeading {
   height: 68px;
   z-index: 20;
-  background: transparent;
+  transition: all 0.45s ease 150ms;
   background-color: #eff2f7;
+  background: url("../../images/topbg.png") repeat left top;
   border-bottom: 1px solid darken(#eff2f7, 10%);
+  @media screen and (max-width: 1279px) {
+    background: none;
+  }
+    @media only screen
+    and (min-device-width: 375px)
+    and (max-device-width: 667px)
+    and (-webkit-min-device-pixel-ratio: 2)
+    and (orientation: portrait) {
+      border-bottom: none;
+  }
 }
 
 .isShopHeading {
-  background: url("../../images/topbg.png") repeat left top;
   width: 100%;
   padding: 0 1rem;
   position: relative;
-  transition: all 0.45s ease 0ms;
-  background-color: #eff2f7;
-  border-bottom: 1px solid darken(#eff2f7, 10%);
   opacity: 1;
-
   color: $black;
 
   h3 {

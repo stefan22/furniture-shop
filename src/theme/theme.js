@@ -36,7 +36,11 @@ const theme = createMuiTheme({
       h3: vars.h3,
       h4: vars.h4,
       h5: vars.h5,
-      h6: vars.h6
+      h6: vars.h6,
+      p: vars.p,
+      reg: vars.reg,
+      lg: vars.lg,
+      xlg: vars.xlg
     }
   },
 

@@ -40,13 +40,26 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "flex-end",
     height: "255px",
     marginLeft: "-3rem",
+    [theme.breakpoints.down("lg")]: {
+      justifyContent: "center"
+    },
 
     "& h1, & p": {
       textAlign: "left",
       width: "fit-content",
       color: theme.palette.colors.darkblue
     },
+    "& h1": {
+      fontSize: theme.palette.fontSizes.xlg,
+      [theme.breakpoints.down("lg")]: {
+        fontSize: theme.palette.fontSizes.lg
+      },
+      [theme.breakpoints.down("sm")]: {
+        fontSize: theme.palette.fontSizes.h1
+      }
+    },
     "& p": {
+      fontSize: theme.palette.fontSizes.reg,
       color: theme.palette.primary.main,
       [theme.breakpoints.down("md")]: {
         margin: "1.25rem 0"
@@ -110,8 +123,8 @@ const MainJumbo = (props) => {
                   <br /> Jumbo furniture
                 </h1>
                 <p>
-                  Whether jumbo suheading lorem Ipsum tara sam ealium corinani
-                  lorem no nulla virusasem abbiamo lavoratum moltissimeum
+                  Suheading ealium corinani lorem no nulla virusasem abbiamo
+                  moltissimeum
                 </p>
               </div>
             </FadeInUpDiv>
