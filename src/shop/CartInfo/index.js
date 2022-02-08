@@ -27,11 +27,20 @@ class CartInfo extends Component {
           <span>
             Your cart:{" "}
             {`${cartTotalItems ? cartTotalItems + " Item(s)" : "(empty)"}`}{" "}
+<<<<<<< HEAD
+
+          {cartTotalItems > 0 &&
+            <Link to="/shop/cart">
+              <ShoppingCartIcon />
+            </Link>
+          }
+=======
             {cartTotalItems > 0 && (
               <Link to={`/repositories/fshop/shop/cart`}>
                 <ShoppingCartIcon />
               </Link>
             )}
+>>>>>>> master
           </span>
         )}
       </div>

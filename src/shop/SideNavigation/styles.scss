@@ -9,8 +9,28 @@
   @include mainBoxCategories;
   .furnlogo {
     background: url("../../images/fslogo.png") no-repeat center 0px;
+<<<<<<< HEAD
+    background-size: cover;
+    transition: all .35s linear 0ms;
+    display: flex;
+    width: 100%;
+    padding: 1rem;
+    max-width: 230px;
+    mix-blend-mode: luminosity;
+    height: 215px;
+    margin: 0 auto;
+    justify-content: center;
+    @media screen and (max-width: 1190px) {
+      max-width: 190px;
+      height: 175px;
+    }
+    @media screen and (max-width: 960px) {
+      display: none;
+    }
+=======
     mix-blend-mode: multiply;
     @include sidenavLogo;
+>>>>>>> master
   }
 
   .topnavCategoriesMain {

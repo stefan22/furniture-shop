@@ -18,7 +18,11 @@ const useStyles = makeStyles({
     height: "18px",
     background: "white",
     border: "1px solid gray",
+<<<<<<< HEAD
+    borderRadius: "0",
+=======
     borderRadius: "0"
+>>>>>>> master
   },
 
   postCheck: {
@@ -30,8 +34,13 @@ const useStyles = makeStyles({
     padding: 0,
     outline: "1px solid white",
     boxShadow: "0 3px 5px 2px rgb(208, 208, 208)",
+<<<<<<< HEAD
+    borderRadius: "3px",
+  },
+=======
     borderRadius: "3px"
   }
+>>>>>>> master
 });
 
 const initialItems = [
@@ -39,17 +48,29 @@ const initialItems = [
     name: "white",
     label: "White",
     Icon: CheckBoxOutlineBlankOutlinedIcon,
+<<<<<<< HEAD
+    CheckedIcon: CheckBoxIcon,
+=======
     CheckedIcon: CheckBoxIcon
+>>>>>>> master
   },
   {
     name: "black",
     label: "Black",
     Icon: CheckBoxOutlineBlankSharpIcon,
+<<<<<<< HEAD
+    CheckedIcon: CheckBoxSharpIcon,
+  },
+];
+
+export default function CustomizingCheckboxItems({ handleDataElement }) {
+=======
     CheckedIcon: CheckBoxSharpIcon
   }
 ];
 
 export default function RadioColors(props) {
+>>>>>>> master
   const classes = useStyles();
   const [items, setItems] = useState({});
 
@@ -66,7 +87,11 @@ export default function RadioColors(props) {
     setItems({ [e.target.name]: e.target.checked });
     let checked = {};
     checked.color = e.target.name;
+<<<<<<< HEAD
+    handleDataElement(checked);
+=======
     props.handleDataElement({ name: e.target.name, value: e.target.checked });
+>>>>>>> master
   };
 
   return (
@@ -83,7 +108,11 @@ export default function RadioColors(props) {
                 <Icon
                   fontSize="small"
                   classes={{
+<<<<<<< HEAD
+                    root: classes.initCheck,
+=======
                     root: classes.initCheck
+>>>>>>> master
                   }}
                 />
               }
@@ -92,7 +121,11 @@ export default function RadioColors(props) {
                   color="primary"
                   fontSize="small"
                   classes={{
+<<<<<<< HEAD
+                    root: classes.postCheck,
+=======
                     root: classes.postCheck
+>>>>>>> master
                   }}
                 />
               }

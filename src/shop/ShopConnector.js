@@ -6,8 +6,13 @@ import { connect } from "react-redux";
 import Shop from "./Shop/index";
 import CartSummary from "./CartSummary";
 import ProductDetails from "./ProductDetails";
+<<<<<<< HEAD
+import { doLoadData,getPage } from "../redux/actions/DataActions";
+//import {getAuthenticatedData} from "../redux/actions/Products";
+=======
 import { getAuthenticatedData } from "../redux/actions/ProductsData";
 import { handleJumboOff } from "../redux/actions/UIActions";
+>>>>>>> master
 import {
   addToCart,
   updateCart,
@@ -27,7 +32,12 @@ class ShopConnector extends Component {
           exact={true}
           render={(routeProps) => (
             <Shop
+<<<<<<< HEAD
+              doLoadData={this.props.doLoadData}
+              //getAuthenticatedData={this.props.getAuthenticatedData}
+=======
               getAuthenticatedData={this.props.getAuthenticatedData}
+>>>>>>> master
               addToCart={this.props.addToCart}
               deleteFromCart={this.props.deleteFromCart}
               totalCartItems={this.props.totalCartItems}
@@ -81,6 +91,10 @@ const mapStateToProps = (state) => ({
 });
 
 const mapActionsToProps = {
+<<<<<<< HEAD
+  doLoadData,
+=======
+>>>>>>> master
   getAuthenticatedData,
   addToCart,
   updateCart,

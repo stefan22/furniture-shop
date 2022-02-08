@@ -50,8 +50,13 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+<<<<<<< HEAD
+  padding: 1rem 0;
+  @media screen and (max-width: 960px) {
+=======
 
   @media screen and (max-width: 1279px) {
+>>>>>>> master
     h2,
     h5 {
       width: 100%;
@@ -70,12 +75,22 @@
   } //endof 960
 
   h2 {
+<<<<<<< HEAD
+    margin-top: 1.5rem;
+    text-align: left;
+    font-size: $h2;
+    color: $redreg;
+  }
+  h5 {
+    color: $lightBlack;
+=======
     text-align: left;
     font-size: $h2;
     color: $pri;
   }
   h5 {
     color: lighten($black, 7%);
+>>>>>>> master
     font-size: $h5;
     text-align: left;
     font-weight: 400;
@@ -94,8 +109,12 @@
       font-size: $h6;
       margin: 1rem 0;
       text-align: left;
+<<<<<<< HEAD
+      @media screen and (max-width: 960px) {
+=======
       color: $black;
       @media screen and (max-width: 1279px) {
+>>>>>>> master
         margin-bottom: 1rem !important;
       }
     }
@@ -104,14 +123,22 @@
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
+<<<<<<< HEAD
+      @media screen and (max-width: 960px) {
+=======
       @media screen and (max-width: 1279px) {
+>>>>>>> master
         margin: 0 auto;
       }
       h3 {
         margin: 0;
         font-size: $h3;
         margin-bottom: 1rem;
+<<<<<<< HEAD
+        color: $redreg;
+=======
         color: $pri;
+>>>>>>> master
       }
     }
   }
@@ -122,13 +149,23 @@
       font-size: $h6;
       text-align: left;
       margin: 1rem 0;
+<<<<<<< HEAD
+      @media screen and (max-width: 960px) {
+=======
       @media screen and (max-width: 1279px) {
+>>>>>>> master
         margin-bottom: 1rem !important;
       }
     }
     .productQty {
       margin: 7px;
       width: 100%;
+<<<<<<< HEAD
+      div {
+        width: 115px;
+        font-size: $small;
+        @media screen and (max-width: 960px) {
+=======
       display: flex;
       min-height: 59px;
       flex-direction: column;
@@ -141,6 +178,7 @@
         width: 115px;
         font-size: $small;
         @media screen and (max-width: 1279px) {
+>>>>>>> master
           display: flex;
           margin: 0 auto;
           input {
@@ -154,8 +192,13 @@
       button {
         margin: 2rem 0 1rem;
         .MuiButton-outlinedSecondary {
+<<<<<<< HEAD
+          color: $redreg !important;
+          border: 1px solid $redreg !important;
+=======
           color: $pri !important;
           border: 1px solid $pri !important;
+>>>>>>> master
         }
       }
     }
@@ -172,6 +215,21 @@
   justify-content: flex-start;
   margin: 7px;
   width: 27%;
+<<<<<<< HEAD
+  & span.MuiTypography-body1 {
+    font-size: .9rem;
+    vertical-align: middle;
+  }
+  @media screen and (max-width: 960px) {
+    p {
+      text-align: center;
+    }
+  }
+
+}
+
+
+=======
   min-height: 92px;
   & span.MuiTypography-body1 {
     font-size: 0.9rem;
@@ -188,6 +246,7 @@
   }
 }
 
+>>>>>>> master
 /**
 # should add matui color to theme
 */

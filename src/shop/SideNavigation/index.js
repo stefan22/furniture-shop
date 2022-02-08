@@ -8,6 +8,38 @@ import HighlightIcon from "@material-ui/icons/Highlight";
 import VerticalAlignTopIcon from "@material-ui/icons/VerticalAlignTop";
 
 class SideNavigation extends Component {
+<<<<<<< HEAD
+
+  render() {
+  console.log(this.props.categories)
+    return (
+      <nav className={"topnavCategoriesWrapper"}>
+        <div className="furnlogo"></div>
+
+        <div className="topnavCategoriesMain">
+          <ul className="topnavCategories">
+            <li className="categoryAll">
+              <Link to={`/shop/products/all`} className="button">
+                <HighlightIcon className="categoryIcon" /> All
+              </Link>
+            </li>
+
+            {this.props.categories.length > 0 &&
+              this.props.categories.map((cat) => (
+                <li className="categoryOther" key={cat.category}>
+                  <Link
+                    rel="noreferrer nonopener"
+                    to={`/shop/products/${cat.category}`}
+                    className="button"
+                  >
+                    <DeckIcon className="categoryIcon" /> {cat.category}
+                  </Link>
+                </li>
+              ))}
+          </ul>
+        </div>
+      </nav>
+=======
   constructor(props) {
     super(props);
     this.state = {
@@ -97,6 +129,7 @@ class SideNavigation extends Component {
           </div>
         </nav>
       </div>
+>>>>>>> master
     );
   }
 }

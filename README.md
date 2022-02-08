@@ -17,6 +17,73 @@ $ npm install
 $ npm start
 
 ```
+  @ json-server
+  =============
+
+  @url => http://localhost:4000/api/products?
+  @param => category
+  @param => _page
+  @param => _limit
+  @param => _sort
+
+  # filter by param
+  # ex: http://localhost:4000/api/products?_page2&_limit=20&_sort=name
+
+```
+
+
+```
+  @ faker-data
+  ============
+
+    ø Categories
+      -----------
+      • furniture
+      • lighting
+      • accessories
+
+    ø Products
+      ------------
+      • id <number>
+      • name <string>
+      • image <string>
+      • category <string>
+      • description <string>
+      • price <number>
+
+
+  @ routes
+  ========
+  • /shop/products/:category
+  • /shop/products/cart
+  • /shop/produts/checkout
+  • /shop/products/:category/:id
+  • /shop/products/all <redirect>
+  • /shop/products/:category/:id  (details page)
+
+```
+
+
+#### Moved data to GCFirebase
+
+- Need to redo pagination
+
+
+
+
+
+
+<br />
+<hr />
+<br />
+
+<kbd>screenshot</kbd>
+
+![](src/images/screenshot.png)
+
+<br/>
+
+
 
 ### New data
 
@@ -30,7 +97,26 @@ $ npm start
 
 #### Old data
 
-- Url: "localhost:4000/api/products>?"
+### firebase GCP functions
+(production)
+
+- deployed fb functions
+- endpoints:
+
+```
+  app.get("/shop/products/all", getProducts );
+
+  app.get("/shop/products/:category/:id", getProduct);
+
+  app.get("/shop/categories/all", getCategories);
+
+  app.get("/shop/cart", getCart);
+
+  app.post("/shop/product", createProduct);
+
+```
+
+
 
 | Param    | Url                                                        |
 | -------- | ---------------------------------------------------------- |
@@ -58,7 +144,12 @@ $ npm start
 
 ### Todos
 
-- Redo pagination
-- design-on-the-fly update: new hero/jumbotron
-- theme merge: mui/sass  finish/up
-- single source admin app GCfunctions finish up
+
+```
+
+ Options -MultiViews
+RewriteEngine On
+Rewritecond %{REQUEST_FILENAME} !-f
+RewriteRule ^ index.html [QSA,L]
+
+```

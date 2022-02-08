@@ -5,7 +5,14 @@ import MainContent from "../layout/MainContent";
 import Grid from "@material-ui/core/Grid";
 // comps
 import SideNavigation from "../SideNavigation";
+<<<<<<< HEAD
+import MobileNavigation from "../MobileNavigation";
+import CartInfo from "../CartInfo";
+import Pagination from "../Pagination";
+
+=======
 import Spinner from "../../components/Spinner";
+>>>>>>> master
 // styles
 import "./styles.scss";
 
@@ -20,7 +27,12 @@ class Shop extends Component {
   }
 
   componentDidMount() {
+<<<<<<< HEAD
+    this.props.doLoadData();
+    //this.props.getAuthenticatedData();
+=======
     this.props.getAuthenticatedData();
+>>>>>>> master
   }
 
   handleFilterProducts = (cat = "all", prdts = []) => {
@@ -62,7 +74,14 @@ class Shop extends Component {
               deleteFromCart={this.props.deleteFromCart}
               totalCartItems={this.props.totalCartItems}
               cart={this.props.cart}
+<<<<<<< HEAD
+            />
+            <ShopHeading mainTitle={"Furniture Shop"} />
+
+            <MainShopContent
+=======
               bigJumbo={ui.bigJumbo}
+>>>>>>> master
               addToCart={this.props.addToCart}
               category={category}
               products={this.handleFilterProducts(category, products)}
