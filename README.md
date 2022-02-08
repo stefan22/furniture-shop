@@ -1,5 +1,7 @@
 # React Store &nbsp; :department_store:
 
+> Candidate for deletion :neckbeard: :boom:  😱
+
 See [Repo Link](https://donpio.tech/repositories/fshop/)
 
 Changes: no longer fetching data with Node/Express, JSONServer/FakerData
