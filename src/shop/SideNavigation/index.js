@@ -23,7 +23,7 @@ class SideNavigation extends Component {
   winScrollAmount = () => {
     let scrollAmt =
       document.body.scrollTop || document.documentElement.scrollTop;
-    return scrollAmt;
+    return scrollAmt - 500;
   };
 
   winScrollShow = (amt) =>
@@ -53,43 +53,50 @@ class SideNavigation extends Component {
     const { scrollButton } = this.state;
 
     return (
-      <nav className={"topnavCategoriesWrapper"}>
-        <div className="furnlogo"></div>
+      <div className="sideNavCol">
+        <nav className="topnavCategoriesWrapper">
+          <div className="furnlogo"></div>
 
-        <div className="topnavCategoriesMain">
-          <ul className="topnavCategories">
-            <li className="categoryAll">
-              <Link
-                to={`/repositories/fshop/shop/products/all`}
-                className="button">
-                {currentCategory === "all" && !!scrollButton && (
-                  <span className="productsScrollTop">
-                    <VerticalAlignTopIcon />
-                  </span>
-                )}
-                <HighlightIcon className="categoryIcon" /> All
-              </Link>
-            </li>
-
-            {this.props.categories.length > 0 &&
-              this.props.categories.map((cat) => (
-                <li className="categoryOther" key={cat.category}>
-                  <Link
-                    rel="noreferrer nonopener"
-                    to={`/repositories/fshop/shop/products/${cat.category}`}
-                    className="button">
-                    {currentCategory === cat.category && !!scrollButton && (
-                      <span className="productsScrollTop">
-                        <VerticalAlignTopIcon />
-                      </span>
-                    )}
-                    <DeckIcon className="categoryIcon" /> {cat.category}
-                  </Link>
-                </li>
-              ))}
-          </ul>
-        </div>
-      </nav>
+          <div className="topnavCategoriesMain">
+            <ul className="topnavCategories">
+              <li
+                key={0}
+                onClick={this.props.handleJumboOff}
+                className="categoryAll">
+                <Link
+                  to={`/repositories/fshop/shop/products/all`}
+                  className="button">
+                  {currentCategory === "all" && !!scrollButton && (
+                    <span className="productsScrollTop">
+                      <VerticalAlignTopIcon />
+                    </span>
+                  )}
+                  <HighlightIcon className="categoryIcon" /> All
+                </Link>
+              </li>
+              {!!this.props.categories &&
+                this.props.categories.map((cat, idx) => (
+                  <li
+                    key={idx + 1}
+                    onClick={this.props.handleJumboOff}
+                    className="categoryOther">
+                    <Link
+                      rel="noreferrer nonopener"
+                      to={`/repositories/fshop/shop/products/${cat.category}`}
+                      className="button">
+                      {currentCategory === cat.category && !!scrollButton && (
+                        <span className="productsScrollTop">
+                          <VerticalAlignTopIcon />
+                        </span>
+                      )}
+                      <DeckIcon className="categoryIcon" /> {cat.category}
+                    </Link>
+                  </li>
+                ))}
+            </ul>
+          </div>
+        </nav>
+      </div>
     );
   }
 }

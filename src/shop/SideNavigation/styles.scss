@@ -1,34 +1,32 @@
-@import '../../styles/vars.scss';
+@import "../../styles/vars.scss";
 
+// sidenav wrapper
 .topnavCategoriesWrapper {
   background: url("../../images/bgside1.png") center 24% no-repeat;
-  background-blend-mode: lighten;
   background-size: auto;
+  width: 100%;
+  // main categories
   @include mainBoxCategories;
   .furnlogo {
-    background: url('../../images/fslogo.png') no-repeat center 0px;
+    background: url("../../images/fslogo.png") no-repeat center 0px;
     mix-blend-mode: multiply;
     @include sidenavLogo;
-
-    @media screen and (max-width: 1279px) {
-      display: none;
-    }
   }
+
   .topnavCategoriesMain {
-    padding: 0 0.1rem;
     position: relative;
     .topnavCategories {
       display: flex;
       flex-flow: column;
-      transition: all 0.35s linear 500ms;
+      transition: all 0.35s linear 100ms;
       justify-content: flex-start;
-      margin-top: 1.5rem;
-      @media screen and (max-width: 1279px) {
-        display: none;
-      } //endof 1279
+      margin: 1.25rem 0;
 
       .categoryAll {
         position: relative;
+        &:hover {
+          background-color: #d5dbe3;
+        }
         a {
           .categoryIcon {
             margin-right: 10px;
@@ -36,10 +34,12 @@
           }
           @include aCategory;
         }
-
       }
       .categoryOther {
         position: relative;
+        &:hover {
+          background-color: #d5dbe3;
+        }
         a {
           .categoryIcon {
             margin-right: 10px;
@@ -49,15 +49,17 @@
         }
       }
     } //topnavCategories
-
   } //topnavCategoriesMain
 
 } //topnavCategoriesWrapper
 
 
+
 /**
-*  productsScrollTop
+*   productsScrollTop
+*   -----------------
 */
+
 .categoryAll a {
   .productsScrollTop {
     transition: all 0.35s linear 0ms;
@@ -101,7 +103,7 @@
   }
 }
 .productsScrollTop::after {
-  content: 'Scroll Top';
+  content: "Scroll Top";
   display: flex;
   justify-content: center;
   align-items: center;
@@ -111,7 +113,5 @@
   letter-spacing: 0;
   line-height: 1;
 }
-
-
 
 /* end productsScrollTop */

@@ -19,11 +19,28 @@ const theme = createMuiTheme({
       black: vars.black,
       white: vars.white,
       snow: vars.snow,
-      lightblack: vars.lightblack,
+      lightblack: vars.lightBlack,
       footerBg: vars.footerBg,
       navigationBg: vars.navigationBg,
       tableHeadingBg: vars.tableHeadingBg,
-      borderBottomLight: vars.borderBottomLight
+      borderBottomLight: vars.borderBottomLight,
+      jumbg: vars.jumbg,
+      darkblue: vars.darkblue
+    },
+    boxShadows: {
+      reg: vars.regboxshadow
+    },
+    fontSizes: {
+      h1: vars.h1,
+      h2: vars.h2,
+      h3: vars.h3,
+      h4: vars.h4,
+      h5: vars.h5,
+      h6: vars.h6,
+      p: vars.p,
+      reg: vars.reg,
+      lg: vars.lg,
+      xlg: vars.xlg
     }
   },
 
@@ -34,7 +51,8 @@ const theme = createMuiTheme({
         paddingRight: "14px"
       },
       root: {
-        fontWeight: "500"
+        fontWeight: "600",
+        fontSize: ".8rem"
       }
     },
     MuiFab: {
@@ -44,5 +62,7 @@ const theme = createMuiTheme({
     }
   }
 });
+
+console.log(theme);
 
 export default theme;

@@ -2,7 +2,7 @@ import React, { Component, createRef } from "react";
 import { withRouter } from "react-router-dom";
 // comps
 import DetailsInfo from "./DetailsInfo";
-import MainContentNav from "../Shop/MainContentNav";
+import MainNav from "../Shop/MainNav";
 import SideNavigation from "../SideNavigation";
 import MobileNavigation from "../MobileNavigation";
 import CartInfo from "../CartInfo";
@@ -128,7 +128,7 @@ class ProductDetails extends Component {
                   <div className="topLiner"></div>
 
                   <div className="mainHeader">
-                    <MainContentNav />
+                    <MainNav />
                   </div>
                 </Grid>
 

@@ -3,13 +3,16 @@ import thunk from "redux-thunk";
 // reducers
 import { ShopReducer } from "./reducers/ShopReducer";
 import { CartReducer } from "./reducers/CartReducer";
+import { UIReducer } from "./reducers/UIReducer";
+
 // middlewares
 const middlewares = [thunk];
 
 // rootReducer
 const rootReducer = combineReducers({
   shop: ShopReducer,
-  cart: CartReducer
+  cart: CartReducer,
+  ui: UIReducer
 });
 
 const composeEnhancer =
