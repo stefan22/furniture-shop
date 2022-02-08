@@ -15,27 +15,26 @@ Install the dependencies and run by:
 cd [to-local-folder]
 $ npm install
 $ npm start
+```
 
 ```
-  @ json-server
-  =============
-
   @url => http://localhost:4000/api/products?
   @param => category
   @param => _page
   @param => _limit
   @param => _sort
 
-  # filter by param
-  # ex: http://localhost:4000/api/products?_page2&_limit=20&_sort=name
-
 ```
 
 
-```
-  @ faker-data
-  ============
+## Filter by param
+ex: `http://localhost:4000/api/products?_page2&_limit=20&_sort=name`
 
+
+## Faker-data
+  
+  
+```
     ø Categories
       -----------
       • furniture
@@ -51,20 +50,21 @@ $ npm start
       • description <string>
       • price <number>
 
-
-  @ routes
-  ========
-  • /shop/products/:category
-  • /shop/products/cart
-  • /shop/produts/checkout
-  • /shop/products/:category/:id
-  • /shop/products/all <redirect>
-  • /shop/products/:category/:id  (details page)
-
 ```
 
 
-#### Moved data to GCFirebase
+##  @ routes
+
+• /shop/products/:category       
+• /shop/products/cart   
+• /shop/produts/checkout    
+• /shop/products/:category/:id   
+• /shop/products/all <redirect>    
+• /shop/products/:category/:id  (details page)    
+
+
+
+### Moved data to GCFirebase
 
 - Need to redo pagination
 
