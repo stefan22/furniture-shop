@@ -1,9 +1,15 @@
 @import "../../styles/vars.scss";
 
+// sidenav wrapper
 .topnavCategoriesWrapper {
+  background: url("../../images/bgside1.png") center 24% no-repeat;
+  background-size: auto;
+  width: 100%;
+  // main categories
   @include mainBoxCategories;
   .furnlogo {
     background: url("../../images/fslogo.png") no-repeat center 0px;
+<<<<<<< HEAD
     background-size: cover;
     transition: all .35s linear 0ms;
     display: flex;
@@ -21,43 +27,111 @@
     @media screen and (max-width: 960px) {
       display: none;
     }
+=======
+    mix-blend-mode: multiply;
+    @include sidenavLogo;
+>>>>>>> master
   }
+
   .topnavCategoriesMain {
-    padding: 0 0.1rem;
+    position: relative;
     .topnavCategories {
       display: flex;
       flex-flow: column;
-      transition: all .35s linear 500ms;
+      transition: all 0.35s linear 100ms;
       justify-content: flex-start;
-      margin-top: 1.5rem;
-      @media screen and (max-width: 960px) {
-        display: none;
-      }//endof 960
+      margin: 1.25rem 0;
 
       .categoryAll {
+        position: relative;
+        &:hover {
+          background-color: #d5dbe3;
+        }
         a {
           .categoryIcon {
             margin-right: 10px;
+            margin-left: 10px;
           }
           @include aCategory;
-        }
-        &:hover {
-          // background-color: $categoryHoverColor;
-          // mix-blend-mode: luminosity;
         }
       }
       .categoryOther {
+        position: relative;
+        &:hover {
+          background-color: #d5dbe3;
+        }
         a {
           .categoryIcon {
             margin-right: 10px;
+            margin-left: 10px;
           }
           @include aCategory;
-        }
-        &:hover {
-          // background-color: $categoryHoverColor;
-          // mix-blend-mode: luminosity;
         }
       }
     } //topnavCategories
   } //topnavCategoriesMain
+
 } //topnavCategoriesWrapper
+
+
+
+/**
+*   productsScrollTop
+*   -----------------
+*/
+
+.categoryAll a {
+  .productsScrollTop {
+    transition: all 0.35s linear 0ms;
+    position: absolute;
+    max-width: 24px;
+    left: 9px;
+    top: 25px;
+    svg {
+      font-size: 1.27rem;
+    }
+  }
+
+  @media screen and (max-width: 1280px) {
+    .productsScrollTop {
+      transition: all 0.35s linear 0ms;
+      position: absolute;
+      max-width: 35px;
+      left: 3px;
+      top: 15px;
+    }
+  }
+}
+
+.categoryOther a {
+  .productsScrollTop {
+    position: absolute;
+    max-width: 24px;
+    left: 9px;
+    top: 25px;
+    svg {
+      font-size: 1.27rem;
+    }
+  }
+  @media screen and (max-width: 1280px) {
+    .productsScrollTop {
+      position: absolute;
+      max-width: 35px;
+      left: 3px;
+      top: 15px;
+    }
+  }
+}
+.productsScrollTop::after {
+  content: "Scroll Top";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 35px;
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1;
+}
+
+/* end productsScrollTop */

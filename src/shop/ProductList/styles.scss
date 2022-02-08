@@ -1,40 +1,43 @@
-@import "../../styles/vars.scss";
+@import '../../styles/vars.scss';
 
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0.5;
-  }
-}
 
-.productListWrapper {
-  display: flex;
-  flex-flow: column;
-  animation: fadeIn 0.35s;
-  transition: opacity 0.5s 350ms;
-  opacity: 1;
-  margin: 2rem 1rem;
-  h4 {
-    @include cardHeading;
-  }
-  .productPriceTage {
-    font-size: $h5;
-    color: $cardPrice;
-    display: block;
-    margin: 1.5rem 0 1.25rem;
-  }
-  .productDescription {
-    height: auto;
-    overflow-y: hidden;
-    @include p;
-  }
-  .actionButtonWrapper {
-    z-index: 10;
-    padding: 1rem;
-    margin-bottom: 1rem;
-    button: {
+
+  .productListWrapper {
+    display: flex;
+    flex-flow: column;
+    opacity: 1;
+    margin: 2rem .5rem;
+
+
+    @media screen and (min-width: 1281px) {
+      margin: 2rem 2.15rem;
     }
-  }
-} //productListWrapper
+    @media screen and (min-width: 768px) and (max-width: 1024px) {
+      margin: 2rem 1rem;
+    }
+    @media screen and (max-width: 414px) {
+      margin: 2rem .5rem;
+    }
+    h4 {
+      @include cardHeading;
+    }
+    .productPriceTage {
+      font-size: $h5;
+      color: $pri;
+      display: block;
+      margin: 1.5rem 0 1.25rem;
+    }
+    .productDescription {
+      height: auto;
+      overflow-y: hidden;
+      @include p;
+    }
+    .actionButtonWrapper {
+      z-index: 10;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      button: {
+      }
+    }
+  } //productListWrapper
+

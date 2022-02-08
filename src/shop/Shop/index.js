@@ -1,23 +1,38 @@
 import React, { Component } from "react";
+// comps
+import MainContent from "../layout/MainContent";
 // mui
 import Grid from "@material-ui/core/Grid";
 // comps
-import MainShopContent from "./MainShopContent";
-import ShopHeading from "./ShopHeading";
 import SideNavigation from "../SideNavigation";
+<<<<<<< HEAD
 import MobileNavigation from "../MobileNavigation";
 import CartInfo from "../CartInfo";
 import Pagination from "../Pagination";
 
+=======
+import Spinner from "../../components/Spinner";
+>>>>>>> master
 // styles
 import "./styles.scss";
 
-const baseURL = "/shop/products";
+const baseURL = "/repositories/fshop/shop/products";
 
 class Shop extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      loading: true
+    };
+  }
+
   componentDidMount() {
+<<<<<<< HEAD
     this.props.doLoadData();
     //this.props.getAuthenticatedData();
+=======
+    this.props.getAuthenticatedData();
+>>>>>>> master
   }
 
   handleFilterProducts = (cat = "all", prdts = []) => {
@@ -36,46 +51,45 @@ class Shop extends Component {
     const {
       products,
       shop: { page, totalPages },
+      ui
     } = this.props;
 
     return (
       <Grid container justify={"center"} spacing={0}>
         <div className="mainWrapper">
-          <Grid item zeroMinWidth md={2} lg={2}>
-            <div className="sideNavCol">
-              <SideNavigation
-                baseURL={baseURL}
-                categories={this.props.shop.categories}
-              />
-            </div>
+          <Grid item zeroMinWidth lg={2}>
+            <SideNavigation
+              handleJumboOff={this.props.handleJumboOff}
+              baseURL={baseURL}
+              currentCategory={category}
+              categories={this.props.shop.categories}
+            />
           </Grid>
 
-          <Grid item xs={12} md={10} lg={10}>
-            <MobileNavigation />
-            <CartInfo
+          {products.length === 0 ? (
+            <Spinner />
+          ) : (
+            <MainContent
+              mainTitle={"Furniture Shop"}
               deleteFromCart={this.props.deleteFromCart}
               totalCartItems={this.props.totalCartItems}
               cart={this.props.cart}
+<<<<<<< HEAD
             />
             <ShopHeading mainTitle={"Furniture Shop"} />
 
             <MainShopContent
+=======
+              bigJumbo={ui.bigJumbo}
+>>>>>>> master
               addToCart={this.props.addToCart}
-              cart={this.props.cart}
               category={category}
               products={this.handleFilterProducts(category, products)}
-            />
-
-            <Pagination
               page={page}
               getPage={this.props.getPage}
               totalPages={totalPages}
             />
-
-            <footer>
-              <h3>Footer</h3>
-            </footer>
-          </Grid>
+          )}
         </div>
       </Grid>
     );

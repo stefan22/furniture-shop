@@ -1,12 +1,24 @@
 @import "../../styles/vars.scss";
 
 .mobileMenu {
-  position: fixed;
-  z-index: 20;
+  z-index: 30;
+  flex: 0 1 auto;
+  padding: 0px 7px;
+  width: fit-content;
+  border-radius: 5px;
+  flex: 0 1 auto;
   display: flex;
-  height: 66px;
-  margin: 0 1rem;
-
+  margin: 0;
+  @media screen and (max-width: 1279px) {
+    position: fixed;
+    left: 2%;
+  }
+  @media screen and (max-width: 414px) {
+    left: 4.5%;
+  }
+  a {
+    padding: 12px 0;
+  }
   .hamburger {
     display: flex;
     align-items: center;
@@ -20,8 +32,9 @@
   text-align: center;
   justify-content: center;
   align-items: center;
-  width: 40px;
+  width: 42px;
   height: 40px;
+  background: $white;
   cursor: pointer;
   &:focus,&:active {
     outline: none;
@@ -30,6 +43,7 @@
   .menuButtonBurger {
     width: 20px;
     height: 2px;
+    padding: 0 5px;
     background: $black;
     border-radius: 5px;
     transition: all 0.25s ease-in-out;
@@ -37,7 +51,7 @@
 }
 
 .menuButton.open .menuButtonBurger {
-  transform: translateX(-15px);
+  transform: translateX(-16px);
   background: transparent;
   box-shadow: none;
 }
@@ -51,19 +65,20 @@
 }
 
 .menuButtonBurger::before {
-  transform: translate(-10px, -10px);
+  transform: translate(-12px, -10px);
 }
 
 .menuButtonBurger::after {
-  transform: translate(-10px, 10px);
+  transform: translate(-12px, 10px);
 }
 
 .menuButtonBurger::before,
 .menuButtonBurger::after {
   content: "";
   position: absolute;
-  width: 20px;
+  width: 24px;
   height: 2px;
+  padding: 0 2px;
   background: $black;
   border-radius: 5px;
   transition: all 0.25s ease-in-out;

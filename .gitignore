@@ -35,5 +35,10 @@ yarn-error.log*
 .firebaserc
 
 
+# others
 **/dbURL.js
 **/fshop-key.json
+*/API/
+/build.*
+
+*.txt

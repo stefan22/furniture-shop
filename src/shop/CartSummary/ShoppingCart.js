@@ -10,20 +10,17 @@ class ShoppingCart extends Component {
     this.props.getCartTotal(this.props.cartItems);
   }
 
-
   handleChange = (qty, e) => {
     this.props.updateCart(qty, e.target.value);
     this.props.getCartTotal(this.props.cartItems);
-  }
+  };
 
   handleDeleteFromCart = (itm) => {
     this.props.deleteFromCart(itm);
     this.props.getCartTotal(this.props.cartItems);
-  }
-
+  };
 
   render() {
-
     const { cartItems, cartTotalPrice } = this.props;
     return (
       <Grid item xs={12}>
@@ -36,7 +33,7 @@ class ShoppingCart extends Component {
                 <div className="cartHead">Description</div>
                 <div className="cartHead">Price</div>
                 <div className="cartHead">Subtotal</div>
-                <div className="cartHead"></div>
+                <div className="cartHead">Edit Cart</div>
               </div>
             </div>
 
@@ -47,7 +44,7 @@ class ShoppingCart extends Component {
                     <input
                       type="number"
                       value={itm.qty}
-                      onChange={(e) => this.handleChange(itm,e)}
+                      onChange={(e) => this.handleChange(itm, e)}
                     />
                   </div>
                   <div className="cartCell">{itm.name}</div>
@@ -57,13 +54,11 @@ class ShoppingCart extends Component {
                   <div className="cartCell cartRemove">
                     <Button
                       onClick={() => this.handleDeleteFromCart(itm)}
-                      variant="outlined"
+                      variant="contained"
                       size="small"
-                      color="secondary"
-                    >
+                      color="primary">
                       Remove
                     </Button>
-
                   </div>
                 </div>
               ))}
@@ -74,11 +69,7 @@ class ShoppingCart extends Component {
                 <div className="cartCell"></div>
                 <div className="cartCell"></div>
                 <div className="cartCell"></div>
-                <div
-                  className="cartCell"
-                >
-                  Total:
-                </div>
+                <div className="cartCell">Total:</div>
                 <div className="cartCell">£ {cartTotalPrice}</div>
                 <div className="cartCell"></div>
               </div>

@@ -11,15 +11,14 @@ class CartInfo extends Component {
 
   handleTotalItems = () => {
     const {
-      cart: { cartItems },
+      cart: { cartItems }
     } = this.props;
     !!cartItems && this.props.totalCartItems(cartItems);
   };
 
   render() {
-
     const {
-      cart: { cartItems, cartTotalItems },
+      cart: { cartItems, cartTotalItems }
     } = this.props;
 
     return (
@@ -28,12 +27,20 @@ class CartInfo extends Component {
           <span>
             Your cart:{" "}
             {`${cartTotalItems ? cartTotalItems + " Item(s)" : "(empty)"}`}{" "}
+<<<<<<< HEAD
 
           {cartTotalItems > 0 &&
             <Link to="/shop/cart">
               <ShoppingCartIcon />
             </Link>
           }
+=======
+            {cartTotalItems > 0 && (
+              <Link to={`/repositories/fshop/shop/cart`}>
+                <ShoppingCartIcon />
+              </Link>
+            )}
+>>>>>>> master
           </span>
         )}
       </div>

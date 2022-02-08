@@ -1,45 +1,20 @@
-# React Store
+# React Store &nbsp; :department_store:
 
-[Different data src]
+See [Repo Link](https://donpio.tech/repositories/fshop/)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Changes: no longer fetching data with Node/Express, JSONServer/FakerData
 
+- Moved proj to [PDETAILS] Branch
 
-### How-to :card_index:
+## Installation
 
-Download repository, install dependencies and type `npm start`
+Install the dependencies and run by:
 
-### Start
-- `npm start` opens in browser:
-  + `localhost:3000` [client]
-  + `localhost:4000` [server]
+```sh
 
-
-### Folders
-- redux [actions,reducers,store,types]
-- shop [shopConnector & components: index.js,styles.scss, ]
-- server `localhost:4000/api/products`
-
-
-### Functionality so far
-
-• Products  `/shop/products`
-- categories/data filtered-by, right-side menu
-- click a product [add-to-cart] button & goto `/shop/cart`
-- [cart badge] upper-right side, displays items currently on cart
-- click [cart-icon] svg, it routes to `/shop/cart`
-
-
-
-• Cart `/shop/cart`
-
-- update quantity, it updates total
-- remove item, it updates total
-- option to [continue-shopping] button (back to `/shop/products`) || [proceed to checkout]
-  button `/shop/checkout`
-
-
-### Data
+cd [to-local-folder]
+$ npm install
+$ npm start
 
 ```
   @ json-server
@@ -110,10 +85,17 @@ Download repository, install dependencies and type `npm start`
 
 
 
+### New data
 
+- Hosted with GC Functions Firestore DB
+- See [DataLink](https://fshop-f04aa.web.app/#home)
 
+#### Main folders
 
+- Redux: actions, reducers, store, types
+- Shop: react components
 
+#### Old data
 
 ### firebase GCP functions
 (production)
@@ -136,15 +118,31 @@ Download repository, install dependencies and type `npm start`
 
 
 
+| Param    | Url                                                        |
+| -------- | ---------------------------------------------------------- |
+| category | localhost:4000/api/products?category=furniture             |
+| \_page   | localhost:4000/api/products?\_page2                        |
+| \_limit  | localhost:4000/api/products?\_page2&\_limit=20             |
+| \_sort   | localhost:4000/api/products?\_page2&\_limit=20&\_sort=name |
 
+##### Faker data products & categories
 
+###### cateogries
 
-<br />
-<br />
+- [Category] - furniture
+- [Category] - lighting
+- [Category] - accessories
 
-<hr />
+###### products
 
+- [product] - id :number
+- [product] - name :string
+- [product] - image :string
+- [product] - category :string
+- [product] - description :string
+- [product] - price :number
 
+### Todos
 
 
 ```

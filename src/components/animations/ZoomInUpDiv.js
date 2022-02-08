@@ -3,11 +3,6 @@ import { zoomInUp } from "react-animations";
 
 const zoomInUpAnimation = keyframes`${zoomInUp}`;
 
-export const ZoomInUpWrapperDiv = styled.div`
+export const ZoomInUpDiv = styled.div`
   animation: 1.5s ${zoomInUpAnimation};
 `;
-
-
-
-
-

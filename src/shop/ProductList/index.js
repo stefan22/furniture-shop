@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
 // mui
 import Grid from "@material-ui/core/Grid";
@@ -6,21 +6,23 @@ import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import Button from "@material-ui/core/Button";
 // styles
-import { ZoomInUpWrapperDiv } from "./ProductListAnimation";
+import { ZoomInUpDiv } from "../../components/animations/ZoomInUpDiv";
+
 import "./styles.scss";
 
 const Product = (props) => {
   const handleAddToCart = (prod) => {
-    props.history.push("/shop/cart");
+    props.history.push(`/repositories/fshop/shop/cart`);
     props.addToCart(prod);
   };
 
   return props.products.map((p) => {
     return (
       <Grid key={p.id} item xs={12} sm={6} md={4} lg={3}>
-        <ZoomInUpWrapperDiv>
+        <ZoomInUpDiv>
           <Card key={p.id} className="productListWrapper" elevation={2}>
-            <Link to={`/shop/products/${p.category}/${p.id}`}>
+            <Link
+              to={`/repositories/fshop/shop/products/${p.category}/${p.id}`}>
               <img src={p.image} alt={p.name} />
             </Link>
             <CardContent key={p.id}>
@@ -32,38 +34,65 @@ const Product = (props) => {
               <Button
                 onClick={() => handleAddToCart(p)}
                 component={Link}
-                to="/shop/cart"
-                variant="outlined"
-                size="small"
-                color="default"
-              >
+                to={`/repositories/fshop/shop/cart`}
+                variant="contained"
+                size={`${window.innerWidth <= 1280 ? "small" : "medium"}`}
+                color="primary">
                 Add To Cart
               </Button>
             </div>
           </Card>
-        </ZoomInUpWrapperDiv>
+        </ZoomInUpDiv>
       </Grid>
     );
   });
 };
 
 class ProductList extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      size: "medium",
+      wi: window.innerWidth
+    };
+  }
+
+  componentDidMount() {
+    window.addEventListener("resize", this.handleButtonSize, false);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.handleButtonSize, false);
+  }
+
+  handleButtonSize = () => {
+    const { wi } = this.state;
+    return wi <= 1280
+      ? this.setState({ size: "small" })
+      : this.setState({ size: "medium" });
+  };
 
   componentDidUpdate() {
-    window.scrollTo(0,0);
+    window.scrollTo(0, 0);
   }
 
   render() {
     if (!this.props.products) {
       return <h5 className="p-2">No Products</h5>;
     }
-
+    const { size } = this.state;
     return (
-      <Grid container>
-        <Product addToCart={this.props.addToCart} {...this.props} />
-      </Grid>
+      <div className="productsWrapper">
+        <Grid container>
+          <Product
+            size={size}
+            addToCart={this.props.addToCart}
+            {...this.props}
+          />
+        </Grid>
+      </div>
     );
   }
-};
+}
 
 export default withRouter(ProductList);
